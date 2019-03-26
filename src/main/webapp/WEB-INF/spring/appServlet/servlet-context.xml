@@ -14,7 +14,6 @@
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
-	<resources mapping="/uploadfile/**" location="/uploadfile/" />
 	
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
@@ -23,16 +22,9 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<!--  이게 일단 실행하면 오류가 나서 일단 주석처리 해놨습니다. 나중에 사용하실떄 주석 푸시고 수정된 내용 저한테 카톡으로 말씀해주세요
-	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-	<beans:property name="maxUploadSize" value="10485760" />
-	</beans:bean>
-	<beans:bean id="uploadPath" class="java.lang.String">
-	<beans:constructor-arg value="디텍토리를 넣어야함 ."/>
-	</beans:bean>
-	-->
 	
-	<context:component-scan base-package="com.team150.pedicab" />
+	
+	<context:component-scan base-package="com.team150" />
 	
 	
 	

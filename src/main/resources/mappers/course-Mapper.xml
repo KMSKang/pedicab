@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team150.mappers.courseMapper">
+
+	<select id="listAll" resultType="com.team150.commons.CourseVO">
+		select * from Course
+	</select>
+	
+	<insert id="create" parameterType="com.team150.commons.CourseVO">
+		insert into Course(cname,cinfo,cprice,cstart,cimg)
+		values (#{cname}, #{cinfo}, #{cprice}, #{cstart}, null)
+	</insert>
+	
+	<select id="read" resultType="com.team150.commons.CourseVO">
+		select * from Course where cseq=#{cseq}
+	</select>
+	
+	<update id="modify">
+		update Course set
+		cname=#{cname},cinfo=#{cinfo},cprice=#{cprice},cstart=#{cstart},cimg=#{cimg}
+		where cseq=#{cseq}
+	</update>
+	
+	<delete id="remove">
+		delete from Course where cseq=#{cseq}
+	</delete>
+</mapper>
