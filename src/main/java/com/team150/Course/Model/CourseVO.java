@@ -1,4 +1,4 @@
-package com.team150.commons;
+package com.team150.Course.Model;
 
 import java.io.File;
 

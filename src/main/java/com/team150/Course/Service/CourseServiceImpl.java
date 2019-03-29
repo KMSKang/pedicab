@@ -1,4 +1,4 @@
-package com.team150.service;
+package com.team150.Course.Service;
 
 import java.io.File;
 import java.util.List;
@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.team150.commons.CourseVO;
-import com.team150.dao.CourseDAO;
+import com.team150.Course.Model.CourseDAO;
+import com.team150.Course.Model.CourseVO;
 @Service
 public class CourseServiceImpl implements CourseService {
 	

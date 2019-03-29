@@ -1,4 +1,4 @@
-package com.team150.controller;
+package com.team150;
 
 import java.text.DateFormat;
 import java.util.Date;

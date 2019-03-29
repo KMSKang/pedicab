@@ -1,10 +1,10 @@
-package com.team150.service;
+package com.team150.Course.Service;
 
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.team150.commons.CourseVO;
+import com.team150.Course.Model.CourseVO;
 
 public interface CourseService {
 

@@ -1,4 +1,4 @@
-package com.team150.dao;
+package com.team150.Course.Model;
 
 import java.util.List;
 
@@ -6,8 +6,6 @@ import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
-
-import com.team150.commons.CourseVO;
 @Repository
 public class CourseDAOImpl implements CourseDAO {
 

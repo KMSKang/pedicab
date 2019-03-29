@@ -1,8 +1,6 @@
-package com.team150.dao;
+package com.team150.Course.Model;
 
 import java.util.List;
-
-import com.team150.commons.CourseVO;
 
 public interface CourseDAO {
 

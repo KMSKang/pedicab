@@ -1,4 +1,4 @@
-package com.team150.service;
+package com.team150.Reserve.Service;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.team150.commons.ReserveVO;
-import com.team150.dao.ReserveDAO;
+import com.team150.Reserve.Model.ReserveDAO;
+import com.team150.Reserve.Model.ReserveService;
 
 @Service
 public class ReserveServiceImpl implements ReserveService {
