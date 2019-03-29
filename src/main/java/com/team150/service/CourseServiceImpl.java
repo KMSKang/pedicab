@@ -1,10 +1,13 @@
 package com.team150.service;
 
+import java.io.File;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.team150.commons.CourseVO;
 import com.team150.dao.CourseDAO;
@@ -12,11 +15,32 @@ import com.team150.dao.CourseDAO;
 public class CourseServiceImpl implements CourseService {
 	
 	@Inject
-	private CourseDAO dao; 
+	private CourseDAO dao;
+	
+	
 
 	@Override
-	public void regist(CourseVO vo) throws Exception {
-		dao.create(vo);
+	@Transactional
+	public void regist(CourseVO vo,HttpServletRequest request) throws Exception {
+		String imgName="";
+		String uploadURI="/uploadFile/coursePhoto/";
+		String dir=request.getSession().getServletContext().getRealPath(uploadURI);
+		
+		System.out.println(dir);
+		
+		if(!vo.getImgfile().isEmpty()) {
+			imgName =vo.getCname();
+			vo.getImgfile().transferTo(new File(dir,imgName));
+			vo.setCimg(imgName);
+		}
+		int result =dao.create(vo);
+		
+		if(result==0) {
+			System.out.println("create fail");
+		}else {
+			System.out.println("create success");
+		}
+		
 	}
 
 	@Override

@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="/course/cregist" method="post"  >
+<form action="/course/cregist" method="post" enctype="multipart/form-data">
 <div>
 코스명
 <input type="text" name="cname" id="cname" placeholder="코스명을 등록해주세요">
@@ -26,7 +26,7 @@
 </div>
 <div>
 이미지
-<input type="file" name="cimg" id="cimg">
+<input type="file" name="imgfile" id="imgfile">
 </div>
 <button type="submit">등록</button>
 </form>

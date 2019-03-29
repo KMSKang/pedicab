@@ -1,14 +1,30 @@
 package com.team150.commons;
 
+import java.io.File;
+
+import org.springframework.web.multipart.MultipartFile;
+
 public class CourseVO {
 	private int cseq;
 	private String cname;
 	private String cinfo;
 	private String cprice;
 	private String cstart;
+	private MultipartFile imgfile;
 	private String cimg;
 	private int sseq;
 	private int pseq;
+	
+
+
+
+	public MultipartFile getImgfile() {
+		return imgfile;
+	}
+
+	public void setImgfile(MultipartFile imgfile) {
+		this.imgfile = imgfile;
+	}
 
 	public int getCseq() {
 		return cseq;

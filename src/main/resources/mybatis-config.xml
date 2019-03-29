@@ -8,5 +8,6 @@
 	</typeAliases>
 	<mappers>
 		<mapper resource="mappers/course-Mapper.xml" />
+		<mapper resource="mappers/reserve-Mapper.xml"/>
 	</mappers>
 </configuration>

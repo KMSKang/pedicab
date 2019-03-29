@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -33,6 +35,22 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
+		return "home";
+	}
+	@RequestMapping(value="/sessionget",method= RequestMethod.GET)
+	public String getSession(Model model,HttpSession session) throws Exception{
+		
+		
+		session.setAttribute("id", 10);
+		
+		model.addAttribute("session", this.getClass());
+		
+		return "home";
+	}
+	@RequestMapping(value="/sessionlose",method= RequestMethod.GET)
+	public String loseSession(HttpSession session) throws Exception{
+		
+		session.invalidate();
 		return "home";
 	}
 	

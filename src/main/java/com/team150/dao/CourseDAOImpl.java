@@ -17,8 +17,8 @@ public class CourseDAOImpl implements CourseDAO {
 	private static String namespace="com.team150.mappers.courseMapper";
 	
 	@Override
-	public void create(CourseVO vo) throws Exception {
-		session.insert(namespace+".create",vo);
+	public int create(CourseVO vo) throws Exception {
+		return session.insert(namespace+".create",vo);
 		
 
 	}

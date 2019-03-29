@@ -29,6 +29,9 @@
 			요금 <input name="cprice" id="cprice" value="${dto.cprice}"
 				placeholder="요금정보를 입력해주세요" readonly="readonly">
 		</div>
+		<div>
+		 이미지 <img src="/uploadFile/coursePhoto/${dto.cimg}">
+		</div>
 	
 
 		<button type="submit" formaction="/course/cmodify" formmethod="get">수정</button>

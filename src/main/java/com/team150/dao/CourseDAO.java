@@ -6,7 +6,7 @@ import com.team150.commons.CourseVO;
 
 public interface CourseDAO {
 
-	public void create(CourseVO vo) throws Exception;
+	public int create(CourseVO vo) throws Exception;
 
 	public CourseVO read(int cseq) throws Exception;
 

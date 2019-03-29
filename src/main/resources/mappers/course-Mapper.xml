@@ -10,7 +10,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<insert id="create" parameterType="com.team150.commons.CourseVO">
 		insert into Course(cname,cinfo,cprice,cstart,cimg)
-		values (#{cname}, #{cinfo}, #{cprice}, #{cstart}, null)
+		values (#{cname}, #{cinfo}, #{cprice}, #{cstart}, #{cimg})
 	</insert>
 	
 	<select id="read" resultType="com.team150.commons.CourseVO">
