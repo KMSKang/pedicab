@@ -1,8 +1,8 @@
-package com.team150.Reserve.Model;
+package com.team150.Reserve.Service;
 
 import java.util.List;
 
-import com.team150.Reserve.Service.ReserveVO;
+import com.team150.Reserve.Model.ReserveVO;
 
 public interface ReserveService {
 	

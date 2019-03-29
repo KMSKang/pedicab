@@ -7,8 +7,6 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.team150.Reserve.Service.ReserveVO;
-
 @Repository
 public class ReserveDAOImpl implements ReserveDAO {
 	

@@ -4,16 +4,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.team150.mappers.courseMapper">
 
-	<select id="listAll" resultType="com.team150.commons.CourseVO">
+	<select id="listAll" resultType="com.team150.Course.Model.CourseVO">
 		select * from Course
 	</select>
 	
-	<insert id="create" parameterType="com.team150.commons.CourseVO">
+	<insert id="create" parameterType="com.team150.Course.Model.CourseVO">
 		insert into Course(cname,cinfo,cprice,cstart,cimg)
 		values (#{cname}, #{cinfo}, #{cprice}, #{cstart}, #{cimg})
 	</insert>
 	
-	<select id="read" resultType="com.team150.commons.CourseVO">
+	<select id="read" resultType="com.team150.Course.Model.CourseVO">
 		select * from Course where cseq=#{cseq}
 	</select>
 	

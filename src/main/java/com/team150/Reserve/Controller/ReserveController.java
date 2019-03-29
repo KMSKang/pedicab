@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.team150.Reserve.Model.ReserveService;
-import com.team150.Reserve.Service.ReserveVO;
+import com.team150.Reserve.Model.ReserveVO;
+import com.team150.Reserve.Service.ReserveService;
 @RequestMapping("/")
 @Controller
 public class ReserveController {

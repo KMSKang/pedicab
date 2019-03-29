@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.team150.Reserve.Model.ReserveDAO;
-import com.team150.Reserve.Model.ReserveService;
+import com.team150.Reserve.Model.ReserveVO;
 
 @Service
 public class ReserveServiceImpl implements ReserveService {

@@ -1,4 +1,4 @@
-package com.team150.Reserve.Service;
+package com.team150.Reserve.Model;
 
 import java.sql.Date;
 

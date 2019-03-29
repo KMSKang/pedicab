@@ -3,22 +3,22 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.team150.mappers.reserveMapper">
-	<select id="listAll" resultType="com.team150.commons.ReserveVO">
+	<select id="listAll" resultType="com.team150.Reserve.Model.ReserveVO">
 		select * from Reserve
 	</select>
 
-	<insert id="create" parameterType="com.team150.commons.ReserveVO">
+	<insert id="create" parameterType="com.team150.Reserve.Model.ReserveVO">
 		insert into
 		Reserve(rtime,rbank,raccount,rmemo,rok,rdate,cseq,useq)
 		values (#{rtime},#{rbank},#{raccount},#{rmemo},"false",now(),#{cseq},#{useq})
 	</insert>
 
-	<select id="read" resultType="com.team150.commons.ReserveVO">
+	<select id="read" resultType="com.team150.Reserve.Model.ReserveVO">
 		select * from Reserve where useq=#{useq}
 	</select>
 	
 	
-	<select id="read1" resultType="com.team150.commons.ReserveVO">
+	<select id="read1" resultType="com.team150.Reserve.Model.ReserveVO">
 		select * from Reserve where rseq=#{rseq}
 	</select>
 

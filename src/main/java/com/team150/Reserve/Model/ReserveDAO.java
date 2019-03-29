@@ -2,8 +2,6 @@ package com.team150.Reserve.Model;
 
 import java.util.List;
 
-import com.team150.Reserve.Service.ReserveVO;
-
 public interface ReserveDAO {
 	public void create(ReserveVO vo) throws Exception;
 	
