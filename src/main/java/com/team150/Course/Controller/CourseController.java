@@ -20,7 +20,7 @@ public class CourseController {
 	@Inject
 	CourseService service;
 	//=================관리자================================//
-	@RequestMapping(value="course/clistAll",method=RequestMethod.GET)
+	@RequestMapping(value="course/clistAll", method=RequestMethod.GET)
 	public void clistAll(Model model) throws Exception{
 		model.addAttribute("list", service.listAll());
 	}
@@ -54,12 +54,12 @@ public class CourseController {
 	
 	//=======================유저=============================//
 	
-	@RequestMapping(value = "course/uclistAll", method = RequestMethod.GET)
+	@RequestMapping(value = "course/uclistAll",method=RequestMethod.GET)
 	public void uclistAll(Model model) throws Exception {
 		model.addAttribute("list", service.listAll());
 	}
 
-	@RequestMapping(value = "/course/ucread", method = RequestMethod.GET)
+	@RequestMapping(value = "/course/ucread",method=RequestMethod.GET)
 	public void ucread(@RequestParam("cseq") int cseq, Model model) throws Exception {
 		model.addAttribute("dto", service.read(cseq));
 	}

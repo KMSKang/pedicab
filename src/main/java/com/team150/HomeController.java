@@ -37,21 +37,5 @@ public class HomeController {
 		
 		return "home";
 	}
-	@RequestMapping(value="/sessionget",method= RequestMethod.GET)
-	public String getSession(Model model,HttpSession session) throws Exception{
-		
-		
-		session.setAttribute("id", 10);
-		
-		model.addAttribute("session", this.getClass());
-		
-		return "home";
-	}
-	@RequestMapping(value="/sessionlose",method= RequestMethod.GET)
-	public String loseSession(HttpSession session) throws Exception{
-		
-		session.invalidate();
-		return "home";
-	}
 	
 }

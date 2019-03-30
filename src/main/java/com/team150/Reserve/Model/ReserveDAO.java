@@ -5,7 +5,7 @@ import java.util.List;
 public interface ReserveDAO {
 	public void create(ReserveVO vo) throws Exception;
 	
-	public ReserveVO read(int useq) throws Exception;
+	public List<ReserveVO> read(int useq) throws Exception;
 	
 	public ReserveVO read1(int rseq) throws Exception;
 	

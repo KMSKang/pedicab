@@ -22,7 +22,7 @@ public class ReserveServiceImpl implements ReserveService {
 	}
 
 	@Override
-	public ReserveVO read(int useq) throws Exception {
+	public List<ReserveVO> read(int useq) throws Exception {
 		return dao.read(useq);
 	}
 
