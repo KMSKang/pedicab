@@ -24,7 +24,7 @@ public class ReviewController {
 	// 리뷰 등록 (페이지)
 	@RequestMapping("/review/reviewWrite")
 	public String reviewWrite(ReviewVO reviewVO) {
-		return "review/reviewWrite";
+		return "/review/reviewWrite";
 	}
 
 	// 리뷰 등록 (실행)
@@ -33,7 +33,7 @@ public class ReviewController {
 
 		service.reviewRegister(reviewVO, request);
 
-		return "redirect:courseReservation.do";
+		return "redirect:/course/courseReservation.do";
 	}
 
 	// 리스트 (리뷰, 답글) (페이지)
@@ -45,7 +45,7 @@ public class ReviewController {
 		// 리뷰 전체 조회
 		model.addAttribute("reviewList", service.reviewSelecter());
 
-		return "course/courseReservation";
+		return "/course/courseReservation";
 	}
 
 	// 리뷰 상세 (페이지)
@@ -57,7 +57,7 @@ public class ReviewController {
 		// 리뷰 전체 조회
 		model.addAttribute("reviewList", service.reviewSelecter());
 
-		return "review/reviewInfo";
+		return "/review/reviewInfo";
 	}
 
 	// 리뷰 수정 (페이지)
@@ -78,7 +78,7 @@ public class ReviewController {
 
 		service.reviewUpdater(reviewVO, request);
 
-		return "redirect:courseReservation.do";
+		return "redirect:/course/courseReservation.do";
 	}
 
 	// 리뷰 삭제 (실행)
@@ -87,7 +87,7 @@ public class ReviewController {
 
 		service.reviewDeleter(reseq);
 
-		return "redirect:courseReservation.do";
+		return "redirect:/course/courseReservation.do";
 	}
 
 	// 답글 등록 (페이지)
@@ -99,7 +99,7 @@ public class ReviewController {
 		// 리뷰 전체 조회
 		model.addAttribute("reviewList", service.reviewSelecter());
 
-		return "review/commentWrite";
+		return "/review/commentWrite";
 	}
 
 	// 답글 등록 (실행)
@@ -108,7 +108,7 @@ public class ReviewController {
 
 		service.commentRegister(commentVO, reseq);
 
-		return "redirect:courseReservation.do";
+		return "redirect:/course/courseReservation.do";
 	}
 
 }
