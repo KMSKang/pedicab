@@ -5,9 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<%@ include file="../commons/hdjs.jsp"%>
 <title>Insert title here</title>
 </head>
 <body>
+<%@ include file="../commons/Header.jsp" %>
+<section id="content">
 	<form action="/course/cregist" method="get">
 		<table>
 			<tr>
@@ -23,5 +26,7 @@
 		</table>
 		<button type="submit">글쓰기</button>
 	</form>
+</section>
+
 </body>
 </html>

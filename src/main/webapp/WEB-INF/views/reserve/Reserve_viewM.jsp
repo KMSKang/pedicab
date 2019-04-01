@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<%@ include file="../commons/hdjs.jsp"%>
 <style>
 #reservenum{
 display:none;  
@@ -14,6 +15,7 @@ visibility: hidden;
 </style>
 </head>
 <body>
+<%@ include file="../commons/Header.jsp" %>
 <form>
 <input name="rseq" id="reservenum" value="${reserve.rseq}">
 

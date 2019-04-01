@@ -5,10 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.css"/>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap-theme.css"/>
+<%@ include file="../commons/hdjs.jsp"%>
 </head>
 <body>
+<%@ include file="../commons/Header.jsp" %>
 	<form>
 		<div class="form-group">
 		<label for="cseq">번호</label>

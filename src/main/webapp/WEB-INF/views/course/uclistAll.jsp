@@ -6,11 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.css"/>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap-theme.css"/>
-
+<%@ include file="../commons/hdjs.jsp"%>
 </head>
 <body>
+<%@ include file="../commons/Header.jsp" %>
 <h1>코스리스트</h1>
 <div class="card-group">
 <c:forEach items="${list}" var="course">

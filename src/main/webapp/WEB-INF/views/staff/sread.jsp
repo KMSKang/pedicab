@@ -6,8 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>라이더 상세 페이지</title>
+<%@ include file="../commons/hdjs.jsp"%>
 </head>
 <body>
+<%@ include file="../commons/Header.jsp" %>
 <h2>라이더 상세 페이지</h2>
 	<table border="1">
 	<tr>

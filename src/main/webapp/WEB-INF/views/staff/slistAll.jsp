@@ -7,9 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <title>라이더 리스트</title>
+<%@ include file="../commons/hdjs.jsp"%>
 </head>
 <body>
-
+<%@ include file="../commons/Header.jsp" %>
 <h2>라이더 정보 리스트</h2>
 
 <table border="1">

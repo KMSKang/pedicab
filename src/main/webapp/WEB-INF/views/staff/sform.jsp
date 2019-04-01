@@ -3,12 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap-theme.css">
+<%@ include file="../commons/hdjs.jsp"%>
 <meta charset="UTF-8">
 <title>라이더 등록</title>
 </head>
 <body>
+<%@ include file="../commons/Header.jsp" %>
 	<h2>라이더 등록</h2>
 	<form  action="sregist" method="post" enctype="multipart/form-data" >
 	<div class="form-group">
