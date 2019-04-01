@@ -16,14 +16,10 @@
 		<div class="collapse navbar-collapse">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item"><a class="nav-link" href="course/clistAll">코스리스트(매니저)</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="course/uclistAll">코스리스트(유저)</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="reserve/Reserve_viewU?useq=${useq }">예약보기(유저)</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="reserve/Reserve_listM">예약리스트(매니저)</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="staff/slistAll">라이더리스트[매니저]</a></li>
+				<li class="nav-item"><a class="nav-link" href="course/uclistAll">코스리스트(유저)</a></li>
+				<li class="nav-item"><a class="nav-link" href="reserve/Reserve_viewU?useq=${useq }">예약보기(유저)</a></li>
+				<li class="nav-item"><a class="nav-link" href="reserve/Reserve_listM">예약리스트(매니저)</a></li>
+				<li class="nav-item"><a class="nav-link" href="staff/slistAll">라이더리스트[매니저]</a></li>
 					
 				<li class="nav-item"><a class="nav-link" href="notice/noticeMain">공지사항</a></li>
 				<li class="nav-item"><a class="nav-link" href="review/reviewWrite">리뷰작성</a></li>

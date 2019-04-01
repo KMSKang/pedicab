@@ -19,7 +19,7 @@ public class QuestionController {
 	QuestionService service;
 
 	// 문의하기 리스트 (페이지)
-	@RequestMapping("/questionMain")
+	@RequestMapping("/question/questionMain")
 	public String questionMain(Model model) {
 
 		model.addAttribute("questionList", service.questionSelecter());
@@ -28,13 +28,13 @@ public class QuestionController {
 	}
 
 	// 문의하기 등록 (페이지)
-	@RequestMapping("/questionWrite")
+	@RequestMapping("/question/questionWrite")
 	public String questionWrite() {
 		return "question/questionWrite";
 	}
 
 	// 문의하기 등록 (실행)
-	@RequestMapping(value = "/questionWriteOK", method = RequestMethod.POST)
+	@RequestMapping(value = "/question/questionWriteOK", method = RequestMethod.POST)
 	public String questionWriteOK(QuestionVO questionVO) {
 
 		service.questionRegister(questionVO);
@@ -43,7 +43,7 @@ public class QuestionController {
 	}
 
 	// 문의하기 상세 (페이지)
-	@RequestMapping(value = "/questionInfo")
+	@RequestMapping(value = "/question/questionInfo")
 	public String questionInfo(Model model, @RequestParam int quseq) {
 
 		model.addAttribute("questionInfo", service.questionInfoer(quseq));
@@ -58,7 +58,7 @@ public class QuestionController {
 //	관리자
 
 	// 문의하기 모든 리스트 (페이지)
-	@RequestMapping(value = "/questionAllList", method = RequestMethod.GET)
+	@RequestMapping(value = "/question/questionAllList", method = RequestMethod.GET)
 	public String questionAllList(Model model) {
 
 		model.addAttribute("questionList", service.questionSelecter());
@@ -67,7 +67,7 @@ public class QuestionController {
 	}
 
 	// 답변하기 리스트 (페이지)
-	@RequestMapping(value = "/answer")
+	@RequestMapping(value = "/question/answer")
 	public String answer(Model model, @RequestParam int quseq) {
 
 		model.addAttribute("questionInfo", service.questionInfoer(quseq));
@@ -76,7 +76,7 @@ public class QuestionController {
 	}
 
 	// 답변하기 등록 (실행)
-	@RequestMapping(value = "/answerOK", method = RequestMethod.POST)
+	@RequestMapping(value = "/question/answerOK", method = RequestMethod.POST)
 	public String AnswerOK(AnswerVO answerVO, @RequestParam int quseq) {
 
 		service.answerRegister(answerVO, quseq);
