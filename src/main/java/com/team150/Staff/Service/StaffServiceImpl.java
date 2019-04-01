@@ -44,7 +44,7 @@ public class StaffServiceImpl implements StaffService {
 	
 	@Override
 	public void modify(StaffVO staff, HttpServletRequest request) throws Exception {
-		// request 이용 절대경로 설정 String imgfile = ""; String uploadUri =
+		// request 이용 절대경로 설정 String
 		String imgfile = "";
 		String uploadUri = "/uploadfile/staffphoto"; 
 		String dir = request.getSession().getServletContext().getRealPath(uploadUri);

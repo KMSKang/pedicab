@@ -27,9 +27,7 @@
 		</label>
 	</div>
 	<div class="form-group">
-		<label for="imgfile">이미지:<br>
 		<input type="file" name="imgfile" id="imgfile">
-		</label>
 	</div>
 	<button type="submit" class="btn btn-primary">라이더 가입</button>
 	</form>

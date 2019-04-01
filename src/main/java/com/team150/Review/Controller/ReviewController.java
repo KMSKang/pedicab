@@ -22,13 +22,13 @@ public class ReviewController {
 	ReviewService service;
 
 	// 리뷰 등록 (페이지)
-	@RequestMapping("/reviewWrite")
+	@RequestMapping("/review/reviewWrite")
 	public String reviewWrite(ReviewVO reviewVO) {
 		return "review/reviewWrite";
 	}
 
 	// 리뷰 등록 (실행)
-	@RequestMapping(value = "/reviewWriteOK", method = RequestMethod.POST)
+	@RequestMapping(value = "/review/reviewWriteOK", method = RequestMethod.POST)
 	public String reviewWriteOK(ReviewVO reviewVO, HttpServletRequest request) throws Exception {
 
 		service.reviewRegister(reviewVO, request);
@@ -37,7 +37,7 @@ public class ReviewController {
 	}
 
 	// 리스트 (리뷰, 답글) (페이지)
-	@RequestMapping("/courseReservation")
+	@RequestMapping("/course/courseReservation")
 	public String courseReservation(Model model) {
 
 		model.addAttribute("commentList", service.commentSelecter());
@@ -49,7 +49,7 @@ public class ReviewController {
 	}
 
 	// 리뷰 상세 (페이지)
-	@RequestMapping("/reviewInfo")
+	@RequestMapping("/review/reviewInfo")
 	public String reviewInfo(Model model, @RequestParam int reseq) {
 
 		model.addAttribute("reviewInfo", service.reviewInfoer(reseq));
@@ -61,7 +61,7 @@ public class ReviewController {
 	}
 
 	// 리뷰 수정 (페이지)
-	@RequestMapping("/reviewModify")
+	@RequestMapping("/review/reviewModify")
 	public ModelAndView reviewModify(Model model, @RequestParam int reseq, @ModelAttribute ReviewVO reviewVO) {
 
 		reviewVO = service.reviewInfoer(reseq);
@@ -73,7 +73,7 @@ public class ReviewController {
 	}
 
 	// 리뷰 수정 (실행)
-	@RequestMapping("/reviewModifyOK")
+	@RequestMapping("/review/reviewModifyOK")
 	public String reviewModifyOK(@ModelAttribute ReviewVO reviewVO, HttpServletRequest request) throws Exception {
 
 		service.reviewUpdater(reviewVO, request);
@@ -82,7 +82,7 @@ public class ReviewController {
 	}
 
 	// 리뷰 삭제 (실행)
-	@RequestMapping("/reviewDelete")
+	@RequestMapping("/review/reviewDelete")
 	public String reviewDelete(@RequestParam int reseq) {
 
 		service.reviewDeleter(reseq);
@@ -91,7 +91,7 @@ public class ReviewController {
 	}
 
 	// 답글 등록 (페이지)
-	@RequestMapping("/commentWrite")
+	@RequestMapping("/review/commentWrite")
 	public String commentWrite(Model model, @RequestParam int reseq) {
 
 		model.addAttribute("reviewInfo", service.reviewInfoer(reseq));
@@ -103,7 +103,7 @@ public class ReviewController {
 	}
 
 	// 답글 등록 (실행)
-	@RequestMapping(value = "/commentWriteOK", method = RequestMethod.POST)
+	@RequestMapping(value = "/review/commentWriteOK", method = RequestMethod.POST)
 	public String commentWriteOK(CommentVO commentVO, @RequestParam int reseq) {
 
 		service.commentRegister(commentVO, reseq);

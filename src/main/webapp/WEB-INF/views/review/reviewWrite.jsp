@@ -60,7 +60,7 @@ img {
 			<jsp:include page="/WEB-INF/views/category/reservationCategory.jsp" flush="false" />
 		</div>
 
-		<img src="../pedicab/resources/img/course/course1.jpg" alt="경복궁사진">
+		<img src="../resources/img/course/course1.jpg" alt="경복궁사진">
 
 		<div class="write">
 			아이디 : <input type="text" placeholder="아이디를 입력주세요" name="reemail"> <br>

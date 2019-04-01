@@ -22,23 +22,22 @@ public class NoticeController {
 	// =================관리자================================//
 
 	// 리스트 (페이지)
-	@RequestMapping("/noticeMain")
+	@RequestMapping("/notice/noticeMain")
 	public String noticeMain(Model model) {
 
 		model.addAttribute("List", service.noticeSelecter());
 
 		return "notice/noticeMain";
-
 	}
 
 	// 등록 (페이지)
-	@RequestMapping("/noticeWrite")
+	@RequestMapping("/notice/noticeWrite")
 	public String noticeWrite() {
 		return "notice/noticeWrite";
 	}
 
 	// 등록 (실행)
-	@RequestMapping(value = "noticeWriteOK", method = RequestMethod.POST)
+	@RequestMapping(value = "/notice/noticeWriteOK", method = RequestMethod.POST)
 	public String noticeWriteOK(NoticeVO noticeVO) {
 
 		service.noticeRegister(noticeVO);
@@ -47,7 +46,7 @@ public class NoticeController {
 	}
 
 	// 상세 (페이지)
-	@RequestMapping("/noticeInfo")
+	@RequestMapping("/notice/noticeInfo")
 	public String noticeInfo(Model model, @RequestParam int noseq) {
 
 		model.addAttribute("Info", service.noticeInfoer(noseq));
@@ -56,7 +55,7 @@ public class NoticeController {
 	}
 
 	// 수정 (페이지)
-	@RequestMapping("/noticeModify")
+	@RequestMapping("/notice/noticeModify")
 	public ModelAndView noticeModify(Model model, @RequestParam int noseq, @ModelAttribute NoticeVO noticeVO) {
 
 		noticeVO = service.noticeInfoer(noseq);
@@ -65,7 +64,7 @@ public class NoticeController {
 	}
 
 	// 수정 (실행)
-	@RequestMapping("/noticeModifyOK")
+	@RequestMapping("/notice/noticeModifyOK")
 	public String noticeModifyOK(@ModelAttribute NoticeVO noticeVO) {
 
 		service.noticeUpdater(noticeVO);
@@ -74,7 +73,7 @@ public class NoticeController {
 	}
 
 	// 삭제 (실행)
-	@RequestMapping("/noticeDelete")
+	@RequestMapping("/notice/noticeDelete")
 	public String noticeDelete(@RequestParam int noseq) {
 
 		service.noticeDeleter(noseq);
