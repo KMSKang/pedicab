@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="StaffVO">
+
+	<insert id="create" parameterType="com.team150.Staff.Model.StaffVO">
+		INSERT INTO staff (sname, sphone, snickname, simg)
+		VALUES (#{sname}, #{sphone}, #{snickname}, #{simg})
+	</insert>
+	
+	<select id="read" resultType="com.team150.Staff.Model.StaffVO">
+		SELECT * FROM staff WHERE sseq = #{sseq}
+	</select>
+	
+	<update id="modify">
+		UPDATE staff SET sphone = #{ sphone }, snickname = #{ snickname }, simg = #{simg }   
+		WHERE sseq = #{ sseq }
+	</update>
+	
+	<delete id="remove">
+		DELETE FROM staff WHERE sseq = #{ sseq }
+	</delete>
+	
+	<select id="listAll" resultType="com.team150.Staff.Model.StaffVO">
+		SELECT * FROM staff WHERE sseq > 0
+	</select>
+		
+</mapper>
