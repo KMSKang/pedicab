@@ -41,10 +41,11 @@ margin-left: 110px;
 
 	<h1>공지사항(쓰기)</h1>
 
-	<form action="/noticeWriteOK" method="POST">
+	<form action="/notice/noticeWriteOK" method="POST">
 
 		제목 : <input type="text" placeholder="제목을 입력해주세요" name="notitle"> <br>
 		내용 : <input type="text" placeholder="내용을 입력해주세요" name="nocontent" id="text2"> <br>
+		
 		<input type="submit" value="등록" id="Erollment">
 
 	</form>
