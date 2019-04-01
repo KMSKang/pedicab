@@ -6,30 +6,15 @@
 <html>
 <head>
 <title>Home</title>
+
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css"/>
+
 <style>
-table {
-	border-collapse: collapse;
-}
-
-td, th {
-	padding: 8px 20px;
-	border: 1px solid #b7b7b7;
-}
-
-th {
-	background-color: #2c8daa;
-	color: #fff;
-}
-
-tr:hover {
-	cursor: default;
-	background-color: #ecfafc;
-}
-
 #a1 {
 	position: absolute;
-	margin-top: -150px;
-	margin-left: 250px;
+	margin-top: -58px;
+	margin-left: 260px;
 	border: 10px solid silver;
 	color: red;
 }
@@ -45,7 +30,9 @@ tr:hover {
 
 	<h1>공지사항(메인)</h1>
 
-	<table>
+		<a href="noticeWrite.do" id="a1">글쓰기</a>
+		
+	<table class="table table-hover">
 	
 		<tr>
 			<th>번호</th>
@@ -54,19 +41,18 @@ tr:hover {
 			<th>기타</th>
 		</tr>
 		
-		<c:forEach items="${mimbers}" var="mimber">
+		<c:forEach items="${List}" var="List">
 			<tr>
-				<td>${mimber.noseq}</td>
-				<td>${mimber.notitle}</td>
-				<td>${mimber.nodate}</td>
-				<td><a href="noticeInfo.do?noseq=${mimber.noseq}">관리</a>
+				<td>${List.noseq}</td>
+				<td>${List.notitle}</td>
+				<td>${List.nodate}</td>
+				<td><a href="noticeInfo.do?noseq=${List.noseq}">관리</a>
 			</tr>
 		
 		</c:forEach>
 
 	</table>
 	
-		<a href="noticeWrite.do" id="a1">글쓰기</a>
 
 </body>
 </html>
