@@ -25,10 +25,10 @@
 				<li class="nav-item"><a class="nav-link"
 					href="staff/slistAll">라이더리스트[매니저]</a></li>
 					
-				<li class="nav-item"><a class="nav-link" href="/noticeMain">공지사항</a></li>
-				<li class="nav-item"><a class="nav-link" href="/reviewWrite">리뷰작성</a></li>
-				<li class="nav-item"><a class="nav-link" href="/favorite">즐겨찾기 리스트</a></li>
-				<li class="nav-item"><a class="nav-link" href="questionMain">문의하기</a></li>
+				<li class="nav-item"><a class="nav-link" href="notice/noticeMain">공지사항</a></li>
+				<li class="nav-item"><a class="nav-link" href="review/reviewWrite">리뷰작성</a></li>
+				<li class="nav-item"><a class="nav-link" href="favorite/favorite">즐겨찾기 리스트</a></li>
+				<li class="nav-item"><a class="nav-link" href="question/questionMain">문의하기</a></li>
 			</ul>
 		</div>
 	</nav>
