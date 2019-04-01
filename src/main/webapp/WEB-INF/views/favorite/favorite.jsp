@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<%@ include file="../commons/hdjs.jsp"%>
 <style>
 .course {
 	list-style: none;
@@ -28,10 +29,7 @@ img {
 </head>
 <body>
 
-	<div>
-		<jsp:include page="/WEB-INF/views/category/reservationCategory.jsp"
-			flush="false" />
-	</div>
+<%@ include file="../commons/Header.jsp" %>
 
 
 	<c:forEach items="${favorite}" var="favorite">

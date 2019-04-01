@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<%@ include file="../commons/hdjs.jsp"%>
 <style>
 * {
 	margin: 0px;
@@ -56,11 +56,8 @@ p {
 
 </head>
 <body>
+<%@ include file="../commons/Header.jsp" %>
 
-	<div>
-		<jsp:include page="/WEB-INF/views/category/contactUsCategory.jsp"
-			flush="false" />
-	</div>
 	<br>
 	<h3>모든 문의 리스트</h3>
 	

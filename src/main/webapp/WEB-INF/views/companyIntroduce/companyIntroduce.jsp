@@ -5,12 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<%@ include file="../commons/hdjs.jsp"%>
 </head>
 <body>
-
-	<div>
-		<jsp:include page="/WEB-INF/views/category/aboutUsCategory.jsp" flush="false" />
-	</div>
+<%@ include file="../commons/Header.jsp" %>
 	
 	<img src="../resources/img/etc/about.png" alt="a1" width="500px" height="500px">
 

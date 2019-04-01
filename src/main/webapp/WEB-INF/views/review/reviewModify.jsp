@@ -9,9 +9,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<%@ include file="../commons/hdjs.jsp"%>
 </head>
 <body>
-
+<%@ include file="../commons/Header.jsp" %>
 	<h3>수정 페이지</h3>
 
 	<form:form action="reviewModifyOK" modelAttribute="reviewVO" enctype="multipart/form-data" method="POST">

@@ -7,6 +7,7 @@
 <html>
 <head>
 <title>Home</title>
+<%@ include file="../commons/hdjs.jsp"%>
 <style>
 table {
 	border-collapse: collapse;
@@ -33,11 +34,7 @@ margin-left: 110px;
 
 </head>
 <body>
-
-	<div>
-		<jsp:include page="/WEB-INF/views/category/contactUsCategory.jsp"
-			flush="false" />
-	</div>
+<%@ include file="../commons/Header.jsp" %>
 
 	<h1>공지사항(쓰기)</h1>
 
