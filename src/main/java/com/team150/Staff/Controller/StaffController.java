@@ -41,10 +41,10 @@ public class StaffController {
 	}
 	
 	// 라이더 소개 이미지 리스트 (유저)
-	@RequestMapping(value = "staff_ListU", method = RequestMethod.GET)
+	@RequestMapping(value = "slistAllU", method = RequestMethod.GET)
 	public String staffListU(Model model) throws Exception {
 		model.addAttribute("list", staffService.listAll());
-		return "staff/staff_ListU";
+		return "staff/slistAllU";
 	}
 	
 	// 라이더 상세 (페이지)

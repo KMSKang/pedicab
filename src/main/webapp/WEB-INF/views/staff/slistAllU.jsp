@@ -6,10 +6,11 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>라이더 소개(유저)</title>
 </head>
 <body>
 
+<h1>라이더 소개</h1>
 
 <c:forEach var="staff" items="${list}">
 

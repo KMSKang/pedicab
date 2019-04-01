@@ -22,6 +22,8 @@
 					href="reserve/Reserve_viewU?useq=${useq }">예약보기(유저)</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="reserve/Reserve_listM">예약리스트(매니저)</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="staff/slistAll">라이더리스트[매니저]</a></li>
 			</ul>
 		</div>
 	</nav>
