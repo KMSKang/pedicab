@@ -5,10 +5,11 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import com.team150.Course.Model.CourseVO;
+import com.team150.Course.Model.FavoriteVO;
 
 public interface CourseService {
 
-	public void regist(CourseVO vo,HttpServletRequest request) throws Exception;
+	public void regist(CourseVO vo, HttpServletRequest request) throws Exception;
 
 	public CourseVO read(int seq) throws Exception;
 
@@ -17,5 +18,14 @@ public interface CourseService {
 	public void remove(int seq) throws Exception;
 
 	public List<CourseVO> listAll() throws Exception;
+
+	// 즐겨찾기 등록
+	public int favoriteRegister(FavoriteVO favoriteVO);
+
+	// 즐겨찾기 삭제
+	public int deleteFavorite(FavoriteVO favoriteVO);
+	
+	// 즐겨찾기 조회
+	public List<FavoriteVO> favoriteSelecter();
 
 }
