@@ -17,7 +17,7 @@
 			</tr>
 			<c:forEach items="${list}" var="reserve">
 				<tr>
-					<td><a href='/reserve/rread1?rseq=${reserve.rseq }'>${reserve.rmemo}</a></td>
+					<td><a href='/reserve/Reserve_viewM?rseq=${reserve.rseq }'>${reserve.rmemo}</a></td>
 				</tr>
 			</c:forEach>
 		</table>

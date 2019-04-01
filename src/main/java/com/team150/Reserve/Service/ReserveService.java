@@ -8,7 +8,7 @@ public interface ReserveService {
 	
 	public void regist(ReserveVO vo) throws Exception;
 	
-	public ReserveVO read(int useq) throws Exception;
+	public List<ReserveVO> read(int useq) throws Exception;
 	
 	public ReserveVO read1(int rseq) throws Exception;
 	

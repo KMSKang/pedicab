@@ -23,8 +23,8 @@ visibility: hidden;
 <div>승인 : ${reserve.rok}</div>
 <div>예약일자 : ${dto.rdate}</div>
 <button type="submit" formaction="/reserve/rmodify" formmethod="get">수정</button>
-<button type="submit" formaction="/reserve/rremove" formmethod="post">예약취소</button>
-<button type="submit" formaction="/reserve/rlistAll" formmethod="get">리스트</button>
+<button type="submit" formaction="/reserve/Reserve_remove" formmethod="post">예약취소</button>
+<button type="submit" formaction="/reserve/Reserve_listM" formmethod="get">리스트</button>
 </form>
 </body>
 </html>

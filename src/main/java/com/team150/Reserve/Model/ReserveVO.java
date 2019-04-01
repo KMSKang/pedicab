@@ -2,6 +2,8 @@ package com.team150.Reserve.Model;
 
 import java.sql.Date;
 
+import lombok.Data;
+@Data
 public class ReserveVO {
 	private int rseq;
 	private String rtime;
@@ -71,5 +73,6 @@ public class ReserveVO {
 	public void setUseq(int useq) {
 		this.useq = useq;
 	}
+	
 
 }

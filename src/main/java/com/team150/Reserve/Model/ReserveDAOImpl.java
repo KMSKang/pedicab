@@ -22,8 +22,8 @@ public class ReserveDAOImpl implements ReserveDAO {
 	}
 
 	@Override
-	public ReserveVO read(int useq) throws Exception {
-		return session.selectOne(namespace+".read", useq);
+	public List<ReserveVO> read(int useq) throws Exception {
+		return  session.selectList(namespace+".read",useq);
 	}
 
 	@Override
