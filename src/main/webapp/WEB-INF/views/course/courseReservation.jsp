@@ -192,7 +192,7 @@ a {
 				</th>
 				<th>${reviewList.redate}</th>
 
-				<th><a href="reviewInfo.do?reseq=${reviewList.reseq}">관리</a></th>
+				<th><a href="/review/reviewInfo.do?reseq=${reviewList.reseq}">관리</a></th>
 			</tr>
 			
 		</c:forEach>

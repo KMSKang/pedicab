@@ -53,7 +53,7 @@ img {
 
 </head>
 <body>
-	<form action="/reviewWriteOK" method="POST" enctype="multipart/form-data">
+	<form action="/review/reviewWriteOK" method="POST" enctype="multipart/form-data">
 		<div class="all"></div>
 
 		<div>
