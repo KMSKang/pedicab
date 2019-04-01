@@ -8,9 +8,11 @@
 <body class="index">
 <%@ include file="commons/Header.jsp" %>
 
+
 <section id="content">
 	<%@ include file="commons/indexbg.jsp"%>
 </section>
     <%@ include file="commons/btjs.jsp" %>
+
 </body>
 </html>
