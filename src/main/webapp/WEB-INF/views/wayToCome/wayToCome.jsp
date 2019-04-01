@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<%@ include file="../commons/hdjs.jsp"%>
 <style>
 * {
 	margin: 0px;
@@ -24,12 +24,7 @@ margin-left: 550px;
 
 </head>
 <body>
-
-	<div>
-		<jsp:include page="/WEB-INF/views/category/contactUsCategory.jsp"
-			flush="false" />
-	</div>
-
+<%@ include file="../commons/Header.jsp" %>
 	<p>오시는길</p>
 	
 	

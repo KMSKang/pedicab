@@ -10,8 +10,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<%@ include file="../commons/hdjs.jsp"%>
 </head>
 <body>
+<%@ include file="../commons/Header.jsp" %>
 	<h3>답글 페이지</h3>
 	<form:form method="post" action="commentWriteOK" modelAttribute="reviewInfo">
 		<form:hidden path="reseq" />

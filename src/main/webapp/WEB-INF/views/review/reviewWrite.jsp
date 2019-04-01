@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<%@ include file="../commons/hdjs.jsp"%>
 <style>
 * {
 	margin: 0px;
@@ -53,6 +54,7 @@ img {
 
 </head>
 <body>
+<%@ include file="../commons/Header.jsp" %>
 	<form action="/review/reviewWriteOK" method="POST" enctype="multipart/form-data">
 		<div class="all"></div>
 

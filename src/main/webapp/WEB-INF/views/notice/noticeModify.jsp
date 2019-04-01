@@ -8,7 +8,7 @@
 <html>
 <head>
 <title>Home</title>
-
+<%@ include file="../commons/hdjs.jsp"%>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css"/>
 
@@ -22,11 +22,7 @@
 
 </head>
 <body>
-
-	<div>
-		<jsp:include page="/WEB-INF/views/category/contactUsCategory.jsp"
-			flush="false" />
-	</div>
+<%@ include file="../commons/Header.jsp" %>
 
 	<h1>공지사항(수정)</h1>
 

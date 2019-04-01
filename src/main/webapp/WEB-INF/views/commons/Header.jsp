@@ -5,14 +5,17 @@
 			<div class="container">
 				<div class="row">
 					<div class="grid_12">
+					<div style="text-align:right;">
+					<a href="#" style="color:white;">로그인</a><span style="color:white">/</span><a href="#" style="color:white;">회원가입</a>
+					</div>
 						<h1>
 							<a href="/">Team150<span>Pedicab Service</span></a>
 						</h1>
 						<nav>
 							<ul class="sf-menu">
-								<li class="current"><a>우리이야기</a>
+								<li ><a>우리이야기</a>
 									<ul>
-										<li><a href="#">회사</a></li>
+										<li><a href="/companyIntroduce/companyIntroduce">회사</a></li>
 										<li><a href="#">직원</a></li>
 										<li><a href="/staff/slistAll">직원리스트(매니저)</a></li>
 									</ul></li>
@@ -30,6 +33,8 @@
 									<ul>
 										<li><a href="/notice/noticeMain">공지사항</a></li>
 										<li><a href="/question/questionMain">문의하기</a></li>
+										<li><a href="/question/questionMain">자주묻는질문</a></li>
+										<li><a href="/wayToCome/wayToCome">오시는길</a></li>
 									</ul></li>
 								<li><a>ETC</a>
 									<ul>
