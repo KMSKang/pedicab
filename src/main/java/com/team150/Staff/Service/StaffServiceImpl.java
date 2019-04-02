@@ -21,7 +21,8 @@ public class StaffServiceImpl implements StaffService {
 	@Override
 	@Transactional
 	public void regist(StaffVO staff, HttpServletRequest request) throws Exception {
-				
+		
+		// 임의 주석
 		// request 이용 절대경로 설정 String imgfile = ""; String uploadUri =
 		String imgfile = "";
 		String uploadUri = "/uploadFile/staffphoto"; 
