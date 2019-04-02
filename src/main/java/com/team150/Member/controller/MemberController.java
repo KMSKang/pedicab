@@ -53,7 +53,7 @@ public class MemberController {
 	@RequestMapping("logOut.do")
 	public ModelAndView logOut(HttpSession session, ModelAndView mav) {
 		memberService.logOut(session); // 세션 초기화 작업(=session.invalidate();)
-		mav.setViewName("member/loginForm"); // 이동할 페이지의 이름
+		mav.setViewName("home"); // 이동할 페이지의 이름
 		mav.addObject("message", "logOut"); // 변수 저장
 		return mav; // 페이지로 이동
 	}

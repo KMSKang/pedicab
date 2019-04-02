@@ -11,36 +11,36 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.team150.Course.Model.CourseDAO;
 import com.team150.Course.Model.CourseVO;
+import com.team150.Course.Model.FavoriteVO;
+
 @Service
 public class CourseServiceImpl implements CourseService {
-	
+
 	@Inject
 	private CourseDAO dao;
-	
-	
 
 	@Override
 	@Transactional
-	public void regist(CourseVO vo,HttpServletRequest request) throws Exception {
-		String imgName="";
-		String uploadURI="/uploadFile/coursePhoto/";
-		String dir=request.getSession().getServletContext().getRealPath(uploadURI);
-		
+	public void regist(CourseVO vo, HttpServletRequest request) throws Exception {
+		String imgName = "";
+		String uploadURI = "/uploadFile/coursePhoto/";
+		String dir = request.getSession().getServletContext().getRealPath(uploadURI);
+
 		System.out.println(dir);
-		
-		if(!vo.getImgfile().isEmpty()) {
-			imgName =vo.getCname();
-			vo.getImgfile().transferTo(new File(dir,imgName));
+
+		if (!vo.getImgfile().isEmpty()) {
+			imgName = vo.getCname();
+			vo.getImgfile().transferTo(new File(dir, imgName));
 			vo.setCimg(imgName);
 		}
-		int result =dao.create(vo);
-		
-		if(result==0) {
+		int result = dao.create(vo);
+
+		if (result == 0) {
 			System.out.println("create fail");
-		}else {
+		} else {
 			System.out.println("create success");
 		}
-		
+
 	}
 
 	@Override
@@ -65,4 +65,26 @@ public class CourseServiceImpl implements CourseService {
 		return dao.listAll();
 	}
 
+//	---------------------------------------------------------------------------
+
+	// 즐겨찾기 등록 (실행)
+	public int favoriteRegister(FavoriteVO favoriteVO) {
+
+		int result = dao.createFavorite(favoriteVO);
+
+		return result;
+	}
+
+	// 즐겨찾기 삭제
+	public int deleteFavorite(FavoriteVO favoriteVO) {
+
+		int result = dao.deleteFavorite(favoriteVO);
+
+		return result;
+	}
+
+	// 즐겨찾기 조회
+	public List<FavoriteVO> favoriteSelecter() {
+		return dao.selectListfavorite();
+	}
 }

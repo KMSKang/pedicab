@@ -26,4 +26,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="remove">
 		delete from Course where cseq=#{cseq}
 	</delete>
+	
+	
+	
+	<!-- 즐겨찾기 등록 -->
+	<insert id="createFavorite" parameterType="com.team150.Course.Model.FavoriteVO" useGeneratedKeys="true" keyProperty="id">
+		insert into favorite (faemail, falink, fadate)
+		value (#{faemail}, #{falink}, now())
+	</insert>
+	
+	
+	
+	<!-- 즐겨찾기 삭제 -->
+	<delete id="deleteFavorite" parameterType="com.team150.Course.Model.FavoriteVO">
+		DELETE FROM favorite WHERE falink = #{falink}
+	</delete>
+	
+	
+	
+	<!-- 즐겨찾기 리스트 -->
+	<select id="selectListfavorite" resultType="com.team150.Course.Model.FavoriteVO">
+		SELECT * FROM favorite
+	</select>
 </mapper>

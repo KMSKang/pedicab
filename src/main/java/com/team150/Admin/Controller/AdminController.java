@@ -20,7 +20,7 @@ public class AdminController {
 	
 	@RequestMapping("login.do") //   url에 /admin/login.do입력히면 views/admin/login.jsp를 보여준다
 	public String login() {
-		return "admin/login";
+		return "admin/loginForm";
 	}
 	
 	@RequestMapping("loginCheck.do")
@@ -30,12 +30,10 @@ public class AdminController {
 		if(name != null) { //로그인 성공
 			session.setAttribute("admin_uid", vo.getUid()); //관리자의 아이디이름
 			session.setAttribute("admin_uname", name); //관리자의 이름
-			session.setAttribute("uid", vo.getUid()); //유저 아이디
-			session.setAttribute("name", name); //유저 이름
-			mav.setViewName("admin/admin"); //맞으면 admin/admin.jsp로 이동
+			mav.setViewName("home"); //맞으면 admin/admin.jsp로 이동
 			mav.addObject("message", "success");
 		} else {
-			mav.setViewName("admin/login"); //틀리면 admin/login.jsp로 이동
+			mav.setViewName("admin/loginForm"); //틀리면 admin/login.jsp로 이동
 			mav.addObject("message", "error");
 		}
 		return mav;
@@ -44,6 +42,6 @@ public class AdminController {
 	@RequestMapping("logOut.do")
 	public String logout(HttpSession session) {
 		session.invalidate(); //세션정보 클리어
-		return "redirect:/admin/login.do";
+		return "home";
 	}
 }

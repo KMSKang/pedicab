@@ -1,9 +1,9 @@
 package com.team150.Course.Model;
 
-import java.io.File;
-
 import org.springframework.web.multipart.MultipartFile;
 
+import lombok.Data;
+@Data
 public class CourseVO {
 	private int cseq;
 	private String cname;

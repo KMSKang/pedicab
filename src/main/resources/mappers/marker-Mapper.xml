@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team150.mappers.marker-Mapper">
+<insert id="create" parameterType="com.team150.MarkerPath.Model.MarkerVO">
+insert into Marker(mname,mlatitude,mlongitude) values(mname=#{mname},mlatitude=#{mlatitude},mlongitude=#{mlongitude})
+</insert>
+<delete id="remove">
+delete from Marker where mseq=#{mseq}
+</delete>
+
+</mapper>

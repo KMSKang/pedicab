@@ -14,39 +14,66 @@ import com.team150.Reserve.Service.ReserveService;
 @RequestMapping("/")
 @Controller
 public class ReserveController {
+	
+	/*===============================
+	 * 
+	 * 리스트=listAll
+	 * SELECT * FROM 테이블명  
+	 * 
+	 * ==============================
+	 * 
+	 * 하나만보기=view(매니저페이지M,유저페이지U)
+	 * SELECT * FROM 테이블명 WHERE seq = ?
+	 * 
+	 * ==============================
+	 * 
+	 * 삭제=remove
+	 * DELETE FROM 테이블명  WHERE seq = ?
+	 * 
+	 * ==============================
+	 * 
+	 * 수정=modify
+	 * UPDATE 테이블명 SET VALUES(?=?,?=?) WHERE seq=?
+	 * 
+	 * =============================
+	 * */
+	
+	
 	@Inject
 	ReserveService service;
 	
 	//===========================관리자=======================//
-	
-	@RequestMapping(value="reserve/rlistAll",method=RequestMethod.GET)
-	public void rlistAll(Model model) throws Exception{
+	//리스트
+	@RequestMapping(value="reserve/Reserve_listM",method=RequestMethod.GET)
+	public void listAll(Model model) throws Exception{
 		model.addAttribute("list", service.listAll());
 	}
-	
-	@RequestMapping(value="/reserve/rread1",method=RequestMethod.GET)
-	public void rread1(@RequestParam("rseq") int rseq,Model model) throws Exception{
+	//상세내역
+	@RequestMapping(value="/reserve/Reserve_viewM",method=RequestMethod.GET)
+	public void viewM(@RequestParam("rseq") int rseq,Model model) throws Exception{
 		model.addAttribute("reserve",service.read1(rseq));
 		
 	}
-    @RequestMapping(value="/reserve/rremove",method=RequestMethod.POST)
-	public String rremovePost(@RequestParam("rseq") int rseq,RedirectAttributes rttr) throws Exception{
+	//취소(삭제)
+    @RequestMapping(value="/reserve/Reserve_remove",method=RequestMethod.POST)
+	public String remove(@RequestParam("rseq") int rseq,RedirectAttributes rttr) throws Exception{
 		service.remove(rseq);
 		
-		return"redirect:/reserve/rlistAll";
+		return"redirect:/reserve/Reserve_listM";
 	}
     
   //===========================유저=======================//
+    //작성
 	@RequestMapping(value = "/reserve/rregist", method = RequestMethod.POST)
-	public String rregisterPOST(ReserveVO vo, RedirectAttributes rttr,@RequestParam("cseq") int cseq) throws Exception {
+	public String create(ReserveVO vo, RedirectAttributes rttr,@RequestParam("cseq") int cseq) throws Exception {
 		vo.setUseq(10);
 		service.regist(vo);
 		System.out.println(vo);
 		return "redirect:/reserve/myreserve";
 	}
-	@RequestMapping(value="/resrve/myreserve")
-	public void myreserve(@RequestParam("useq") int useq,Model model) throws Exception{
-		
+	//나의내역
+	@RequestMapping(value="/resrve/Reserve_viewU")
+	public void read(Model model,@RequestParam("useq") int useq) throws Exception{
 		model.addAttribute("list", service.read(useq));
 	}
 

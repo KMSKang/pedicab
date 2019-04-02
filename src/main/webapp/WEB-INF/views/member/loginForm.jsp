@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="../include/header.jsp"%>
+<%@ include file="../commons/option.jsp"%>
 <script>
 $(function(){
 	$("#btnLogin").click(function(){
@@ -30,7 +30,7 @@ $(function(){
 </script>
 </head>
 <body>
-	<%@ include file="../include/memberMenu.jsp"%>
+	<%@ include file="../commons/loginMenu.jsp"%>
 	
 	<h2>로그인 폼</h2>
 	<form name="form1" method="post">

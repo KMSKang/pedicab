@@ -3,12 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="../include/header.jsp"%>
+<%@ include file="../commons/option.jsp"%>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<%@ include file="../include/memberMenu.jsp"%>
+	<%@ include file="../commons/loginMenu.jsp"%>
 	<h2>회원 목록</h2>
 	<%-- <input type="button" value="회원등록" onclick="location.href='${path}/member/write.do'"> --%>
 				<input type="button" value="회원 정보수정" onclick="location.href='${path}/member/update.do'">

@@ -3,12 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="../include/header.jsp"%>
+<%@ include file="../commons/option.jsp"%>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<%@ include file="../include/memberMenu.jsp"%>
+	<%@ include file="../commons/loginMenu.jsp"%>
 	<h2>회원 등록폼</h2>
 	<form name="form1" method="post" action="${path}/member/insert.do">
 		<table border="1" width="400px">

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team150.mappers.reviewMapper">
+
+
+
+	<!-- 등록 -->
+	<insert id="reviewCreate" parameterType="com.team150.Review.Model.ReviewVO">
+		INSERT INTO practice (reemail, rephoto, recontent, redate)
+		value ( #{reemail}, #{rephoto}, #{recontent}, now() )
+	</insert>
+	
+	
+	
+	<!-- 리뷰 조회 -->
+	<select id="reviewListAll" resultType="com.team150.Review.Model.ReviewVO">
+		SELECT * FROM practice
+	</select>
+	
+	
+	
+	<!-- 리뷰 상세, 리뷰 수정 -->
+	<select id="reviewSelectOne" resultType="com.team150.Review.Model.ReviewVO">
+		SELECT * FROM practice where reseq=#{reseq}
+	</select>
+	
+	
+	
+	<!-- 리뷰 수정 -->
+	<update id="reviewUpdate" parameterType="com.team150.Review.Model.ReviewVO">
+		UPDATE practice	SET reemail = #{reemail}, rephoto = #{rephoto}, recontent = #{recontent} WHERE reseq = ${reseq}
+	</update>
+	
+
+	
+	<!-- 리뷰 삭제 -->
+	<delete id="reviewDelete" parameterType="com.team150.Review.Model.ReviewVO">
+		DELETE FROM practice WHERE reseq=#{reseq}
+	</delete> 
+	
+	
+	
+	<!-- 답글 등록 -->
+	<insert id="commentCreate" parameterType="com.team150.Review.Model.CommentVO">
+		INSERT INTO practice1 (cocontent, reseq) 
+		value ( #{cocontent}, #{reseq} )
+	</insert>
+	
+	
+	
+	<!-- 답글 조회 -->
+	<select id="listAllComment" resultType="com.team150.Review.Model.CommentVO">
+		SELECT * FROM practice1
+	</select>
+</mapper>

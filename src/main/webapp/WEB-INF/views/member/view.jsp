@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="../include/header.jsp"%>
+<%@ include file="../commons/option.jsp"%>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
@@ -26,7 +26,7 @@ $(function(){
 </script>
 </head>
 <body>
-	<%@ include file="../include/adminMenu.jsp"%>
+	<%@ include file="../commons/loginMenu.jsp"%>
 	<h2>회원 정보</h2>
 	<form name="form1" method="post">
 		<table border="1" width="400px">

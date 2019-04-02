@@ -1,4 +1,4 @@
-<%@ include file="../include/header.jsp"%>
+<%@ include file="../commons/option.jsp"%>
 <script>
 	$(document).ready(function() {
 		$("#profileImg").click(function() {
