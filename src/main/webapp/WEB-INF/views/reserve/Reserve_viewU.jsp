@@ -6,9 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<%@ include file="../commons/hdjs.jsp"%>
 </head>
-<h1>내예약</h1>
 <body>
+<%@ include file="../commons/Header.jsp" %>
+<h1>내예약</h1>
 <c:forEach items="${list}" var="reserve">
 <div>${reserve.rmemo}</div>
 </c:forEach>

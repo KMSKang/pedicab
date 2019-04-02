@@ -7,11 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<header>
-		<a href="/"><img src=/resources/img/icon/logo.png></a>
-	</header>
-	<nav>
+
+	<div>
+		<jsp:include page="/WEB-INF/views/category/aboutUsCategory.jsp" flush="false" />
+	</div>
 	
-	</nav>
+	<img src="../resources/img/etc/about.png" alt="a1" width="500px" height="500px">
+
 </body>
 </html>

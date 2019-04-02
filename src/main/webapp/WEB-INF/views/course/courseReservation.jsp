@@ -7,9 +7,7 @@
 <meta charset="UTF-8">
 <title>코스 예약</title>
 
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css"/>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css"/>
-
+<%@ include file="../commons/hdjs.jsp"%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>
@@ -93,6 +91,7 @@ a {
 
 </head>
 <body>
+
 
 	<div>
 		<jsp:include page="/WEB-INF/views/category/userCategory.jsp"
@@ -192,7 +191,7 @@ a {
 				</th>
 				<th>${reviewList.redate}</th>
 
-				<th><a href="reviewInfo.do?reseq=${reviewList.reseq}">관리</a></th>
+				<th><a href="/review/reviewInfo.do?reseq=${reviewList.reseq}">관리</a></th>
 			</tr>
 			
 		</c:forEach>

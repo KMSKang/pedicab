@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<%@ include file="../commons/hdjs.jsp"%>
 <style>
 #coursenum{
 display:none;
@@ -14,6 +15,7 @@ visibility: hidden;
 </style>
 </head>
 <body>
+<%@ include file="../commons/Header.jsp" %>
 	<h1>${dto.cname}</h1>
 	<h2>코스소개</h2>
 	<div>${dto.cinfo}</div>

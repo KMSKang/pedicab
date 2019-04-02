@@ -8,8 +8,10 @@
 <head>
 <meta charset="UTF-8">
 <title>라이더 수정 페이지</title>
+<%@ include file="../commons/hdjs.jsp"%>
 </head>
 <body>
+<%@ include file="../commons/Header.jsp" %>
 <h2>라이더 수정 페이지</h2>
  <form:form method="post" action="smodify" modelAttribute="staff" enctype="multipart/form-data"> 
 <form:hidden path="sseq" />

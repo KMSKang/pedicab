@@ -72,12 +72,12 @@ public class CourseController {
 	}
 
 	// 즐겨찾기 조회(페이지)
-	@RequestMapping("/favorite")
+	@RequestMapping("/favorite/favorite")
 	public String favoriteList(Model model) {
 
 		model.addAttribute("favorite", service.favoriteSelecter());
 
-		return "favorite/favorite";
+		return "/favorite/favorite";
 
 	}
 

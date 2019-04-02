@@ -4,7 +4,6 @@ import java.util.List;
 
 public interface StaffDao {	
 
-	
 	public void create(StaffVO staff) throws Exception;
 	
 	public StaffVO read(int sseq) throws Exception;

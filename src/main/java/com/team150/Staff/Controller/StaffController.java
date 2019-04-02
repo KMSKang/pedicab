@@ -26,7 +26,6 @@ public class StaffController {
 		return "/staff/sform";
 	}
 
-	
 	// 라이더 등록
 	@RequestMapping(value = "sregist", method = RequestMethod.POST)
 	public String create(@ModelAttribute StaffVO staff, HttpServletRequest request) throws Exception {

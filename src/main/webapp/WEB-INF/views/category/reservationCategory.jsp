@@ -64,17 +64,17 @@ a {
 	<nav>
 		<ul>
 			<li></li>
-			<li><a href="/pedicab/companyIntroduce">about us</a></li>
-			<li><a href="/pedicab/courseIntroduce">course</a></li>
-			<li><a href="/pedicab/reservationConfirm">reservation</a></li>
-			<li><a href="/pedicab/noticeMain">contact us</a></li>
+			<li><a href="/companyIntroduce">about us</a></li>
+			<li><a href="/courseIntroduce">course</a></li>
+			<li><a href="/reservationConfirm">reservation</a></li>
+			<li><a href="/noticeMain">contact us</a></li>
 			<li><a href="#">engilsh</a></li>
 		</ul>
 	</nav>
 
-	<a href="/pedicab/favorite">즐겨찾기</a>
+	<a href="favorite">즐겨찾기</a>
 	<br>
-	<a href="/pedicab/reservationConfirm">내 예약</a>
+	<a href="reservationConfirm">내 예약</a>
 
 
 
