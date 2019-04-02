@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="member"> 
+
+	<select id="loginCheck" resultType="String">
+		select uname from User
+		where uid=#{uid} and upwd=#{upwd}
+	</select>
+	
+	<select id="checkPw" resultType="int">
+	select count(*) from User where uid=#{uid} and upwd=#{upwd}
+	<!-- 사용자가 입력한 정보가 맞으면 카운트 1, 틀리면 0 -->
+	</select>
+	
+	<select id="listAll" resultType="com.team150.Member.Model.MemberVO">
+									<!-- 단축 경로 -->
+							  		<!-- 풀 경로는 resultType="com.example.spring01.model.dto.MemberDTO"이나 mybatis-config.xml에서 단축으로 줄일 수 있다.  -->
+	select *from User
+	
+	</select>
+	
+	<select id="view" resultType="com.team150.Member.Model.MemberVO">
+	select *from User where uid = #{uid}
+	</select>
+	
+	<insert id="insert">
+	insert into User(uid, upwd, uname, uimg, uymd, ugender, uphone ) values(#{uid},#{upwd},#{uname},#{uimg},#{uymd},#{ugender},#{uphone})
+															<!-- #{DTO에 적어둔 변수명과 일치해야함} -->
+	</insert>
+	
+	<delete id="remove">
+	delete from User where uid=#{uid}
+	</delete>
+	
+	<update id = "modify">
+	update User set  upwd=#{upwd}, uname=#{uname}, uimg=#{uimg}, uymd=#{uymd}, ugender=#{ugender}, uphone=#{uphone} where uid=#{uid}
+	</update>
+	
+	
+</mapper>
+
+
+
+
+
+
+

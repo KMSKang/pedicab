@@ -5,8 +5,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="grid_12">
-					<div style="text-align:right;">
-					<a href="#" style="color:white;">로그인</a><span style="color:white">/</span><a href="#" style="color:white;">회원가입</a>
+					<div >
+						<%@ include file="../commons/loginMenu.jsp"%>
 					</div>
 						<h1>
 							<a href="/">Team150<span>Pedicab Service</span></a>
@@ -15,8 +15,6 @@
 							<ul class="sf-menu">
 								<li ><a>우리이야기</a>
 									<ul>
-										<li><a href="#">회사</a></li>
-										<li><a href="/staff/slistAllU">직원</a></li>
 										<li><a href="/companyIntroduce/companyIntroduce">회사</a></li>
 										<li><a href="/staff/slistAllU">직원</a></li>
 										<li><a href="/staff/slistAll">직원리스트(매니저)</a></li>
