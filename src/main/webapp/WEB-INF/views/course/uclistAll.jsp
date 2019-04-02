@@ -14,7 +14,7 @@
 <div class="card-group">
 <c:forEach items="${list}" var="course">
 <div class="card" style= "width: 18rem;">
-  <img src="/uploadFile/coursePhoto/${course.cimg}" class="card-img-top" alt="..." style="width:12rem;heigth:10rem;">
+  <img src="${pageContext.request.contextPath}/webapp/resources/uploadFile/coursePhoto/${course.cimg}" class="card-img-top" alt="..." style="width:12rem;heigth:10rem;">
   <div class="card-body">
     <h5 class="card-title">${course.cname}</h5>
     <p class="card-text">${course.cinfo }</p>
