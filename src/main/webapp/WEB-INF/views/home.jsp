@@ -13,6 +13,6 @@
 	<%@ include file="commons/indexbg.jsp"%>
 </section>
     <%@ include file="commons/btjs.jsp" %>
-깃테스트입니다
+     <%@ include file="commons/footer.jsp" %>
 </body>
 </html>
