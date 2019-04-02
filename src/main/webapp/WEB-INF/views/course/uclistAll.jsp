@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 <%@ include file="../commons/hdjs.jsp"%>
 </head>
-<body class="index-2">
+<body class="index-1">
 <%@ include file="../commons/Header.jsp" %>
 <section id="content">
 	<div class="full-width-container block-1">
@@ -20,13 +20,14 @@
 					</header>
 				</div>
 				<c:forEach items="${list}" var="course">
-				<div id="touch_gallery">
+				
+				<div>
 					<div class="grid_4">
-						<div class="img_block"><a href="/resources/uploadFile/coursePhoto/${course.cimg}"><img src="${pageContext.request.contextPath}/webapp/resources/uploadFile/coursePhoto/${course.cimg}" alt="코스사진"><i></i></a></div>
+						<div class="img_block"><img src="/uploadFile/CoursePhoto/${course.cimg }" alt="코스사진"><i>+</i></div>
 						<article>
-							<h4>${course.cname}</h4>
+							<h4>${course.cname }</h4>
 							<p>${course.cinfo }</p>
-							<a href="/course/ucread?cseq=${course.cseq}" class="btn btn-primary">더보러가기</a>
+							<a href="/course/ucread?cseq=${course.cseq}" class="btn btn-primary">더 알아보기</a>
 						</article>
 					</div>
 				</div>
@@ -35,5 +36,11 @@
 		</div>
 	</div>
 </section>
+<script>
+	$(function(){
+		$('#touch_gallery a').touchTouch();
+	});
+</script>
+
 </body>
 </html>
