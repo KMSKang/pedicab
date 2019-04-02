@@ -7,7 +7,6 @@
 		<!-- 여기다가 이제 나중에 본인들 사용할 VO(MODEL)을  넣으시면됩니다. -->
 	</typeAliases>
 	<mappers>
-		<mapper resource="mappers/course-Mapper.xml" />
-		<mapper resource="mappers/reserve-Mapper.xml"/>
+
 	</mappers>
 </configuration>

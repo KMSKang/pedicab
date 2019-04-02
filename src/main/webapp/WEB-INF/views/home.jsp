@@ -1,17 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+
 <html>
 <head>
 	<title>Home</title>
+	<%@ include file="include/header.jsp" %> <!-- include/header.jsp 가져옴 -->
 </head>
 <body>
 <form >
-<button type="submit" formaction="course/clistAll" formmethod="get">코스리스트(매니저)</button>
-<button type="submit" formaction="course/uclistAll" formmethod="get">코스트리스트(유저)</button>
-<button type="submit" formaction="/resrve/myreserve?useq=" formmethod="get">나의예약보기(유저)</button>
-<button type="submit" formaction="reserve/rlistAll" formmethod="get">예약리스트(매니저)</button>
+<%@ include file="include/memberMenu.jsp" %> <!-- include/menu.jsp 가져옴 -->
+
+<c:if test="${sessionScope.uid != null }"> <!-- sessionScope:service에 세션영역에 저장된 변수 -->
+	<h2>${sessionScope.uname}(${sessionScope.uid})님의 방문을 환영합니다. </h2>
+		<!-- 사용자이름(아이디) -->
+</c:if>
 </form>
 </body>
 </html>

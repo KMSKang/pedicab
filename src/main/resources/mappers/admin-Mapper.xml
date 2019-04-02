@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="admin">
+	<select id="loginCheck" resultType="String"> <!-- 쿼리의 결과(아이디와 패스워드가 맞을 경우)는 name, 틀리면 null이니  resultType="String" -->
+		select uname from Admin
+		where uid=#{uid} and upwd=#{upwd}
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
