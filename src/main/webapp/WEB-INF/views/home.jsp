@@ -9,7 +9,10 @@
 </head>
 
 <body class="index">
-	<%@ include file="commons/Header.jsp"%>
+
+<%@ include file="commons/Header.jsp" %>
+
+
 <section id="content">
 	<%@ include file="commons/indexbg.jsp"%>
 </section>
