@@ -40,9 +40,9 @@
 		</div>
 	
 
-		<button type="submit" formaction="/course/cmodify" formmethod="get"  class="btn btn-primary">수정</button>
-		<button type="submit" formaction="/course/cremove" formmethod="post"  class="btn btn-primary">삭제</button>
-		<button type="submit" formaction="/course/clistAll" formmethod="get"  class="btn btn-primary">목록</button>
+		<button type="submit" formaction="/course/cmodify" formmethod="get"  class="btn">수정</button>
+		<p><button type="submit" formaction="/course/cremove" formmethod="post"  class="btn">삭제</button></p>
+		<p><button type="submit" formaction="/course/clistAll" formmethod="get"  class="btn">목록</button>
 	</form>
 </body>
 </html>
