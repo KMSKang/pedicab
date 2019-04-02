@@ -9,24 +9,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@ include file="../commons/Header.jsp" %>
-<section id="content">
-	<form action="/course/cregist" method="get">
-		<table>
-			<tr>
-				<td width="77">
-					<p align="center">코스명</p>
-				</td>
-			</tr>
+	<%@ include file="../commons/Header.jsp"%>
+	<section id="content" style="text-algin: center;">
+		<form action="/course/cregist" method="get"
+			style="text-align: center;">
+			<h3 align="center">코스</h3>
+			<br>
 			<c:forEach items="${list}" var="course">
-				<tr>
-					<td><a href='/course/cread?cseq=${course.cseq}'>${course.cname}</a></td>
-				</tr>
+               <div>
+				<p><a href='/course/cread?cseq=${course.cseq}'>${course.cname}</a></p><br>
+               </div>
 			</c:forEach>
-		</table>
-		<button type="submit">글쓰기</button>
-	</form>
-</section>
+
+			<button type="submit">글쓰기</button>
+		</form>
+	</section>
 
 </body>
 </html>

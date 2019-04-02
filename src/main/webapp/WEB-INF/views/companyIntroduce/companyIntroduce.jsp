@@ -12,19 +12,51 @@
 	<section>
 		<div class="full-width-container block-2">
 			<div class="container">
-			  <div class="grid_12">
-			  <br>
-				<header><h3><span style="tex"><strong>About us</strong></span></h3></header>
-				<br>
-				<br>
-				<article>
-				<p style="text-align:center;"><img src="${pageContext.request.contextPath}/resources/img/etc/Introduce.jpg" style="width:1000px;height:600px;"></p>
-				<br>
-				<br>
-                <p style="text-align:center;"><strong>오래된 좋은 친구라는 뜻을 가진 ‘아띠’는 인력거라는 간단한 도구로 특별한 추억과 행복을 선사하는 국내 최초 인력거 투어 회사입니다.</strong></p>
-                
-                </article>			  
-			  </div>
+				<div class="grid_12">
+					<br>
+					<header>
+						<h3>
+							<span><strong>About us</strong></span>
+						</h3>
+					</header>
+					<br> <br>
+					<article>
+						<p style="text-align: center;">
+							<img
+								src="${pageContext.request.contextPath}/resources/img/etc/Introduce.jpg"
+								style="width: 1000px; height: 600px;">
+						</p>
+						<br> <br>
+						<header>
+							<h3>
+								<span>우리회사는?</span>
+							</h3>
+						</header>
+						<br> <br> <br>
+						<p style="text-align: center;">
+							<strong> Falling on the deafest ears But I know you hear
+								my tears Crying to the blindest eyes But I know you see the lies
+								That's you, oh lord You got more bones than a graveyard It's
+								true, oh lord There's more love in a dead man's arms So blame it
+								on the down below Take it from the weakest soul Bury all your
+								sorrow Till the dead don't seem so cold That's you, oh lord You
+								got more bones than a graveyard It's true, oh lord There's more
+								love in a dead man's arms </strong>
+						</p>
+						<br><br><br>
+						<p style="text-align: center;">
+						   Falling on the deafest ears But I know you hear
+								my tears Crying to the blindest eyes But I know you see the lies
+								That's you, oh lord You got more bones than a graveyard It's
+								true, oh lord There's more love in a dead man's arms So blame it
+								on the down below Take it from the weakest soul Bury all your
+								sorrow Till the dead don't seem so cold That's you, oh lord You
+								got more bones than a graveyard It's true, oh lord There's more
+								love in a dead man's arms
+						</p>
+
+					</article>
+				</div>
 			</div>
 		</div>
 	</section>

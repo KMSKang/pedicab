@@ -1,7 +1,7 @@
 @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
-@import url(//fonts.googleapis.com/css?family=Open+Sans:700,400,300);
-@import url(//fonts.googleapis.com/css?family=Dorsa);
-@import url(http://fonts.googleapis.com/css?family=Dosis:400,600);
+@import url(//fonts.googleapis.com/css?family=Nanum+Gothic:700,400,300);
+@import url(//fonts.googleapis.com/css?family=Nanum+Gothic);
+@import url(http://fonts.googleapis.com/css?family=Nanum+Gothic:400,600);
 /* =======================================================
 					variables
 ======================================================== */
@@ -10,7 +10,7 @@
 =========================================================*/
 body {
   background: #f6f6f7;
-  font: 14px/24px Georgia, 'Times New Roman', Times, serif;
+  font-family: 14px/24px 'Nanum Gothic', sans-serif;
 }
 a {
   text-decoration: none;
@@ -156,7 +156,7 @@ h5 a:hover {
   color: #b5b2b2;
   font-size: 36px;
   margin-left: 29px;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   margin-bottom: 30px;
   position: relative;
 }
@@ -235,7 +235,7 @@ h5 a:hover {
   line-height: 12px;
   padding: 10px 0;
   color: #ffffff;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   font-size: 14px;
   display: block;
 }
@@ -315,11 +315,11 @@ h5 a:hover {
 h2,
 h3,
 h4 {
-  font-family: 'Marvel', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   color: #3c3c3e;
 }
 h2 {
-  font: 400 60px/60px 'Open Sans', sans-serif;
+  font: 400 60px/60px 'Nanum Gothic', sans-serif;
   text-align: center;
   margin-bottom: 50px;
   border-bottom: 3px solid #3c3c3e;
@@ -327,14 +327,14 @@ h2 {
 }
 h3 {
   font-size: 50px;
-  font-family: 'Marvel', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   text-align: center;
   line-height: 50px;
 }
 h4 {
   font-size: 28px;
   line-height: 28px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   text-align: center;
   margin-top: 0px;
   margin-bottom: 20px;
@@ -342,7 +342,7 @@ h4 {
 h5 {
   font-size: 16px;
   line-height: 16px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   text-align: left;
   margin-bottom: 10px;
   color: #3c3c3e;
@@ -351,7 +351,7 @@ h5 {
   color: #d94d3a;
 }
 p {
-  font: 16px/20px 'Open Sans', sans-serif;
+  font: 16px/20px 'Nanum Gothic', sans-serif;
   color: #727070;
 }
 .full-width-container {
@@ -370,7 +370,7 @@ p {
   border: 1px solid #5d5959;
   background: none;
   display: block;
-  font: 36px/76px 'Open Sans', sans-serif;
+  font: 36px/76px 'Nanum Gothic', sans-serif;
   text-align: center;
   color: #5d5959;
   margin-top: 20px;
@@ -392,7 +392,7 @@ p {
 }
 @media only screen and (max-width: 979px) {
   h2 {
-    font: 300 62px/62px 'Open Sans', sans-serif;
+    font: 300 62px/62px 'Nanum Gothic', sans-serif;
     text-align: center;
     margin-bottom: 40px;
   }
@@ -400,17 +400,17 @@ p {
     display: none;
   }
   h3 {
-    font: 45px/45px 'Marvel', sans-serif;
+    font: 45px/45px 'Nanum Gothic', sans-serif;
     text-align: center;
   }
   h4 {
-    font: 30px/30px 'Marvel', sans-serif;
+    font: 30px/30px 'Nanum Gothic', sans-serif;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
   }
   h5 {
-    font: 20px/20px 'Marvel', sans-serif;
+    font: 20px/20px 'Nanum Gothic', sans-serif;
     text-align: center;
     margin-bottom: 20px;
     color: #3c3c3e;
@@ -418,7 +418,7 @@ p {
 }
 @media only screen and (max-width: 767px) {
   h2 {
-    font: 300 52px/52px 'Open Sans', sans-serif;
+    font: 300 52px/52px 'Nanum Gothic', sans-serif;
     text-align: center;
     margin-bottom: 40px;
   }
@@ -426,17 +426,17 @@ p {
     display: none;
   }
   h3 {
-    font: 45px/45px 'Marvel', sans-serif;
+    font: 45px/45px 'Nanum Gothic', sans-serif;
     text-align: center;
   }
   h4 {
-    font: 25px/25px 'Marvel', sans-serif;
+    font: 25px/25px 'Nanum Gothic', sans-serif;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
   }
   h5 {
-    font: 20px/20px 'Marvel', sans-serif;
+    font: 20px/20px 'Nanum Gothic', sans-serif;
     text-align: center;
     margin-bottom: 20px;
     color: #3c3c3e;
@@ -447,7 +447,7 @@ p {
 }
 @media only screen and (max-width: 479px) {
   h2 {
-    font: 300 42px/42px 'Open Sans', sans-serif;
+    font: 300 42px/42px 'Nanum Gothic', sans-serif;
     text-align: center;
     margin-bottom: 40px;
   }
@@ -455,17 +455,17 @@ p {
     display: none;
   }
   h3 {
-    font: 35px/35px 'Marvel', sans-serif;
+    font: 35px/35px 'Nanum Gothic', sans-serif;
     text-align: center;
   }
   h4 {
-    font: 20px/20px 'Marvel', sans-serif;
+    font: 20px/20px 'Nanum Gothic', sans-serif;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
   }
   h5 {
-    font: 16px/16px 'Marvel', sans-serif;
+    font: 16px/16px 'Nanum Gothic', sans-serif;
     text-align: center;
     margin-bottom: 20px;
     color: #3c3c3e;
@@ -484,7 +484,7 @@ p {
 .index .block-2 h2 {
   color: #ffffff;
   font-size: 48px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   text-decoration: none;
   border-bottom: none;
   display: block;
@@ -566,7 +566,7 @@ p {
   display: block;
   position: relative;
   color: #ffffff;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 .index .block-4 .el-1 {
   left: 300px;
@@ -584,7 +584,7 @@ p {
 }
 .index .block-5 .text {
   border: 1px solid #fff;
-  font: 14px/20px 'Open Sans', sans-serif;
+  font: 14px/20px 'Nanum Gothic', sans-serif;
   color: #727070;
   margin-bottom: 30px;
 }
@@ -911,7 +911,7 @@ p {
   display: inline-block;
   width: 53px;
   height: 36px;
-  font: 24px/36px 'Dosis', sans-serif;
+  font: 24px/36px 'Nanum Gothic', sans-serif;
   color: #5d5959;
   border: 1px solid #7b7878;
   margin-left: -1px;
@@ -1018,7 +1018,7 @@ p {
 }
 .index-3 .block-1 .attributes > div > div a {
   color: #737272;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 .index-3 .block-1 .attributes > div > div a:hover {
   color: #000;
@@ -1059,7 +1059,7 @@ p {
 .index-3 .item-1 li a {
   color: #535151;
   font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 .index-3 .item-1 li a:hover {
   color: #d94d3a;
@@ -1196,7 +1196,7 @@ p {
 }
 #footer .copyright pre {
   color: #000;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   font-size: 14px;
   margin-bottom: 10px;
   text-align: center;
