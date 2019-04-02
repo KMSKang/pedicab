@@ -15,8 +15,10 @@
 							<ul class="sf-menu">
 								<li ><a>우리이야기</a>
 									<ul>
+										<li><a href="#">회사</a></li>
+										<li><a href="/staff/slistAllU">직원</a></li>
 										<li><a href="/companyIntroduce/companyIntroduce">회사</a></li>
-										<li><a href="#">직원</a></li>
+										<li><a href="/staff/slistAllU">직원</a></li>
 										<li><a href="/staff/slistAll">직원리스트(매니저)</a></li>
 									</ul></li>
 								<li><a>코스</a>

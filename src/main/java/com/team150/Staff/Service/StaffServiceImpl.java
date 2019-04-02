@@ -21,9 +21,11 @@ public class StaffServiceImpl implements StaffService {
 	@Override
 	@Transactional
 	public void regist(StaffVO staff, HttpServletRequest request) throws Exception {
+		
+		// 임의 주석
 		// request 이용 절대경로 설정 String imgfile = ""; String uploadUri =
 		String imgfile = "";
-		String uploadUri = "/uploadfile/staffphoto"; 
+		String uploadUri = "/uploadFile/staffphoto"; 
 		String dir = request.getSession().getServletContext().getRealPath(uploadUri);
 		
 		System.out.println(dir);
@@ -34,7 +36,6 @@ public class StaffServiceImpl implements StaffService {
 			staff.setSimg(imgfile);
 		}
 		staffDao.create(staff);
-		
 	}
 	
 	@Override
@@ -44,9 +45,9 @@ public class StaffServiceImpl implements StaffService {
 	
 	@Override
 	public void modify(StaffVO staff, HttpServletRequest request) throws Exception {
-		// request 이용 절대경로 설정 String imgfile = ""; String uploadUri =
+		// request 이용 절대경로 설정 String
 		String imgfile = "";
-		String uploadUri = "/uploadfile/staffphoto"; 
+		String uploadUri = "/uploadFile/staffphoto"; 
 		String dir = request.getSession().getServletContext().getRealPath(uploadUri);
 		
 		// 물리적 저장 설정
@@ -69,42 +70,4 @@ public class StaffServiceImpl implements StaffService {
 		return staffDao.listAll();
 	}
 
-	
-//	  @Autowired 
-//	  private StaffDaoImpl staffDao;
-//	  
-//	  public List<StaffVO> getStaffList(){
-//		  return staffDao.getStaffList(); 
-//	  }
-//	  
-//	  public StaffVO getStaff(int sseq) {
-//		  return staffDao.getStaff(sseq); 
-//	  }
-//	  
-//	  @Transactional 
-//	  public boolean insertStaff(StaffVO staff, HttpServletRequest
-//	  request) throws IllegalStateException, IOException {
-//	  
-//	  // request 이용 절대경로 설정 
-//		  String imgfile = "";
-//		String uploadUri = "/uploadfile/staffphoto";
-//		  String dir = request.getSession().getServletContext().getRealPath(uploadUri);
-//	  
-//	  // 물리적 저장 설정
-//		  imgfile = staff.getSnickname() + "_" + staff.getImgfile().getOriginalFilename();
-//		  staff.getImgfile().transferTo(new File(dir, imgfile));
-//		staff.setSimg(imgfile);
-//	  
-//		  return staffDao.insertStaff(staff);
-//	  }
-//	  
-//	  public boolean updateStaff(StaffVO staff) { 
-//		  return staffDao.updateStaff(staff);
-//	  }
-//	  
-//	  public boolean deleteStaff(int sseq) { 
-//		  return staffDao.deleteStaff(sseq);
-//	  }
-//	 
-	
 }

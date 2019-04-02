@@ -8,6 +8,7 @@
 <body class="index">
 <%@ include file="commons/Header.jsp" %>
 
+<!-- 깃 테스트 -->
 
 <section id="content">
 	<%@ include file="commons/indexbg.jsp"%>
