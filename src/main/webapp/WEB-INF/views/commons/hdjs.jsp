@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="true"%>
 <link rel="stylesheet" type="text/css"
@@ -39,6 +41,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.simplr.smoothscroll.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/superfish.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.mobilemenu.js"></script>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js"></script>
 <!--[if (gt IE 9)|!(IE)]><!-->
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/resources/js/jquery.mobile.customized.min.js"></script>
@@ -49,5 +52,13 @@
 		if ($('html').hasClass('desktop')) {
 			new WOW().init();
 		}
+		$('#sform').validate({
+			messages : {
+				sname:"이름을 쓰세요",
+				sphone:"전화번호 쓰세요",
+				snickname:"별명쓰세요",
+				imgfile:"파일첨부하세요"
+			}
+		});
 	});
 </script>

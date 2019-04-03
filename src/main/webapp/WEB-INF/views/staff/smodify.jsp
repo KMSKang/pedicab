@@ -12,15 +12,17 @@
 </head>
 <body>
 <%@ include file="../commons/Header.jsp" %>
-<h2>라이더 수정 페이지</h2>
- <form:form method="post" action="smodify" modelAttribute="staff" enctype="multipart/form-data"> 
-<form:hidden path="sseq" />
-이름 ${staff.sname } <br>
-번호<form:input path="sphone"/> <br>
-닉네임 <form:input path="snickname"/><br>
-사진 <input type="file" name="imgfile" id="imgfile" >
-<p>
-<input type="submit" value="[변경사항 적용]">
+<h4>라이더 수정 페이지</h4>
+<form:form method="post" action="smodify" modelAttribute="staff" enctype="multipart/form-data"> 
+	<div class="form-group">
+		<form:hidden path="sseq" />
+		이름 ${staff.sname } <br>
+		번호<form:input path="sphone"/> <br>
+		닉네임 <form:input path="snickname"/><br>
+		사진 <input type="file" name="imgfile" id="imgfile" >
+	</div>
+	<p>
+	<input type="submit" value="[변경사항 적용]">
 </form:form> 
 </body>
 </html>
