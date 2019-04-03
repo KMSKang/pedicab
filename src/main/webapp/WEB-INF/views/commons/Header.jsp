@@ -5,9 +5,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="grid_12">
-					<div >
-						<%@ include file="../commons/loginMenu.jsp"%>
-					</div>
+						<div >
+							<%@ include file="../commons/loginMenu.jsp"%>
+						</div>
 						<h1>
 							<a href="/">Team150<span>Pedicab Service</span></a>
 						</h1>

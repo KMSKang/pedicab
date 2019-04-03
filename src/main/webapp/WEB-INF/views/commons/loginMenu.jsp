@@ -15,8 +15,9 @@
 		</c:when>
 		
 		<c:when test="${sessionScope.admin_uid != null}">
-				<span style="color:white">${sessionScope.admin_uname}님이 로그인중입니다.</span>
-				<a href="${path}/admin/logOut.do" style="color:white">로그아웃</a>
+				<span style="color:white">${sessionScope.admin_uname}님이 로그인중입니다. |</span>
+				<a href="${path}/member/list.do" style="color:white">회원목록  |</a>
+				<a href="${path}/admin/logOut.do" style="color:white">로그아웃 </a>
 		</c:when>
 		<c:otherwise>
 				<span style="color:white"> ${sessionScope.uname}님이 로그인중입니다. | </span>
