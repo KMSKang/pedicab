@@ -6,8 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>코스 예약</title>
-
-<%@ include file="../commons/hdjs.jsp"%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>

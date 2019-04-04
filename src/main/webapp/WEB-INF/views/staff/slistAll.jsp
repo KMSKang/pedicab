@@ -10,7 +10,6 @@
 <title>라이더 리스트</title>
 <link rel="stylesheet" type="text/css"
    href="../../resources/css/bootstrap.css" />
-<%@ include file="../commons/hdjs.jsp"%>
 <style>
 	th,td{
 		text-align: center;
@@ -25,7 +24,7 @@
 </head>
 <body>
 <%@ include file="../commons/Header.jsp" %>
-<h4>라이더 리스트</h4>
+<h4>사원 목록</h4>
 <div class="container">
 	<div class="rows">
 			<table class="table-hover table-bordered">
@@ -50,7 +49,7 @@
 	</div>
 	<br>
 	<p>
-	<button class="btn-primary" onclick="location.href='sform'">사원정보 추가</button>
+	<button class="btn-primary" onclick="location.href='sform'">사원 추가</button>
 	</p>
 </div>
 </body>

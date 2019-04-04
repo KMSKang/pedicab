@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>라이더 상세 페이지</title>
-<%@ include file="../commons/hdjs.jsp"%>
 <style>
 	th,td{
 		text-align: center;
@@ -20,7 +19,7 @@
 <body>
 <%@ include file="../commons/Header.jsp" %>
 <div class="container">
-<h4>라이더 상세 페이지</h4>
+<h4>사원 상세보기</h4>
 	<div class="row">
 		<table class="table-hover table-bordered">
 			<tr>
@@ -33,14 +32,16 @@
 				<td>${staff.sname }</td>
 				<td>${staff.sphone }</td>
 				<td>${staff.snickname }</td>
-				<td><img src="/uploadfile/staffphoto/${staff.simg }">
+				<td><img src="/uploadFile/staffphoto/${staff.simg }" style="widht:50px; height:50px;">
 				</td>
 			</tr>
 		</table>
 	</div>
 <br>
-<button class="btn-primary" onclick="location.href='smodify?sseq=${staff.sseq }'">사원정보 수정</button>
-<button class="btn-primary" onclick="location.href='sremove?sseq=${staff.sseq }'">사원정보 수정</button>
+<button class="btn-primary" onclick="location.href='smodify?sseq=${staff.sseq }'">수정</button>
+<button class="btn-primary" onclick="location.href='sremove?sseq=${staff.sseq }'">삭제</button>
+<button class="btn-primary" onclick="location.href='slistAll'">목록</button>
+
 </div>
 </body>
 </html>
