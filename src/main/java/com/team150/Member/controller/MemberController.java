@@ -95,7 +95,8 @@ public class MemberController {
 		boolean result = memberService.checkPw(vo.getUid(), vo.getUpwd());
 	  //logger.info("비밀번호 확인: "+result);
 	  
-	  if(result) {//비밀번호가 맞으면 memberService.modify(vo); //레코드 수정 
+	  if(result) {//비밀번호가 맞으면 
+		  memberService.modify(vo); //레코드 수정 
 		  return "redirect:/member/list.do"; //목록으로 이동 
 	  }else {//비밀번호가 틀리면 
 		 MemberVO vo2 = memberService.view(vo.getUid()); 

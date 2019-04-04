@@ -54,8 +54,9 @@ $(function(){
 			<tr>
 				<td>성별</td>
 				<td> 
-					<input type="radio" name="ugender" value="${vo.ugender}"> 남자
-  					<input type="radio" name="ugender" value="${vo.ugender}"> 여자
+					<%-- <input name="ugender" value="${vo.ugender}"> --%>
+					<input type="radio" name="ugender" value="남자"> 남자
+  					<input type="radio" name="ugender" value="여자"> 여자 
 				</td>
 			</tr>
 			<tr>
