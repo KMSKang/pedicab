@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>라이더 상세 페이지</title>
-<%@ include file="../commons/hdjs.jsp"%>
 <style>
 	th,td{
 		text-align: center;

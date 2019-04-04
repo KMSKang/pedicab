@@ -8,7 +8,6 @@
 <html>
 <head>
 <title>Home</title>
-<%@ include file="../commons/hdjs.jsp"%>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css"/>
 

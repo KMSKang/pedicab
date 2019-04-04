@@ -7,7 +7,7 @@
 <html>
 <head>
 <title>Home</title>
-<%@ include file="../commons/hdjs.jsp"%>
+
 <style>
 table {
 	border-collapse: collapse;

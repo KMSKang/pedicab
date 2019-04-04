@@ -4,7 +4,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="../commons/hdjs.jsp"%>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css"
    href="../../resources/css/bootstrap.css" />

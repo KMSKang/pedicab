@@ -7,7 +7,6 @@
 
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css"/>
-<%@ include file="../commons/hdjs.jsp"%>
 <script src="/resources/js/bootstrap.min.js" ></script>
 
 <style>

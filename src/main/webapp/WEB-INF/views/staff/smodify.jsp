@@ -8,7 +8,6 @@
 <head>
 <meta charset="UTF-8">
 <title>사원정보 수정 페이지</title>
-<%@ include file="../commons/hdjs.jsp"%>
 <style>
 	.center{
 		margin-top: 30px;
