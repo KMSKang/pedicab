@@ -7,16 +7,7 @@
 <html>
 <head>
 <title>Home</title>
-<<<<<<< HEAD
-<%@ include file="../commons/hdjs.jsp"%>
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css" />
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css" />
-=======
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css"/>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css"/>
->>>>>>> branch 'master' of https://github.com/bitteam150/pedicab.git
+
 
 <style>
 #a1 {
