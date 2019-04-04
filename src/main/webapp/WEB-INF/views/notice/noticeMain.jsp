@@ -8,7 +8,6 @@
 <head>
 <title>Home</title>
 
-
 <style>
 #a1 {
 	position: absolute;

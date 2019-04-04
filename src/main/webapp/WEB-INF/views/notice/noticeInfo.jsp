@@ -5,15 +5,6 @@
 <html>
 <head>
 <title>Home</title>
-
-
-<script src="/resources/js/bootstrap.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css"/>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css"/>
-<script src="/resources/js/bootstrap.min.js" ></script>
->>>>>>> branch 'master' of https://github.com/bitteam150/pedicab.git
-
 <style>
 #a1 {
 	text-decoration: none;
