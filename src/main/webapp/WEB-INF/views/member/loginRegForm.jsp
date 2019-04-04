@@ -168,6 +168,9 @@ button.social-signin.google {
 }
 </style>
 
+<script>
+
+</script>
 
 </head>
 <body>
@@ -184,7 +187,7 @@ button.social-signin.google {
 				<input type="radio" name="ugender" value="남자" checked>남자
 				<input type="radio" name="ugender" value="여자" >여자
 				<input type="text" name="uphone" placeholder="휴대폰번호" /> 
-				<input type="submit" name="signup_submit" value="가입" />
+				<input type="submit" name="signup_submit" value="가입"/>
 			</form>
 		</div>
 

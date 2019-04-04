@@ -33,7 +33,6 @@
 				<td>${row.uymd}</td>
 				<td>${row.ugender}</td>
 				<td>${row.uphone}</td>
-				
 				<%-- <td><a href="${path}/member/view.do?userid=${row.userid}">${row.name}</a></td> --%>
 			
 				<td><fmt:formatDate value="${row.udate}"

@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -8,32 +9,64 @@
 <html>
 <head>
 <title>Home</title>
+<<<<<<< HEAD
+<%@ include file="../commons/hdjs.jsp"%>
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css" />
+=======
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css"/>
+>>>>>>> branch 'master' of https://github.com/bitteam150/pedicab.git
 
 <style>
-#submit1 {
-	position: absolute;
-	margin-left: 582px;
-	margin-top: -40px;
+#noticeP {
+	margin-top: 30px;
+	margin-left: 630px;
+	font-weight: 900;
+	color: black;
+	font-size: 40px;
+}
+
+#form {
+	width: 55%;
+}
+
+#hr {
+	border: 0;
+	height: 1px;
+	background: #ccc;
+}
+
+#Erollment {
+	width: 90px;
+	background: none;
+	font: 16px/22px 'Nanum Gothic', sans-serif;
+	margin-left: 1000px;
+	margin-top: -50px;
 }
 </style>
 
 </head>
 <body>
-<%@ include file="../commons/Header.jsp" %>
+	<%@ include file="../commons/Header.jsp"%>
 
-	<h1>공지사항(수정)</h1>
+	<p id="noticeP">공지사항(수정)</p>
 
-	<table class="table table-hover">
+	<form:form action="noticeModifyOK" modelAttribute="noticeVO"
+		method="POST" id="form">
 
-		<tr>
-			<th>번호</th>
-			<th>제목</th>
-			<th>내용</th>
-			<th>작성일</th>
-		</tr>
-		<form:form action="noticeModifyOK" modelAttribute="noticeVO" method="POST">
+		<hr id="hr">
+
+		<table class="table table-hover">
+
+			<tr>
+				<th>번호</th>
+				<th>제목</th>
+				<th>내용</th>
+				<th>작성일</th>
+			</tr>
 			<form:hidden path="noseq" />
 			<tr>
 				<td>${noticeVO.noseq}</td>
@@ -42,9 +75,8 @@
 				<td>${noticeVO.nodate}</td>
 			</tr>
 
-			<input type="submit" value="등록" id="submit1">
-		</form:form>
-	</table>
-
+		</table>
+		<button type="submit" class="btn btn-default" id="Erollment">등록</button>
+	</form:form>
 </body>
 </html>
