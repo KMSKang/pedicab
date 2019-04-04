@@ -30,7 +30,7 @@
 
 #noticeP {
 	margin-top: 30px;
-	margin-left: 630px;
+	margin-left: 835px;
 	font-weight: 900;
 	color: black;
 	font-size: 40px;
@@ -44,11 +44,11 @@
 #write1 {
 	position: absolute;
 	margin-top: -65px;
-	margin-left: 680px;
+	margin-left: 870px;
 }
 
 form {
-	margin-left: 375px;
+	margin-left: 480px;
 	width: 50%;
 }
 
