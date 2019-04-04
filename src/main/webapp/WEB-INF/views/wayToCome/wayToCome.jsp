@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="../commons/hdjs.jsp"%>
+
 <style>
 * {
 	margin: 0px;

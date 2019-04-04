@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="../commons/hdjs.jsp"%>
 <meta charset="UTF-8">
 <title>라이더 등록</title>
 <style>

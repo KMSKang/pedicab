@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<%@ include file="../commons/hdjs.jsp"%>
+
 <title>Insert title here</title>
 </head>
 <body>

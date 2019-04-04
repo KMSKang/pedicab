@@ -10,7 +10,6 @@
 <title>라이더 리스트</title>
 <link rel="stylesheet" type="text/css"
    href="../../resources/css/bootstrap.css" />
-<%@ include file="../commons/hdjs.jsp"%>
 <style>
 	th,td{
 		text-align: center;

@@ -6,12 +6,18 @@
 <head>
 <title>Home</title>
 
+<<<<<<< HEAD
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css" />
 <%@ include file="../commons/hdjs.jsp"%>
 <script src="/resources/js/bootstrap.min.js"></script>
+=======
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css"/>
+<script src="/resources/js/bootstrap.min.js" ></script>
+>>>>>>> branch 'master' of https://github.com/bitteam150/pedicab.git
 
 <style>
 #a1 {
