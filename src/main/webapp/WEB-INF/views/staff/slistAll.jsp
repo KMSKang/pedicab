@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>라이더 리스트</title>
 <link rel="stylesheet" type="text/css"
-   href="../../resources/css/bootstrap.css" />
+   href="../../resources/css/cssu/css/style.css" />
 <style>
 	th,td{
 		text-align: center;
