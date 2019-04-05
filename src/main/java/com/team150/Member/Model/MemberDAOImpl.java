@@ -42,7 +42,7 @@ public class MemberDAOImpl implements MemberDAO {
 
 	@Override
 	public void remove(String uid) { 
-		sqlSession.update("member.remove", uid);
+		sqlSession.delete("member.remove", uid);
 	}
 
 	@Override public void modify(MemberVO vo) {
