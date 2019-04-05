@@ -16,8 +16,8 @@
 </head>
 <body>
 <%@ include file="../commons/Header.jsp" %>
-<h4 class="text-center">사원 소개</h4>
 <div class="container">
+<h4 class="text-center">사원 소개</h4>
 <c:forEach var="staff" items="${list}">
 	<div class="col-md-3 col-sm-4 col-xs-6">
 	<img class="img-circle" src="/uploadFile/staffphoto/${staff.simg }" />

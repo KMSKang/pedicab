@@ -5,7 +5,6 @@
 <html>
 <head>
 <title>공지사항(상세)</title>
-
 <style>
 .write1 {
 	float: left;
@@ -44,7 +43,7 @@ table {
 			<div
 				class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
 				<div class="col-md-9 ftco-animate pb-5 text-center">
-					<h1 class="mb-3 bread">공지사항(상세)</h1>
+					<h1 class="mb-3 bread">공지사항</h1>
 				</div>
 			</div>
 		</div>
@@ -52,34 +51,24 @@ table {
 
 
 	<section class="ftco-section bg-light">
-	
-	
-		<div class="write1">
-			<a href="noticeModify.do?noseq=${Info.noseq}" class="btn btn-outline-secondary" role="button">수정</a>
+		<div class="container">
+			<table class="table table-hover">
+
+				<tr>
+					<th>번호</th>
+					<th>제목</th>
+					<th>내용</th>
+					<th>작성일</th>
+				</tr>
+
+				<tr>
+					<td>${Info.noseq}</td>
+					<td>${Info.notitle}</td>
+					<td>${Info.nocontent}</td>
+					<td>${Info.nodate}</td>
+				</tr>
+			</table>
 		</div>
-
-		<div class="write2">
-			<a href="noticeDelete.do?noseq=${Info.noseq}" class="btn btn-outline-secondary" role="button">삭제</a>
-		</div>
-
-		<table class="table table-hover">
-
-			<tr>
-				<th>번호</th>
-				<th>제목</th>
-				<th>내용</th>
-				<th>작성일</th>
-			</tr>
-
-			<tr>
-				<td>${Info.noseq}</td>
-				<td>${Info.notitle}</td>
-				<td>${Info.nocontent}</td>
-				<td>${Info.nodate}</td>
-			</tr>
-
-		</table>
-
 	</section>
 
 	<%@ include file="../header/footer.jsp"%>
