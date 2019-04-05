@@ -4,107 +4,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Home</title>
-
-<<<<<<< HEAD
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css" />
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css" />
-<%@ include file="../commons/hdjs.jsp"%>
-<script src="/resources/js/bootstrap.min.js"></script>
-=======
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css"/>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css"/>
-<script src="/resources/js/bootstrap.min.js" ></script>
->>>>>>> branch 'master' of https://github.com/bitteam150/pedicab.git
+<title>공지사항(상세)</title>
 
 <style>
-#a1 {
-	text-decoration: none;
-	color: black;
-	border: 1px solid silver;
-	margin-top: -60px;
-	margin-left: 340px;
-	border: 10px solid silver;
-	position: absolute;
+.write1 {
+	float: left;
 }
 
-#a2 {
-	text-decoration: none;
-	color: black;
-	border: 1px solid silver;
-	margin-top: -60px;
-	margin-left: 400px;
-	border: 10px solid silver;
-	position: absolute;
-}
-
-#noticeP {
-	margin-top: 30px;
-	margin-left: 630px;
-	font-weight: 900;
-	color: black;
-	font-size: 40px;
-}
-
-#hr {
-	border: 0;
-	height: 1px;
-	background: #ccc;
-}
-
-form {
-	margin-left: 375px;
-	width: 55%;
-}
-
-#write {
-	font: 16px/32px 'Nanum Gothic', sans-serif;
-	margin: 0px;
-}
-
-#write1 {
-	position: absolute;
-	margin-top: -25px;
-	margin-left: 970px;
-}
-
-#write2 {
-	position: absolute;
-	margin-top: -25px;
-	margin-left: 1060px;
+.write2 {
+	float: left;
+	margin-left: 10px;
 }
 
 table {
-	margin-top: 30px;
 	text-align: center;
+	color: black;
 }
 
-table tr th {
-	text-align: center;
+.btn-primary {
+	background: transparent !important;
+	border: 1px solid silver !important;
+	color: black !important;
 }
 </style>
 
+<%@ include file="../header/hdcss.jsp"%>
 </head>
 <body>
-	<%@ include file="../commons/Header.jsp"%>
 
-	<p id="noticeP">공지사항(상세)</p>
 
-	<div id="write1">
-		<a href="noticeModify.do?noseq=${Info.noseq}" class="btn btn-default "
-			style="width: 80px; padding: 0;" id="write">수정</a>
-	</div>
+	<%@ include file="../header/Header.jsp"%>
 
-	<div id="write2">
-		<a href="noticeDelete.do?noseq=${Info.noseq}" class="btn btn-default "
-			style="width: 80px; padding: 0;" id="write">삭제</a>
-	</div>
 
-	<form>
+	<section class="hero-wrap hero-wrap-2 js-fullheight"
+		style="background-image: url('/resources/images/bg_1.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div
+				class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate pb-5 text-center">
+					<h1 class="mb-3 bread">공지사항(상세)</h1>
+				</div>
+			</div>
+		</div>
+	</section>
 
-		<hr id="hr">
+
+	<section class="ftco-section bg-light">
+	
+	
+		<div class="write1">
+			<a href="noticeModify.do?noseq=${Info.noseq}" class="btn btn-outline-secondary" role="button">수정</a>
+		</div>
+
+		<div class="write2">
+			<a href="noticeDelete.do?noseq=${Info.noseq}" class="btn btn-outline-secondary" role="button">삭제</a>
+		</div>
 
 		<table class="table table-hover">
 
@@ -121,7 +77,11 @@ table tr th {
 				<td>${Info.nocontent}</td>
 				<td>${Info.nodate}</td>
 			</tr>
+
 		</table>
-	</form>
+
+	</section>
+
+	<%@ include file="../header/footer.jsp"%>
 </body>
 </html>

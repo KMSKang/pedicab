@@ -1,109 +1,89 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 <html>
 <head>
-<title>Home</title>
-<<<<<<< HEAD
-<%@ include file="../commons/hdjs.jsp"%>
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css" />
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css" />
-=======
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css"/>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css"/>
->>>>>>> branch 'master' of https://github.com/bitteam150/pedicab.git
-
+<title>공지사항(메인)</title>
 <style>
-#a1 {
-	position: absolute;
-	margin-top: -58px;
-	margin-left: 260px;
-	border: 10px solid silver;
-	color: red;
-}
-
-#hr {
-	border: 0;
-	height: 1px;
-	background: #ccc;
-}
-
-#noticeP {
-	margin-top: 30px;
-	margin-left: 835px;
-	font-weight: 900;
-	color: black;
-	font-size: 40px;
-}
-
-#write {
-	font: 16px/32px 'Nanum Gothic', sans-serif;
-	margin: 0px;
-}
-
-#write1 {
-	position: absolute;
-	margin-top: -65px;
-	margin-left: 870px;
-}
-
-form {
-	margin-left: 480px;
-	width: 50%;
-}
-
 table {
-	margin-top: 30px;
 	text-align: center;
+	color: black;
 }
 
-table tr th {
-	text-align: center;
+#a_management {
+	color: black;
+}
+
+.col-1{
 }
 </style>
 
+<%@ include file="../header/hdcss.jsp"%>
 </head>
 <body>
-	<%@ include file="../commons/Header.jsp"%>
+	<%@ include file="../header/Header.jsp"%>
 
-	<p id="noticeP">공지사항(메인)</p>
-
-
-	<form>
-	
-	<hr id="hr">
-
-		<div id="write1">
-			<a href="noticeWrite.do" class="btn btn-default "
-				style="width: 80px; padding: 0;" id="write">글쓰기</a>
+	<section class="hero-wrap hero-wrap-2 js-fullheight"
+		style="background-image: url('/resources/images/bg_1.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div
+				class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate pb-5 text-center">
+					<h1 class="mb-3 bread">공지사항</h1>
+				</div>
+			</div>
 		</div>
+	</section>
 
-		<table class="table table-hover">
+	<section class="ftco-section bg-light">
 
-			<tr>
-				<th>번호</th>
-				<th>제목</th>
-				<th>작성일</th>
-				<th>기타</th>
-			</tr>
+		<div class="container">
 
-			<c:forEach items="${List}" var="List">
+			<div class="row">
+				<div class="col-10">col-8</div>
+				<div class="col-2">
+					<a href="noticeWrite.do" class="btn btn-outline-secondary"
+						role="button">글쓰기</a>
+				</div>
+			</div>
+			<table class="table table-hover">
 				<tr>
-					<td>${List.noseq}</td>
-					<td>${List.notitle}</td>
-					<td>${List.nodate}</td>
-					<td><a href="noticeInfo.do?noseq=${List.noseq}">관리</a>
+					<th>번호</th>
+					<th>제목</th>
+					<th>작성일</th>
+					<th>기타</th>
 				</tr>
+				<c:forEach items="${List}" var="List">
+					<tr>
+						<td>${List.noseq}</td>
+						<td>${List.notitle}</td>
+						<td>${List.nodate}</td>
+						<td><a href="noticeInfo.do?noseq=${List.noseq}"
+							id="a_management">관리</a>
+					</tr>
+				</c:forEach>
+			</table>
+			<div class="row mt-5">
+				<div class="col text-center">
+					<div class="block-27">
+						<ul>
+							<li><a href="#">&lt;</a></li>
+							<li class="active"><span>1</span></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li><a href="#">&gt;</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-			</c:forEach>
-
-		</table>
-	</form>
-
+	<%@ include file="../header/footer.jsp"%>
 </body>
 </html>
