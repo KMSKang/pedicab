@@ -10,7 +10,6 @@
 			aria-expanded="false" aria-label="Toggle navigation">
 			<span class="oi oi-menu"></span> Menu
 		</button>
-
 		<div class="collapse navbar-collapse" id="ftco-nav">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active"><a href="index.html"
@@ -18,7 +17,7 @@
 				<li class="nav-item"><a href="about.html" class="nav-link">about</a></li>
 				<li class="nav-item"><a href="destination.html"
 					class="nav-link">course</a></li>
-				<li class="nav-item"><a href="hotel-resto.html"
+				<li class="nav-item"><a href="/user/course/courselist"
 					class="nav-link">reserve</a></li>
 				<li class="nav-item"><a href="blog.html" class="nav-link">blog</a></li>
 				<li class="nav-item dropdown"><a

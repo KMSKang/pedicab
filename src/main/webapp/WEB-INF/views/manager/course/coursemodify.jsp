@@ -17,7 +17,7 @@
 					<h3 class="page-header">Course</h3>
 				</div>
 				<div class="row">
-					<div class="col-lg-6">
+					<div class="col-lg-12">
 						<section class="panel">
 							<header class="panel-heading">코스등록</header>
 							<div class="panel-body">

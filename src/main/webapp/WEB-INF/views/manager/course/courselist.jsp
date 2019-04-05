@@ -30,9 +30,9 @@
 		<td>${Course.cname }</td>
 		<td>${Course.cprice }</td>
 		<td><div class="btn-group">
-		<a class="btn btn-primary" href="#">read</a>
+		<a class="btn btn-primary" href="/manager/course/courseread?cseq=${Course.cseq}">read</a>
 		<a class="btn btn-success" href='/manager/course/coursemodify?cseq=${Course.cseq}'>modify</a>
-		<a class="btn btn-danger" href="#">remove</a>
+		<a class="btn btn-danger" href="/manager/course/courseremove?cseq=${Course.cseq}">remove</a>
 		</div></td>
 		</tr>
 		</c:forEach>
