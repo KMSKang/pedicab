@@ -21,7 +21,13 @@
 					<li class="nav-item"><a href="hotel-resto.html"
 						class="nav-link">reserve</a></li>
 					<li class="nav-item"><a href="blog.html" class="nav-link">blog</a></li>
-					<li class="nav-item"><a href="contact.html" class="nav-link">contact</a></li>
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">contact</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="#">notice</a>
+					<a class="dropdown-item" href="#">Q&A</a>
+					<a class="dropdown-item" href="#">WaytoCome</a>
+					</div>
+					</li>
 					<li class="nav-item cta"><a href="#" class="nav-link">Login</a></li>
 
 				</ul>
