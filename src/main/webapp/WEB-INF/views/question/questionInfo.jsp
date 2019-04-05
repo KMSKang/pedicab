@@ -56,7 +56,7 @@ tr:hover {
 
 </head>
 <body>
-<%@ include file="../commons/Header.jsp" %>
+<%@ include file="../commons/Header.jsp"%>
 
 	<br>
 

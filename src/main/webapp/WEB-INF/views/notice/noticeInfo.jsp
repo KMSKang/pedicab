@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>공지사항(상세)</title>
+<title>공지사항</title>
 <style>
 .write1 {
 	float: left;
@@ -27,16 +27,16 @@ table {
 }
 </style>
 
-<%@ include file="../header/hdcss.jsp"%>
+<%@ include file="../commons/indexbg.jsp"%>
 </head>
 <body>
 
 
-	<%@ include file="../header/Header.jsp"%>
+	<%@ include file="../commons/Header.jsp"%>
 
 
 	<section class="hero-wrap hero-wrap-2 js-fullheight"
-		style="background-image: url('/resources/images/bg_1.jpg');"
+		style="background-image: url('/resources/imagesu/bg_1.jpg');"
 		data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -71,6 +71,6 @@ table {
 		</div>
 	</section>
 
-	<%@ include file="../header/footer.jsp"%>
+	<%@ include file="../commons/footer.jsp"%>
 </body>
 </html>

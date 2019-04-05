@@ -21,7 +21,7 @@
 					<li class="nav-item"><a href="hotel-resto.html"
 						class="nav-link">reserve</a></li>
 					<li class="nav-item"><a href="blog.html" class="nav-link">blog</a></li>
-					<li class="nav-item"><a href="contact.html" class="nav-link">contact</a></li>
+					<li class="nav-item"><a href="/notice/noticeMain" class="nav-link">contact</a></li>
 					<li class="nav-item cta"><a href="#" class="nav-link">Login</a></li>
 
 				</ul>

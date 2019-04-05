@@ -18,6 +18,8 @@ public class QuestionController {
 	@Inject
 	QuestionService service;
 
+//	고객
+	
 	// 문의하기 리스트 (페이지)
 	@RequestMapping("/question/questionMain")
 	public String questionMain(Model model) {
