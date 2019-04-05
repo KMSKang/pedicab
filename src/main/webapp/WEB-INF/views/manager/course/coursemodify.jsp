@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CourseWrite</title>
+<title>CourseModify</title>
 <%@include file="../../commons/mh.jsp"%>
 </head>
 <body>
@@ -21,31 +21,26 @@
 						<section class="panel">
 							<header class="panel-heading">코스등록</header>
 							<div class="panel-body">
-								<form role="form" action="/manager/course/coursewrite" method="POST" enctype="multipart/form-data">
+								<form role="form" action="/manager/course/coursemodify" method="POST" enctype="multipart/form-data">
 									<div class="form-group">
 										<label for="cname">코스명</label> <input
 											type="text" name="cname" id="cname"class="form-control" 
-											placeholder="Enter CourseName">
+											placeholder="Enter CourseName" value="${dto.cname }">
 									</div>
 									<div class="form-group">
 										<label for="cinfo">코스소개</label> <textarea
 											 name="cinfo" id="cinfo"class="form-control" 
-											placeholder="Enter Courseinfo"></textarea>
+											placeholder="Enter Courseinfo" >${dto.cinfo}</textarea>
 									</div>
 									<div class="form-group">
 										<label for="cstart">출발장소</label> <input
 											type="text" name="cstart" id="cstart"class="form-control" 
-											placeholder="Enter Startpoint">
+											placeholder="Enter Startpoint" value="${dto.cstart}" >
 									</div>
 									<div class="form-group">
 										<label for="cprice">요금</label> <input
 											type="text" name="cprice" id="cname"class="form-control" 
-											placeholder="Enter price">
-									</div>
-									<div class="form-group">
-										<label for="imgfile">코스사진등록</label> <input
-											name="imgfile"
-											type="file" id="imgfile">
+											placeholder="Enter price" value="${dto.cprice}">
 									</div>
 									<button type="submit" class="btn btn-primary">등록</button>
 								</form>

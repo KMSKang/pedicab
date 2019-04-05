@@ -22,7 +22,7 @@ table {
 <%@ include file="../header/hdcss.jsp"%>
 </head>
 <body>
-	<%@ include file="../header/Header.jsp"%>
+	<%@ include file="../commons/Header.jsp"%>
 
 	<section class="hero-wrap hero-wrap-2 js-fullheight"
 		style="background-image: url('/resources/images/bg_1.jpg');"
@@ -74,6 +74,6 @@ table {
 		</div>
 	</section>
 
-	<%@ include file="../header/footer.jsp"%>
+	<%@ include file="../commons/footer.jsp"%>
 </body>
 </html>
