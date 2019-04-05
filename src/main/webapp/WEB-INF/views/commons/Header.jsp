@@ -26,8 +26,8 @@
 					role="button" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false">contact</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">notice</a> <a
-							class="dropdown-item" href="#">Q&A</a> <a class="dropdown-item"
+						<a class="dropdown-item" href="/notice/noticeMain">notice</a> <a
+							class="dropdown-item" href="/question/questionMain">Q&A</a> <a class="dropdown-item"
 							href="#">WaytoCome</a>
 					</div></li>
 				<li class="nav-item cta"><a href="#" class="nav-link">Login</a></li>

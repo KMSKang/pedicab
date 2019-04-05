@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-* {
+/* * {
 	margin: 0px;
 	padding: 0px;
 }
@@ -23,30 +23,64 @@
 	color: red;
 	margin-left: 150px;
 	margin-top: -35px;
+} */
+#name {
+	color: red;
 }
 </style>
-
+<%@ include file="../commons/indexbg.jsp"%>
 </head>
 <body>
-<%@ include file="../commons/Header.jsp" %>
-	<br>
-	
-	<h3>문의하기(작성)</h3>
-	
-	<br>
-	<hr>
-	<br>
-	
-	<form action="/questionWriteOK" method="POST">
-	
-		제목 : <input type="text" placeholder="제목을 입력해주세요" name="qutitle"> <br>
-		작성자 : <input type="text" placeholder="성함를 입력해주세요" name="quemail"> <br>
-		내용 : <input type="text" placeholder="내용을 입력해주세요." name="qucontent"> <br>
-		
-		<input type="submit" value="등록">
-		
-	</form>
-	
+	<%@ include file="../commons/Header.jsp"%>
+
+	<section class="hero-wrap hero-wrap-2 js-fullheight"
+		style="background-image: url('/resources/imagesu/bg_1.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div
+				class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate pb-5 text-center">
+					<h1 class="mb-3 bread">1:1 문의</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section bg-light">
+		<div class="container">
+			<form action="/question/questionWriteOK" method="POST">
+
+				<h3 class="mb-5"></h3>
+				<div class="form-group">
+					<label for="email">작성자 *</label> <input type="text"
+						class="form-control" name="quemail" id="email"
+						placeholder="작성자명을 입력해주세요.">
+				</div>
+				
+				<div class="form-group">
+					<label for="name">제목 *</label> <input type="text"
+						class="form-control" name="qutitle" id="name"
+						placeholder="제목을 입력해주세요.">
+				</div>
+
+				<div class="form-group">
+					<label for="message">내용</label>
+					<textarea name="qucontent" id="message" cols="30" rows="10"
+						class="form-control" placeholder="내용을 입력해주세요."></textarea>
+				</div>
+
+				<div class="row" style="margin-right: 12%;">
+					<div class="col-6"></div>
+					<div class="form-group col-6">
+						<input type="submit" value="문의하기" class="btn py-3 px-4 btn-primary">
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</section>
+	<%@ include file="../commons/footer.jsp"%>
 </body>
 </html>
 <!-- <img id="kakaotalk" src="../pedicab/resources/img/icon/kt.png">
