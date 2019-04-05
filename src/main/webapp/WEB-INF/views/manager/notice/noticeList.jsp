@@ -43,8 +43,8 @@
 										<td>
 											<div class="btn-group">
 												
-												<a class="btn btn-success" href="noticeModify.do?noseq=${List.noseq}">수정</a>
-												<a class="btn btn-danger" href="noticeDelete.do?noseq=${List.noseq}">삭제</a>
+												<a class="btn btn-success" href="noticeModify.do?noseq=${List.noseq}">modify</a>
+												<a class="btn btn-danger" href="noticeDelete.do?noseq=${List.noseq}">remove</a>
 											</div>
 										</td>
 									</tr>

@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -12,19 +13,15 @@ table {
 #a_management {
 	color: black;
 }
-
-.col-1 {
-	
-}
 </style>
 
-<%@ include file="../header/hdcss.jsp"%>
+<%@ include file="../commons/indexbg.jsp"%>
 </head>
 <body>
 	<%@ include file="../commons/Header.jsp"%>
 
 	<section class="hero-wrap hero-wrap-2 js-fullheight"
-		style="background-image: url('/resources/images/bg_1.jpg');"
+		style="background-image: url('/resources/imagesu/bg_1.jpg');"
 		data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">

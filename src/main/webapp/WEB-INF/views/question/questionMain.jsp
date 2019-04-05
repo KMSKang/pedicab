@@ -1,95 +1,77 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-* {
-	margin: 0px;
-	padding: 0px;
-}
-
 table {
-	border-collapse: collapse;
+	text-align: center;
+	color: black;
 }
 
-td, th {
-	padding: 8px 20px;
-	border: 1px solid #b7b7b7;
-}
-
-th {
-	background-color: #2c8daa;
-	color: #fff;
-}
-
-tr:hover {
-	cursor: default;
-	background-color: #ecfafc;
-}
-
-#kakaotalk {
-	width: 55px;
-	height: 55px;
-}
-
-#a1 {
-	position: absolute;
-	border: 10px solid silver;
-	color: red;
-	margin-left: 260px;
-	margin-top: -40px;
-}
-
-p {
-	margin-left: 390px;
-	margin-top: -40px;
-	font-size: 30px;
+#td_title {
+	color: black;
 }
 </style>
 
+<%@ include file="../commons/indexbg.jsp"%>
 </head>
 <body>
-<%@ include file="../commons/Header.jsp" %>
-	<br>
-	<h1>나의 문의 리스트</h1>
-	<a href="questionWrite.do?" id="a1">문의하기</a>
-	<p>작성자 : kk920106@naver.com</p>
-	<br>
-	<hr>
-	<br>
+	<%@ include file="../commons/Header.jsp"%>
 
-	<table>
+	<section class="hero-wrap hero-wrap-2 js-fullheight"
+		style="background-image: url('/resources/imagesu/bg_1.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div
+				class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate pb-5 text-center">
+					<h1 class="mb-3 bread">1:1 문의</h1>
+				</div>
+			</div>
+		</div>
+	</section>
 
-		<tr>
-			<th>번호</th>
-			<th>제목</th>
-			<th>작성자</th>
-			<th>작성일</th>
-		</tr>
-
-		<c:forEach items="${questionList}" var="questionList">
-		<%-- <c:set var="id" value="kk920106@naver.com" scope="session" />
-		<c:if test="${questionList.quemail == id}"> --%>
-			<tr>
-				<td>${questionList.quseq}</td>
-				<td><a href="questionInfo.do?quseq=${questionList.quseq}">${questionList.qutitle}</a></td>
-				<td>${questionList.quemail}</td>
-				<td>${questionList.qudate}</td>
-			</tr>
-			<%-- </c:if> --%>
-		</c:forEach>
-	</table>
-
-<img id="kakaotalk" src="../resources/img/icon/kt.png">
-	<a href="#">1:1 오픈 채팅방 문의<br>상담 가능 시간 10:00 ~ 18:00<br>
-		(근무시간 외에는 챗봇을 이용하시면 24시간 상담이 가능합니다.)
-	</a>
-	
+	<section class="ftco-section bg-light">
+		<div class="container">
+			<table class="table table-hover">
+				<tr>
+					<th>번호</th>
+					<th>제목</th>
+					<th>작성자</th>
+					<th>작성일</th>
+				</tr>
+				<c:forEach items="${questionList}" var="questionList">
+					<tr>
+						<td>${questionList.quseq}</td>
+						<td><a href="questionInfo.do?quseq=${questionList.quseq}"
+							id="td_title">${questionList.qutitle}</a></td>
+						<td>${questionList.quemail}</td>
+						<td>${questionList.qudate}</td>
+					</tr>
+				</c:forEach>
+			</table>
+			<div class="row mt-5">
+				<div class="col text-center">
+					<div class="block-27">
+						<ul>
+							<li><a href="#">&lt;</a></li>
+							<li class="active"><span>1</span></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li><a href="#">&gt;</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<%@ include file="../commons/footer.jsp"%>
 </body>
 </html>

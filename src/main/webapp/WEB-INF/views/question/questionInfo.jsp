@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
+<!-- <style>
 * {
 	margin: 0px;
 	padding: 0px;
@@ -52,11 +52,11 @@ tr:hover {
 	margin-top: -48px;
 	border: 10px solid silver;
 }
-</style>
+</style> -->
 
 </head>
 <body>
-<%@ include file="../commons/Header.jsp" %>
+<%@ include file="../commons/Header.jsp"%>
 
 	<br>
 
