@@ -21,20 +21,19 @@ public class CourseController {
 	CourseService service;
 
 	//=================관리자================================//
-	@RequestMapping(value="course/clistAll", method=RequestMethod.GET)
+	@RequestMapping(value="/manager/course/courselist", method=RequestMethod.GET)
 	public void clistAll(Model model) throws Exception{
 		model.addAttribute("list", service.listAll());
 	}
 
-	@RequestMapping(value = "/course/cregist", method = RequestMethod.GET)
-	public void cregistGET(CourseVO vo, Model model) throws Exception {
-
+	@RequestMapping(value = "/manager/course/coursewrite", method = RequestMethod.GET)
+	public String coursewrite() throws Exception {
+		return "/manager/course/coursewrite";
 	}
-
-	@RequestMapping(value = "/course/cregist", method = RequestMethod.POST)
+	@RequestMapping(value = "/manager/course/coursewrite", method = RequestMethod.POST)
 	public String cregisterPOST(CourseVO vo, RedirectAttributes rttr, HttpServletRequest request) throws Exception {
 		service.regist(vo, request);
-		return "redirect:/course/clistAll";
+		return "redirect:/manager/course/courselist";
 	}
 
 	@RequestMapping(value = "/course/cread", method = RequestMethod.GET)
@@ -42,15 +41,15 @@ public class CourseController {
 		model.addAttribute("dto", service.read(cseq));
 	}
 
-	@RequestMapping(value = "/course/cmodify", method = RequestMethod.GET)
-	public void cmodifyGET(int cseq, Model model) throws Exception {
+	@RequestMapping(value = "/manager/course/coursemodify", method = RequestMethod.GET)
+	public void cmodifyGET(@RequestParam("cseq") int cseq, Model model) throws Exception {
 		model.addAttribute("dto", service.read(cseq));
 	}
 
-	@RequestMapping(value = "/course/cmodify", method = RequestMethod.POST)
+	@RequestMapping(value = "/manager/course/coursemodify", method = RequestMethod.POST)
 	public String cmodifyPOST(CourseVO vo, RedirectAttributes rttr) throws Exception {
 		service.modify(vo);
-		return "redirect:/course/cread?cseq=" + vo.getCseq();
+		return "redirect:/manager/course/courselist";
 	}
 
 	@RequestMapping(value = "/course/cremove", method = RequestMethod.POST)

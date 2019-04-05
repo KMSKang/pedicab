@@ -130,6 +130,7 @@
 		</div>
 	</section>
 </section>
+</section>
    <!-- ↓ 이부분은 자바스크립트가 작성된 include 태그입니다. 포함 하셔야됩니다 ! -->
 	<%@include file="commons/mjs.jsp"%>
 </body>

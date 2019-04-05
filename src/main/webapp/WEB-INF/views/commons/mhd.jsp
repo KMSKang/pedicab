@@ -8,6 +8,6 @@
 			</div>
 
 			<!--logo start-->
-			<a href="index.html" class="logo">Team150<span class="lite">(Pedicab)</span></a>
+			<a href="/managerhome" class="logo">Team150<span class="lite">(Pedicab)</span></a>
 			<!--logo end-->
 		</header>
