@@ -26,10 +26,11 @@ public class CourseController {
 		model.addAttribute("list", service.listAll());
 	}
 
-	@RequestMapping(value = "/course/cregist", method = RequestMethod.GET)
-	public void cregistGET(CourseVO vo, Model model) throws Exception {
-
+	@RequestMapping(value = "/manager/course/coursewrite", method = RequestMethod.GET)
+	public String coursewrite() throws Exception {
+		return "/manager/course/coursewrite";
 	}
+	
 
 	@RequestMapping(value = "/course/cregist", method = RequestMethod.POST)
 	public String cregisterPOST(CourseVO vo, RedirectAttributes rttr, HttpServletRequest request) throws Exception {

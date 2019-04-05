@@ -33,12 +33,16 @@ public class HomeController {
 		return "home";
 	}
 	@RequestMapping(value="/managerhome",method=RequestMethod.GET)
-	public String managerhone() {
+	public String managerhome() {
 		return"managerhome";
 	}
 	@RequestMapping(value="/test",method=RequestMethod.GET)
 	public String test() {
 		return"test";
+	}
+	@RequestMapping(value="/manager/course/courselist",method=RequestMethod.GET)
+	public String managercourse() {
+		return"/manager/course/courselist";
 	}
 
 }
