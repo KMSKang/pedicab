@@ -36,9 +36,9 @@ public class CourseController {
 		return "redirect:/manager/course/courselist";
 	}
 
-	@RequestMapping(value = "/course/cread", method = RequestMethod.GET)
+	@RequestMapping(value = "/manager/course/courseread", method = RequestMethod.GET)
 	public void cread(@RequestParam("cseq") int cseq, Model model) throws Exception {
-		model.addAttribute("dto", service.read(cseq));
+		model.addAttribute("course", service.read(cseq));
 	}
 
 	@RequestMapping(value = "/manager/course/coursemodify", method = RequestMethod.GET)
@@ -52,15 +52,15 @@ public class CourseController {
 		return "redirect:/manager/course/courselist";
 	}
 
-	@RequestMapping(value = "/course/cremove", method = RequestMethod.POST)
+	@RequestMapping(value = "/manager/course/courseremove", method = RequestMethod.GET)
 	public String cremovePost(@RequestParam("cseq") int cseq, RedirectAttributes rttr) throws Exception {
 		service.remove(cseq);
-		return "redirect:/course/clistAll";
+		return "redirect:/manager/course/courselist";
 	}
 
 	//=======================유저=============================//
 	
-	@RequestMapping(value = "course/uclistAll",method=RequestMethod.GET)
+	@RequestMapping(value = "/user/course/courselist",method=RequestMethod.GET)
 	public void uclistAll(Model model) throws Exception {
 		model.addAttribute("list", service.listAll());
 	}

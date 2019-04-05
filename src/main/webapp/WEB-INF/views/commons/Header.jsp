@@ -16,7 +16,7 @@
 					<li class="nav-item active"><a href="index.html"
 						class="nav-link">Team150</a></li>
 					<li class="nav-item"><a href="about.html" class="nav-link">about</a></li>
-					<li class="nav-item"><a href="destination.html"
+					<li class="nav-item"><a href="/user/course/courselist"
 						class="nav-link">course</a></li>
 					<li class="nav-item"><a href="hotel-resto.html"
 						class="nav-link">reserve</a></li>
