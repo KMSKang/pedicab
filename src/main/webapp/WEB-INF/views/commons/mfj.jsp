@@ -18,7 +18,7 @@
 					</a></li>
 					<li class="active"><a class="" href="/manager/notice/noticeList"><span>Notice</span>
 					</a></li>
-					<li class="active"><a class="" href="#"><span>Question</span>
+					<li class="active"><a class="" href="/manager/question/questionList"><span>Question</span>
 					</a></li>
 				</ul>
 				<!-- sidebar menu end-->

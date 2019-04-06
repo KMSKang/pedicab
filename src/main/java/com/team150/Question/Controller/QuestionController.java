@@ -59,13 +59,15 @@ public class QuestionController {
 
 //	관리자
 
-	// 문의하기 모든 리스트 (페이지)
-	@RequestMapping(value = "/question/questionAllList", method = RequestMethod.GET)
-	public String questionAllList(Model model) {
+	// 문의하기 답변하기 모든 리스트 (페이지)
+	@RequestMapping(value = "/manager/question/questionList", method = RequestMethod.GET)
+	public String questionList(Model model) {
 
 		model.addAttribute("questionList", service.questionSelecter());
+		
+		model.addAttribute("answerList", service.answerSelecter());
 
-		return "question/questionAllList";
+		return "/manager/question/questionList";
 	}
 
 	// 답변하기 리스트 (페이지)
