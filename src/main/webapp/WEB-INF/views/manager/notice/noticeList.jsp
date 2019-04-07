@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -6,6 +7,15 @@
 <html lang="UTF-8">
 <head>
 <title>Manger</title>
+<style>
+table {
+	text-align: center;
+	color: black;
+}
+table th {
+	text-align: center;
+}
+</style>
 <!--↓ 이부분은 managerpage에 적용될 css가 담겨있는 iclude 태그입니다. 포함하셔야 됩니다. -->
 <%@include file="../../commons/mh.jsp"%>
 </head>
@@ -33,8 +43,8 @@
 									<th>management</th>
 								</tr>
 							</thead>
-								<tbody>
-							<c:forEach items="${List}" var="List">
+							<tbody>
+								<c:forEach items="${List}" var="List">
 									<tr>
 										<td>${List.noseq}</td>
 										<td>${List.notitle}</td>
@@ -42,14 +52,16 @@
 										<td>${List.nodate}</td>
 										<td>
 											<div class="btn-group">
-												
-												<a class="btn btn-success" href="noticeModify.do?noseq=${List.noseq}">modify</a>
-												<a class="btn btn-danger" href="noticeDelete.do?noseq=${List.noseq}">remove</a>
+
+												<a class="btn btn-success"
+													href="noticeModify.do?noseq=${List.noseq}">modify</a> <a
+													class="btn btn-danger"
+													href="noticeDelete.do?noseq=${List.noseq}">remove</a>
 											</div>
 										</td>
 									</tr>
-							</c:forEach>
-								</tbody>
+								</c:forEach>
+							</tbody>
 						</table>
 						<a class="btn btn-default" href="noticeWrite.do">write</a>
 					</div>

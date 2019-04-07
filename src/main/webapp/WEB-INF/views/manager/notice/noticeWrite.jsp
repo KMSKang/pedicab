@@ -29,7 +29,7 @@
 					<div class="col-lg-12">
 						<h3 class="page-header">Notice</h3>
 						<section class="panel">
-							<header class="panel-heading"> write </header>
+							<header class="panel-heading"> Write Notice </header>
 							<div class="panel-body">
 								<div class="form">
 									<form class="form-validate form-horizontal" id="feedback_form"
@@ -47,7 +47,7 @@
 											<label for="ccomment" class="control-label col-lg-2">content</label>
 											<div class="col-lg-10">
 												<textarea class="form-control " id="ccomment" name="nocontent"
-													required></textarea>
+													required style="height: 600px;"></textarea>
 											</div>
 										</div>
 										<div class="form-group">

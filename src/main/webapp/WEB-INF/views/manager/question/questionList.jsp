@@ -12,6 +12,15 @@
 	color: black;
 }
 
+table {
+	color: black;
+	text-align: center;
+}
+
+table th {
+	text-align: center;
+}
+
 #h1 {
 	color: black;
 }
@@ -38,7 +47,7 @@
 					<div class="col-lg-12">
 						<h3 class="page-header">Q & A</h3>
 
-						<h1 id="h1">고객 문의 리스트</h1>
+						<h1 id="h1">문의 리스트(전체)</h1>
 
 						<hr id="hr">
 
@@ -46,10 +55,11 @@
 							<thead>
 								<tr>
 									<th>No</th>
-									<th>title</th>
-									<th>content</th>
+									<th>Title</th>
+									<th>Content</th>
+									<th>Writer</th>
 									<th>Date</th>
-									<th>management</th>
+									<th>Management</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -60,48 +70,45 @@
 										<td><a
 											href="/question/questionInfo.do?quseq=${questionList.quseq}"
 											id="td_title">${questionList.qutitle}</a></td>
+										<td>${questionList.qucontent}</td>
 										<td>${questionList.quemail}</td>
 										<td>${questionList.qudate}</td>
 										<td>
 											<div class="btn-group">
-
-												<a class="btn btn-primary"
-													href="noticeModify.do?noseq=${List.noseq}">answer</a> <a
-													class="btn btn-danger"
-													href="noticeDelete.do?noseq=${List.noseq}">remove</a>
+												<a class="btn btn-warning"
+													href="/manager/question/questionInfo.do?quseq=${questionList.quseq}">Info</a>
 											</div>
 										</td>
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
-						<br><br><br><br><br><br>
-						<h1 id="h1">답변 리스트</h1>
+						<br> <br> <br> <br>
+						<h1 id="h1">답변 리스트(전체)</h1>
 						<hr id="hr">
 						<table class="table table-striped table-advance table-hover">
 							<thead>
 								<tr>
 									<th>No</th>
-									<th>title</th>
-									<th>content</th>
+									<th>Content</th>
+									<th>Name</th>
 									<th>Date</th>
-									<th>management</th>
+									<th>Management</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach items="${answerList}" var="answerList">
 									<tr>
-										<td>${answerList.quseq}</td>
-										<td>${answerList.qutitle}</td>
-										<td>${answerList.quemail}</td>
-										<td>${answerList.qudate}</td>
+										<td>${answerList.naseq}</td>
+										<td><a
+											href="/question/questionInfo.do?quseq=${answerList.naseq}"
+											id="td_title">${answerList.nacontent}</a></td>
+										<td>${answerList.naname}</td>
+										<td>${answerList.nadate}</td>
 										<td>
 											<div class="btn-group">
-
-												<a class="btn btn-primary"
-													href="noticeModify.do?noseq=${List.noseq}">answer</a> <a
-													class="btn btn-danger"
-													href="noticeDelete.do?noseq=${List.noseq}">remove</a>
+												<a class="btn btn-warning"
+													href="/manager/question/questionInfo.do?quseq=${answerList.quseq}">Info</a>
 											</div>
 										</td>
 									</tr>

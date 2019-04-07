@@ -32,7 +32,7 @@ public class NoticeServiceImpl implements NoticeService {
 		}
 	}
 
-	// 상세 (페이지)
+	// 상세, 수정 (페이지)
 	public NoticeVO noticeInfoer(int noseq) {
 		return dao.selectOne(noseq);
 	}
