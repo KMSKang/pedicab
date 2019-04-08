@@ -107,7 +107,7 @@ public class MemberController {
 	  }
 
 	@RequestMapping("/manager/member/delete.do")
-	public String remove(@RequestParam String uid, @RequestParam String upwd, Model model) {
+	public String remove(@RequestParam String uid, Model model) {
 			memberService.remove(uid);
 			return "redirect:/manager/list.do";
 	}
