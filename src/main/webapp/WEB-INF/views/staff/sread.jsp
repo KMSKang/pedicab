@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>라이더 상세 페이지</title>
+<%@ include file="../commons/indexbg.jsp" %>
 <style>
 	th,td{
 		text-align: center;
@@ -17,7 +18,6 @@
 </style>
 </head>
 <body>
-<%@ include file="../commons/Header.jsp" %>
 <div class="container">
 <h4>사원 상세보기</h4>
 	<div class="row">
