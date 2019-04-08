@@ -79,5 +79,7 @@ public class CourseController {
 		return "/favorite/favorite";
 
 	}
+	
+	//커밋
 
 }
