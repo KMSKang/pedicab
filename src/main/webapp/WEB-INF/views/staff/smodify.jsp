@@ -38,7 +38,7 @@
             <div class="panel-body">
               <div class="form">
                 <form class="form-validate form-horizontal" id="feedback_form"
-                  method="post" action="smodify" enctype="multipart/form-data">
+                  method="post" action="/staff/smodify" enctype="multipart/form-data">
                   <div class="form-group">
                     <label for="sphone" class="control-label col-lg-2">폰번호<span class="required">*</span></label>
                     <div class="col-lg-10">
@@ -54,13 +54,13 @@
                   <div class="form-group">
                     <label for="imgfile" class="control-label col-lg-2">이미지<span class="required">*</span></label>
                     <div class="col-lg-10">
-                      <input class="form-control" id="imgfile" name="imgfile" type="file" required placeholder="${staff.simg }"/>
+                      <input class="form-control" id="imgfile" name="imgfile" type="file" required />
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
                       <button class="btn btn-primary" type="submit">저장</button>
-                      <button class="btn btn-primary" type="button" onclick="location.href='slistAll'">취소</button>
+                      <button class="btn btn-primary" type="button" onclick="location.href='/staff/slistAll'">취소</button>
                     </div>
                   </div>           
                 </form>
