@@ -14,7 +14,7 @@
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active"><a href="/"
 					class="nav-link">Team150</a></li>
-				<li class="nav-item"><a href="about.html" class="nav-link">about</a></li>
+				<li class="nav-item"><a href="/user/html/aboutus" class="nav-link">about</a></li>
 				<li class="nav-item"><a href="/user/course/courselist"
 					class="nav-link">course</a></li>
 				<li class="nav-item"><a href=""

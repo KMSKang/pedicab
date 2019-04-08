@@ -36,5 +36,9 @@ public class HomeController {
 	public String managerhome() {
 		return"managerhome";
 	}
+	@RequestMapping(value="/user/html/aboutus",method=RequestMethod.GET)
 
+	public String aboutus() {
+		return "/user/html/aboutus";
+	}
 }
