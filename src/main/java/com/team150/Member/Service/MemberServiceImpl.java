@@ -22,8 +22,8 @@ public class MemberServiceImpl implements MemberService {
 		String name = memberDao.loginCheck(vo);
 		if (name != null) {// null이 아니라는 것 = 정상적
 			// 세션변수 등록(세션변수는 사용자가 로그인~로그아웃할때까지 값을 계속 가짐/ 기본 15분)
+			session.setAttribute("useq", ""+vo.getUseq());
 			session.setAttribute("uid", vo.getUid()); // "세션변수 명", 값
-			session.setAttribute("useq", vo.getUseq());
 			session.setAttribute("uname", name);
 		}
 		return name;
@@ -63,6 +63,10 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public boolean checkPw(String uid, String upwd) {
 		return memberDao.checkPw(uid, upwd);
+	}
+	
+	public int session(String uid) {
+		return memberDao.session(uid);
 	}
 
 }

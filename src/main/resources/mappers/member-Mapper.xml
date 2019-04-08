@@ -40,6 +40,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	update User set  upwd=#{upwd}, uname=#{uname}, uimg=#{uimg}, uymd=#{uymd}, ugender=#{ugender}, uphone=#{uphone} where uid=#{uid}
 	</update>
 	
+	<select id="session" resultType="int">
+	select useq from User where uid=#{uid}
+	</select>
+	
 	
 </mapper>
 
