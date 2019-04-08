@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<nav
-	class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
-	id="ftco-navbar">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
+		id="ftco-navbar">
 	<div class="container">
 		<a class="navbar-brand" href="/"><span>Team150</span></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -29,8 +29,14 @@
 							class="dropdown-item" href="/question/questionMain">Q&A</a> <a class="dropdown-item"
 							href="#">WaytoCome</a>
 					</div></li>
-				<li class="nav-item cta"><a href="#" class="nav-link">Login</a></li>
-
+				<c:choose>
+					<c:when test="${sessionScope.uid==null }">
+					<li class="nav-item cta"><a href="${path}/member/loginForm.do" class="nav-link">Login</a></li>					
+					</c:when>
+					<c:otherwise>
+					<li class="nav-item cta"><a href="${path}/member/logOut.do" class="nav-link">Logout</a></li>	
+					</c:otherwise>
+					</c:choose>
 			</ul>
 		</div>
 	</div>

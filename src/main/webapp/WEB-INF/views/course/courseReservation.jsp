@@ -61,7 +61,6 @@ table {
 										})
 					});
 </script>
-
 <style>
 #Heart {
 	margin-left: 680px;

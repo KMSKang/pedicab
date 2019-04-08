@@ -65,9 +65,9 @@ public class CourseController {
 		model.addAttribute("list", service.listAll());
 	}
 
-	@RequestMapping(value = "/course/ucread",method=RequestMethod.GET)
+	@RequestMapping(value = "/user/course/courseread",method=RequestMethod.GET)
 	public void ucread(@RequestParam("cseq") int cseq, Model model) throws Exception {
-		model.addAttribute("dto", service.read(cseq));
+		model.addAttribute("course", service.read(cseq));
 	}
 
 	// 즐겨찾기 조회(페이지)
@@ -79,5 +79,7 @@ public class CourseController {
 		return "/favorite/favorite";
 
 	}
+	
+	//커밋
 
 }
