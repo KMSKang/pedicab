@@ -38,15 +38,33 @@ public class QuestionServiceImpl implements QuestionService {
 		return dao.questionSelectOne(quseq);
 	}
 
+	// 문의하기 수정 (실행)
+	public int questionUpdater(QuestionVO questionVO) {
+		return dao.questionUpdate(questionVO);
+	}
+
+	// 문의하기 삭제 (실행)
+	public int questionDeleter(int quseq) {
+		return dao.questionDelete(quseq);
+	}
+
+	// 문의+답변 삭제 (실행)
+	public int allDeleter(int quseq) {
+		return dao.allDelete(quseq);
+	}
+
 //	----------------------------------------------------------------------------
 
 //	관리자
 
+	// 답변하기 리스트 (페이지)
+	public List<AnswerVO> answerSelecter() {
+		return dao.answerListAll();
+	}
+
 	// 답변하기 등록 (실행)
-	public void answerRegister(AnswerVO answerVO, int quseq) {
-
-		int result = dao.answerCreate(answerVO, quseq);
-
+	public void answerRegister(AnswerVO answerVO) {
+		int result = dao.answerCreate(answerVO);
 		if (result == 0) {
 			System.out.println("noticeRegister Fail!!");
 		} else {
@@ -54,8 +72,18 @@ public class QuestionServiceImpl implements QuestionService {
 		}
 	}
 
-	// 답변하기 리스트 (페이지)
-	public List<AnswerVO> answerSelecter() {
-		return dao.answerListAll();
+	// 답변하기 수정 (페이지)
+	public AnswerVO answerInfoer(int naseq) {
+		return dao.answerSelectOne(naseq);
+	}
+
+	// 답변하기 수정 (실행)
+	public int answerUpdater(AnswerVO answerVO) {
+		return dao.answerUpdate(answerVO);
+	}
+
+	// 답변하기 삭제 (실행)
+	public int answerDeleter(int naseq) {
+		return dao.answerDelete(naseq);
 	}
 }

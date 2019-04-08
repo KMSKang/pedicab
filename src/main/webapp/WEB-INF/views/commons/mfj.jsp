@@ -8,7 +8,7 @@
 					</a></li>
 					<li class="active"><a class="" href="/manager/list.do"><span>Member</span>
 					</a></li>
-					<li class="active"><a class="" href="#"><span>Staff</span>
+					<li class="active"><a class="" href="slistAll"><span>Staff</span>
 					</a></li>
 					<li class="active"><a class="" href="/manager/course/courselist"><span>Course</span>
 					</a></li>
@@ -16,9 +16,9 @@
 					</a></li>
 					<li class="active"><a class="" href="#"><span>Review</span>
 					</a></li>
-					<li class="active"><a class="" href="#"><span>Notice</span>
+					<li class="active"><a class="" href="/manager/notice/noticeList"><span>Notice</span>
 					</a></li>
-					<li class="active"><a class="" href="#"><span>Question</span>
+					<li class="active"><a class="" href="/manager/question/questionList"><span>Question</span>
 					</a></li>
 				</ul>
 				<!-- sidebar menu end-->

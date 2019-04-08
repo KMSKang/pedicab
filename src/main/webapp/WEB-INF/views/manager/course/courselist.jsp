@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,23 +17,25 @@
 		<div class="row">
 		<h3 class="page-header">Course</h3>
 		<table class="table table-striped table-advance table-hover">
-		<tbody>
+		<thead>
 		<tr>
 		<td>Name</td>
 		<td>Price</td>
-		<td>Start</td>
 		<td>Action</td>
 		</tr>
+		</thead>
+		<tbody>
+		<c:forEach items="${list}" var="Course">
 		<tr>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td>${Course.cname }</td>
+		<td>${Course.cprice }</td>
 		<td><div class="btn-group">
-		<a class="btn btn-primary" href="#">read</a>
-		<a class="btn btn-success" href="#">modify</a>
-		<a class="btn btn-danger" href="#">remove</a>
+		<a class="btn btn-primary" href="/manager/course/courseread?cseq=${Course.cseq}">read</a>
+		<a class="btn btn-success" href='/manager/course/coursemodify?cseq=${Course.cseq}'>modify</a>
+		<a class="btn btn-danger" href="/manager/course/courseremove?cseq=${Course.cseq}">remove</a>
 		</div></td>
 		</tr>
+		</c:forEach>
 		</tbody>
 		</table>
 		<a class="btn btn-default" href="/manager/course/coursewrite">write</a>
