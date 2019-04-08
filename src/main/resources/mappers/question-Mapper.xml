@@ -28,6 +28,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	
+	<!-- 문의하기 수정 -->
+	<update id="questionUpdate" parameterType="com.team150.Question.Model.QuestionVO">
+		UPDATE question	SET quemail = #{quemail}, qutitle = #{qutitle}, qucontent = #{qucontent} WHERE quseq = #{quseq}
+	</update>
+	
+	
+	
+	<!-- 문의하기 삭제 -->
+	<delete id="questionDelete" parameterType="com.team150.Question.Model.QuestionVO">
+		DELETE FROM question WHERE quseq = #{quseq}
+	</delete>
+	
+	
+	
+	<!-- 문의+답변 삭제 (실행) -->
+	<delete id="allDelete" parameterType="com.team150.Question.Model.AnswerVO">
+		DELETE FROM question1 WHERE quseq = #{quseq}
+	</delete>
+	
+	
+	
 	<!-- 답변하기 등록 -->
 	<insert id="answerCreate" parameterType="com.team150.Question.Model.AnswerVO">
 		INSERT INTO question1 (naname, nacontent, nadate, quseq) 
@@ -40,4 +61,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="answerListAll" resultType="com.team150.Question.Model.AnswerVO">
 		SELECT * FROM question1
 	</select>
+	
+	
+	
+	<!-- 답변하기 수정 (페이지)-->
+	<select id="answerSelectOne" resultType="com.team150.Question.Model.AnswerVO">
+		SELECT * FROM question1 where naseq=#{naseq}
+	</select>
+	
+	
+	
+	<!-- 답변하기 수정 (실행) -->
+	<update id="answerUpdate" parameterType="com.team150.Question.Model.AnswerVO">
+		UPDATE question1 SET nacontent = #{nacontent} WHERE naseq = ${naseq}
+	</update>
+	
+	
+	
+	<!-- 답변하기 삭제 (실행) -->
+	<delete id="answerDelete" parameterType="com.team150.Question.Model.AnswerVO">
+		DELETE FROM question1 WHERE naseq=#{naseq}
+	</delete>
+	
+	
+	
 </mapper>

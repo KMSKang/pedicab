@@ -30,7 +30,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 공지사항 수정 -->
 	<update id="update" parameterType="com.team150.Notice.Model.NoticeVO">
-		UPDATE notice SET notitle = #{notitle}, nocontent = #{nocontent} WHERE noseq = ${noseq}
+		UPDATE notice SET notitle = #{notitle}, nocontent = #{nocontent} WHERE noseq = #{noseq}
 	</update>
 	
 	

@@ -33,12 +33,8 @@ public class HomeController {
 		return "home";
 	}
 	@RequestMapping(value="/managerhome",method=RequestMethod.GET)
-	public String managerhone() {
+	public String managerhome() {
 		return"managerhome";
-	}
-	@RequestMapping(value="/test",method=RequestMethod.GET)
-	public String test() {
-		return"test";
 	}
 
 }
