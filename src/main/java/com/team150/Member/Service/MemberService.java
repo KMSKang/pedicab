@@ -16,5 +16,6 @@ public interface MemberService {
 	public void remove(String uid); 
 	public void modify(MemberVO vo); 
 	public boolean checkPw(String uid, String upwd);
+	public int session(String uid);
 
 }

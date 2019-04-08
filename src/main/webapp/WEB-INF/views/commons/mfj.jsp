@@ -8,7 +8,7 @@
 					</a></li>
 					<li class="active"><a class="" href="/manager/list.do"><span>Member</span>
 					</a></li>
-					<li class="active"><a class="" href="slistAll"><span>Staff</span>
+					<li class="active"><a class="" href="/staff/slistAll"><span>Staff</span>
 					</a></li>
 					<li class="active"><a class="" href="/manager/course/courselist"><span>Course</span>
 					</a></li>

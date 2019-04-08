@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.team150.Member.Service.MemberService;
 import com.team150.Reserve.Model.ReserveVO;
 import com.team150.Reserve.Service.ReserveService;
 @RequestMapping("/")
@@ -42,6 +43,9 @@ public class ReserveController {
 	@Inject
 	ReserveService service;
 	
+	@Inject
+	MemberService memberservice;
+	
 	//===========================관리자=======================//
 	//리스트
 	@RequestMapping(value="reserve/Reserve_listM",method=RequestMethod.GET)
@@ -64,12 +68,14 @@ public class ReserveController {
     
   //===========================유저=======================//
     //작성
-	@RequestMapping(value = "/reserve/rregist", method = RequestMethod.POST)
-	public String create(ReserveVO vo, RedirectAttributes rttr,@RequestParam("cseq") int cseq) throws Exception {
-		vo.setUseq(10);
+	@RequestMapping(value = "/user/reserve/userreserve", method = RequestMethod.POST)
+	public String create(ReserveVO vo, RedirectAttributes rttr,@RequestParam("cseq") int cseq,@RequestParam("uid") String uid) throws Exception {
+		
+		int useq=memberservice.session(uid);
+		vo.setUseq(useq);
 		service.regist(vo);
 		System.out.println(vo);
-		return "redirect:/reserve/myreserve";
+		return "redirect:/";
 	}
 	//나의내역
 	@RequestMapping(value="/resrve/Reserve_viewU")

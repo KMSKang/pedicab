@@ -6,26 +6,72 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+table {
+	text-align: center;
+	color: black;
+}
+</style>
+<%@ include file="../commons/indexbg.jsp"%>
 </head>
 <body>
 	<%@ include file="../commons/Header.jsp"%>
-	<h3>상세 페이지</h3>
-	번호 : ${reviewInfo.reseq}
-	<br> 이메일 : ${reviewInfo.reemail}
-	<br>
-	<c:forEach items="${reviewList}" var="reviewList">
-		<c:if test="${reviewInfo.reseq == reviewList.reseq}">
-		사진 :<br>
-			<img src="uploadFile\memberPhoto/${reviewList.rephoto}" />
-			<br>
-		</c:if>
-	</c:forEach>
-	내용 : ${reviewInfo.recontent}
-	<br> 날짜 : ${reviewInfo.redate}
-	<br>
 
-	<a href="commentWrite.do?reseq=${reviewInfo.reseq}">답글</a>
-	<a href="reviewModify.do?reseq=${reviewInfo.reseq}">수정</a>
-	<a href="reviewDelete.do?reseq=${reviewInfo.reseq}">삭제</a>
+	<section class="hero-wrap hero-wrap-2 js-fullheight"
+		style="background-image: url('/resources/imagesu/bg_1.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div
+				class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate pb-5 text-center">
+					<h1 class="mb-3 bread">리뷰</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section bg-light">
+		<div class="container">
+			<a href="commentWrite.do?reseq=${reviewInfo.reseq}">답글</a>
+			<div class="row" style="margin-bottom: 1%; margin-left: 1%;">
+				<div class="col-10"></div>
+				<div class="col-2">
+					<a class="btn btn-outline-dark"
+						href="reviewModify.do?reseq=${reviewInfo.reseq}">수정</a> <a
+						class="btn btn-outline-dark"
+						href="reviewDelete.do?reseq=${reviewInfo.reseq}">삭제</a>
+				</div>
+			</div>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>번호</th>
+						<th>작성자</th>
+						<th>사진</th>
+						<th>리뷰</th>
+						<th>작성일</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>${reviewInfo.reseq}</td>
+						<td>${reviewInfo.reemail}</td>
+						<td><c:forEach items="${reviewList}" var="reviewList">
+								<c:if test="${reviewInfo.reseq == reviewList.reseq}">
+									<img src="uploadFile\memberPhoto/${reviewList.rephoto}" />
+								</c:if>
+							</c:forEach></td>
+						<td>${reviewInfo.recontent}</td>
+						<td>${reviewInfo.redate}</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+
+		</div>
+	</section>
+	<%@ include file="../commons/footer.jsp"%>
 </body>
 </html>
