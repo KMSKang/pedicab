@@ -24,7 +24,7 @@ public class ReviewServiceImpl implements ReviewService {
 	public void reviewRegister(ReviewVO reviewVO, HttpServletRequest request) throws Exception {
 
 		String imgName = "";
-		String uploadUri = "/uploadFile/memberPhoto";
+		String uploadUri = "/uploadFile/reviewPhoto";
 		String dir = request.getSession().getServletContext().getRealPath(uploadUri);
 
 		if (!reviewVO.getPhotoFile().isEmpty()) {

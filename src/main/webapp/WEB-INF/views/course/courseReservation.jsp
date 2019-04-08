@@ -179,7 +179,7 @@ table a {
 						<tr>
 							<td>${reviewList.reseq}</td>
 							<td>${reviewList.reemail}</td>
-							<td><img src="uploadFile\memberPhoto/${reviewList.rephoto}" /></td>
+							<td><img src="/uploadFile/reviewPhoto/${reviewList.rephoto}" /></td>
 							<td><a
 								href="/review/reviewInfo.do?reseq=${reviewList.reseq}">${reviewList.recontent}<br>
 									<c:forEach items="${commentList}" var="commentList">
