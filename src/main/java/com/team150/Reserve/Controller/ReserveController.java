@@ -65,8 +65,7 @@ public class ReserveController {
   //===========================유저=======================//
     //작성
 	@RequestMapping(value = "/reserve/rregist", method = RequestMethod.POST)
-	public String create(ReserveVO vo, RedirectAttributes rttr,@RequestParam("cseq") int cseq) throws Exception {
-		vo.setUseq(10);
+	public String create(ReserveVO vo, RedirectAttributes rttr,@RequestParam("cseq") int cseq,@RequestParam("useq") int useq) throws Exception {
 		service.regist(vo);
 		System.out.println(vo);
 		return "redirect:/reserve/myreserve";

@@ -130,6 +130,11 @@
 								class="form-control" name="rmemo" id="rmemo">
 						</div>
 						<div class="form-group">
+						<label style="color: black">요청사항</label>
+							<p>${sessionScope.useq}</p>
+							<p>${sessionScope.uid }</p>
+						</div>
+						<div class="form-group">
 						 <input type="submit" value="에약하기" class="btn btn-primary py-3 px-5">
 						</div>
 					</form>
