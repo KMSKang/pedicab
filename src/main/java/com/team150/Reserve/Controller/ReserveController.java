@@ -1,6 +1,8 @@
 package com.team150.Reserve.Controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -69,17 +71,21 @@ public class ReserveController {
   //===========================유저=======================//
     //작성
 	@RequestMapping(value = "/user/reserve/userreserve", method = RequestMethod.POST)
-	public String create(ReserveVO vo, RedirectAttributes rttr,@RequestParam("cseq") int cseq,@RequestParam("uid") String uid) throws Exception {
+	public String create(ReserveVO vo, RedirectAttributes rttr,@RequestParam("uid") String uid) throws Exception {
 		
 		int useq=memberservice.session(uid);
 		vo.setUseq(useq);
 		service.regist(vo);
-		System.out.println(vo);
-		return "redirect:/";
+		return "redirect:/user/reserve/myreserve";
 	}
 	//나의내역
-	@RequestMapping(value="/resrve/Reserve_viewU")
-	public void read(Model model,@RequestParam("useq") int useq) throws Exception{
+	@RequestMapping(value="/user/reserve/myreserve")
+	public void read(Model model, HttpServletRequest request) throws Exception{
+		HttpSession session =request.getSession();
+		String uid =session.getAttribute("uid").toString();
+		System.out.println(uid);
+		int useq=memberservice.session(uid);
+		System.out.println(useq);
 		model.addAttribute("list", service.read(useq));
 	}
 
