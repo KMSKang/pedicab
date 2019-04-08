@@ -6,6 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>코스 예약</title>
+<style>
+table {
+	text-align: center;
+	color: black;
+}
+</style>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -55,6 +61,17 @@
 										})
 					});
 </script>
+<style>
+#Heart {
+	margin-left: 680px;
+	margin-top: 430px;
+	position: absolute;
+}
+
+table a {
+	color: black;
+}
+</style>
 <%@ include file="../commons/indexbg.jsp"%>
 </head>
 <body>
@@ -68,7 +85,7 @@
 			<div
 				class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
 				<div class="col-md-9 ftco-animate pb-5 text-center">
-					<h1 class="mb-3 bread">1:1 문의</h1>
+					<h1 class="mb-3 bread">예약</h1>
 				</div>
 			</div>
 		</div>
@@ -142,40 +159,38 @@
 					<hr>
 					<div>
 						<h1>리뷰</h1>
-						<h3>리뷰 리스트</h3>
 					</div>
 				</div>
 			</div>
 
 			<table class="table table-hover">
-				<tr>
-					<th>reseq</th>
-					<th>reemail</th>
-					<th>renphoto</th>
-					<th>recontent</th>
-					<th>redate</th>
-					<th>기타</th>
-				</tr>
-
-				<c:forEach items="${reviewList}" var="reviewList">
-
+				<thead>
 					<tr>
-						<th>${reviewList.reseq}</th>
-						<th>${reviewList.reemail}</th>
-						<th><img src="uploadFile\memberPhoto/${reviewList.rephoto}" /></th>
-						<th>${reviewList.recontent}<br> <c:forEach
-								items="${commentList}" var="commentList">
-								<c:if test="${commentList.reseq == reviewList.reseq}">
-									<br>---------답글------------<br>${commentList.cocontent}<br>
-								</c:if>
-							</c:forEach>
-						</th>
-						<th>${reviewList.redate}</th>
-
-						<th><a href="/review/reviewInfo.do?reseq=${reviewList.reseq}">관리</a></th>
+						<th>번호</th>
+						<th>작성자</th>
+						<th>사진</th>
+						<th>리뷰</th>
+						<th>작성일</th>
 					</tr>
-
-				</c:forEach>
+				</thead>
+				<tbody>
+					<c:forEach items="${reviewList}" var="reviewList">
+						<tr>
+							<td>${reviewList.reseq}</td>
+							<td>${reviewList.reemail}</td>
+							<td><img src="uploadFile\memberPhoto/${reviewList.rephoto}" /></td>
+							<td><a
+								href="/review/reviewInfo.do?reseq=${reviewList.reseq}">${reviewList.recontent}<br>
+									<c:forEach items="${commentList}" var="commentList">
+										<c:if test="${commentList.reseq == reviewList.reseq}">
+											<br>---------답글------------<br>${commentList.cocontent}<br>
+										</c:if>
+									</c:forEach>
+							</a></td>
+							<td>${reviewList.redate}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
 			</table>
 		</div>
 	</section>

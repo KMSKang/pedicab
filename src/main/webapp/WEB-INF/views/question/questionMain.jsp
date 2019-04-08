@@ -42,7 +42,7 @@ table {
 
 	<section class="ftco-section bg-light">
 		<div class="container">
-			<div class="row" style="margin-bottom: 1%; margin-left:1%;">
+			<div class="row" style="margin-bottom: 1%; margin-left: 1%;">
 				<div class="col-10"></div>
 				<div class="col-2">
 					<a class="btn btn-outline-dark" href="questionWrite.do">문의하기</a>
@@ -51,21 +51,25 @@ table {
 			<!-- <a class="btn btn-outline-dark" href="noticeWrite.do">문의하기</a> -->
 
 			<table class="table table-hover">
-				<tr>
-					<th>번호</th>
-					<th>제목</th>
-					<th>작성자</th>
-					<th>작성일</th>
-				</tr>
-				<c:forEach items="${questionList}" var="questionList">
+				<thead>
 					<tr>
-						<td>${questionList.quseq}</td>
-						<td><a href="questionInfo.do?quseq=${questionList.quseq}"
-							id="td_title">${questionList.qutitle}</a></td>
-						<td>${questionList.quemail}</td>
-						<td>${questionList.qudate}</td>
+						<th>번호</th>
+						<th>제목</th>
+						<th>작성자</th>
+						<th>작성일</th>
 					</tr>
-				</c:forEach>
+				</thead>
+				<tbody>
+					<c:forEach items="${questionList}" var="questionList">
+						<tr>
+							<td>${questionList.quseq}</td>
+							<td><a href="questionInfo.do?quseq=${questionList.quseq}"
+								id="td_title">${questionList.qutitle}</a></td>
+							<td>${questionList.quemail}</td>
+							<td>${questionList.qudate}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
 			</table>
 			<div class="row mt-5">
 				<div class="col text-center">
