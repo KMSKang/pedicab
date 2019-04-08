@@ -15,23 +15,28 @@
 <%@ include file="../commons/indexbg.jsp" %>
 </head>
 <body>
-<div>
 <%@ include file="../commons/Header.jsp"%>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-md-2">
-    </div>
-    <div class="col-md-8">
-      <c:forEach var="staff" items="${list}">
-	    <img class="img-circle" src="/uploadFile/staffphoto/${staff.simg }" />
-		<p>${staff.sname }</p>
-      </c:forEach>
-    </div>
-    <div class="col-md-2">
-    </div>
-  </div>
-</div>
+<div class="hero-wrap js-fullheight"
+		style="background-image: url('/resources/imagesu/bg_2.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div
+				class="row no-gutters slider-text js-fullheight align-items-center justify-content-end"
+				data-scrollax-parent="true">
+				<div class="col-md-7 ftco-animate mt-5"
+					data-scrollax=" properties: { translateY: '70%' }">
+					<h1 class="mb-4"
+						data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">CourseList</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+        <c:forEach var="staff" items="${list}">
+	      <img class="img-circle" src="/uploadFile/staffphoto/${staff.simg }" />
+		  <p>${staff.sname }</p>
+        </c:forEach>
+
 <div>
 <%@ include file="../commons/footer.jsp" %>
 </div>

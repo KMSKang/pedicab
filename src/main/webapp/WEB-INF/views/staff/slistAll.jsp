@@ -37,15 +37,15 @@
          	      <td>${staff.snickname }</td>
          	      <td>
          	        <div class="btn-group">
-         	          <a class="btn btn-success" href="smodify?sseq=${staff.sseq }">수정</a>
-         	          <a class="btn btn-danger" href="sremove?sseq=${staff.sseq }">삭제</a>
+         	          <a class="btn btn-success" href="/staff/smodify?sseq=${staff.sseq }">수정</a>
+         	          <a class="btn btn-danger" href="/staff/sremove?sseq=${staff.sseq }">삭제</a>
          	        </div>
          	      </td>
          	    </tr>
          	    </c:forEach>
          	  </tbody>
           	</table>
-          <button class="btn btn-primary" type="button" onclick="location.href='sform'">사원추가</button>
+          <button class="btn btn-primary" type="button" onclick="location.href='/staff/sform'">사원추가</button>
           </div>
         </div>
       </section>

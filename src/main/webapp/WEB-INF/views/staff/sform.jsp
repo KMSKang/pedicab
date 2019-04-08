@@ -27,7 +27,7 @@
               INSERT PAGE
             </header>
             <div class="form">
-              <form class="form-validate form-horizontal">
+              <form class="form-validate form-horizontal" action="/staff/sregist" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="sname" class="control-label col-lg-2">이름<span class="required">*</span></label>
                   <div class="col-lg-10">
@@ -56,7 +56,7 @@
                   <label for="imgfile" class="control-label col-lg-2">이름<span class="required">*</span></label>
                   <div class="col-lg-10">
                     <button class="btn btn-primary" type="submit">저장</button>
-                    <button class="btn btn-primary" type="button" onclick="location.href='slistAll'">취소</button>
+                    <button class="btn btn-primary" type="button" onclick="location.href='/staff/slistAll'">취소</button>
                   </div>
                 </div>
               </form>
