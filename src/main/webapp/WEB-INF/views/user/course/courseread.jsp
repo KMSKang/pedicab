@@ -60,7 +60,7 @@
 <body>
 	<%@ include file="../../commons/Header.jsp"%>
 	<section class="hero-wrap hero-wrap-2 js-fullheight"
-		style="background-image: url('/resources/imagesu/bg_1.jpg');"
+		style="background-image: url('/uploadFile/coursePhoto/${course.cimg}');"
 		data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">

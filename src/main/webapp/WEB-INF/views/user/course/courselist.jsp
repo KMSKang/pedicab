@@ -10,7 +10,7 @@
 <body>
 	<%@ include file="../../commons/Header.jsp"%>
 	<div class="hero-wrap js-fullheight"
-		style="background-image: url('/resources/imagesu/bg_1.jpg');"
+		style="background-image: url('/resources/imagesu/bg_2.jpg');"
 		data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
