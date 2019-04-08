@@ -55,42 +55,6 @@
 										})
 					});
 </script>
-
-<style>
-
-/* .left {
-	float: left;
-	margin: 10px;
-}
-
-a {
-	text-decoration: none;
-	color: black;
-}
-
-#show {
-	background-color: white;
-	color: black;
-	border: 1px solid white;
-	font-size: 15px;
-}
-
-#text {
-	width: 1820px;
-	height: 51px;
-}
-
-#button1 {
-	width: 50px;
-	height: 55px;
-}
-
-#Heart {
-	margin-left: 680px;
-	margin-top: 430px;
-	position: absolute;
-} */
-</style>
 <%@ include file="../commons/indexbg.jsp"%>
 </head>
 <body>
