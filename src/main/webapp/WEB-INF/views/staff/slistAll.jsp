@@ -5,11 +5,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>라이더 리스트</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>라이더 리스트</title>
-<link rel="stylesheet" type="text/css"
-   href="../../resources/css/bootstrap.css" />
+<%@ include file="../commons/indexbg.jsp" %>
 <style>
 	th,td{
 		text-align: center;

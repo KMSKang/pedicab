@@ -1,99 +1,79 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 <html>
 <head>
-<title>Home</title>
-
 <style>
-#a1 {
-	position: absolute;
-	margin-top: -58px;
-	margin-left: 260px;
-	border: 10px solid silver;
-	color: red;
-}
-
-#hr {
-	border: 0;
-	height: 1px;
-	background: #ccc;
-}
-
-#noticeP {
-	margin-top: 30px;
-	margin-left: 835px;
-	font-weight: 900;
-	color: black;
-	font-size: 40px;
-}
-
-#write {
-	font: 16px/32px 'Nanum Gothic', sans-serif;
-	margin: 0px;
-}
-
-#write1 {
-	position: absolute;
-	margin-top: -65px;
-	margin-left: 870px;
-}
-
-form {
-	margin-left: 480px;
-	width: 50%;
-}
-
 table {
-	margin-top: 30px;
 	text-align: center;
+	color: black;
 }
 
-table tr th {
-	text-align: center;
+#a_management {
+	color: black;
+}
+
+.col-1 {
+	
 }
 </style>
 
+<%@ include file="../header/hdcss.jsp"%>
 </head>
 <body>
-	<%@ include file="../commons/Header.jsp"%>
+	<%@ include file="../header/Header.jsp"%>
 
-	<p id="noticeP">공지사항(메인)</p>
-
-
-	<form>
-	
-	<hr id="hr">
-
-		<div id="write1">
-			<a href="noticeWrite.do" class="btn btn-default "
-				style="width: 80px; padding: 0;" id="write">글쓰기</a>
+	<section class="hero-wrap hero-wrap-2 js-fullheight"
+		style="background-image: url('/resources/images/bg_1.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div
+				class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate pb-5 text-center">
+					<h1 class="mb-3 bread">공지사항</h1>
+				</div>
+			</div>
 		</div>
+	</section>
 
-		<table class="table table-hover">
-
-			<tr>
-				<th>번호</th>
-				<th>제목</th>
-				<th>작성일</th>
-				<th>기타</th>
-			</tr>
-
-			<c:forEach items="${List}" var="List">
+	<section class="ftco-section bg-light">
+		<div class="container">
+			<table class="table table-hover">
 				<tr>
-					<td>${List.noseq}</td>
-					<td>${List.notitle}</td>
-					<td>${List.nodate}</td>
-					<td><a href="noticeInfo.do?noseq=${List.noseq}">관리</a>
+					<th>번호</th>
+					<th>제목</th>
+					<th>작성일</th>
 				</tr>
+				<c:forEach items="${List}" var="List">
+					<tr>
+						<td>${List.noseq}</td>
+						<td><a href="noticeInfo.do?noseq=${List.noseq}"
+							id="a_management">${List.notitle}</a></td>
+						<td>${List.nodate}</td>
+						<td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
+		<div class="row mt-5">
+			<div class="col text-center">
+				<div class="block-27">
+					<ul>
+						<li><a href="#">&lt;</a></li>
+						<li class="active"><span>1</span></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">&gt;</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
 
-			</c:forEach>
-
-		</table>
-	</form>
-
+	<%@ include file="../header/footer.jsp"%>
 </body>
 </html>

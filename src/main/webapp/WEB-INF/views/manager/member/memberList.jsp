@@ -5,14 +5,15 @@
 <head>
 <title>Manger</title>
 <!--↓ 이부분은 managerpage에 적용될 css가 담겨있는 iclude 태그입니다. 포함하셔야 됩니다. -->
-<%@include file="commons/mh.jsp"%>
+<%@include file="../../commons/mh.jsp"%>
+<%@ include file="option.jsp"%>
 </head>
 <body>
 <!--↓아래에 있는 section id="container"는 꼭 만드서야 합니다 !  -->
 <section id="container" class="">
 <!--↓밑에 두개 include 파일은 복사 하셔서 만드시는 뷰단 페이지에다가 붙여넣기 하세요 꼭 이위치에 복사 하셔야 됩니다! -->
-	<%@include file="commons/mhd.jsp"%>
-	<%@include file="commons/mfj.jsp"%>
+	<%@include file="../../commons/mhd.jsp"%>
+	<%@include file="../../commons/mfj.jsp"%>
 <!-- ↓id="main-content" section은 작성하시는 코드가 들어가는 부분입니다. 만드셔야지 되요!  -->
 	<section id="main-content">
 <!--      ↓여기있는 wrapper는 감싸주는거 같아요 저도 잘 모르겠어요 일단 만드셔야 됩니다. -->
@@ -20,63 +21,37 @@
 		  <!-- ↓ 하나의 코드를 작성 하실떄 div class="row"는  하나의 행을 의미합니다.  -->
 		 <div class="row">
 		 <div class="col-lg-12">
-		 <h3 class="page-header">h3태그로 작성된 부분입니다.메인콘텐츠에서 제목에 해당되는부분입니다. class="page-header"를 포함하셔야됩니다.</h3>
+		 <h3 class="page-header">Member List</h3>
 		 <table class="table table-striped table-advance table-hover">
                 <tbody>
                   <tr>
-                    <th>Full Name</th>
-                    <th>Date</th>
-                    <th>Email</th>
-                    <th>City</th>
+                    <th>Id</th>
+                    <th>Name</th>
                     <th>Mobile</th>
+                    <th>Date</th>
                     <th>Action</th>
                   </tr>
-                  <tr>
-                    <td>Angeline Mcclain</td>
-                    <td>2004-07-06</td>
-                    <td>dale@chief.info</td>
-                    <td>Rosser</td>
-                    <td>176-026-5992</td>
-                    <td>
+            	  <c:forEach var="row" items="${list}">
+					<!-- 컨트롤러에서 넘어온 변수 -->
+				  <tr>
+					<td>${row.uid}</td>
+					<td>${row.uname}</td>
+					<td>${row.uphone}</td>
+					<td><fmt:formatDate value="${row.udate}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+				<%-- <td><a href="${path}/member/view.do?userid=${row.userid}">${row.name}</a></td> --%>
+					 <td>
                       <div class="btn-group">
-                        <a class="btn btn-primary" href="#">조회</a>
-                        <a class="btn btn-success" href="#">수정</a>
-                        <a class="btn btn-danger" href="#">삭제</a>
+                        <a class="btn btn-primary" href="/manager/member/view.do?uid=${row.uid}">조회</a>
+                        <a class="btn btn-danger" href="/manager/member/delete.do">삭제</a>
                       </div>
                     </td>
-                  </tr>
-                   <tr>
-                    <td>Angeline Mcclain</td>
-                    <td>2004-07-06</td>
-                    <td>dale@chief.info</td>
-                    <td>Rosser</td>
-                    <td>176-026-5992</td>
-                    <td>
-                      <div class="btn-group">
-                        <a class="btn btn-primary" href="#">조회</a>
-                        <a class="btn btn-success" href="#">수정</a>
-                        <a class="btn btn-danger" href="#">삭제</a>
-                      </div>
-                    </td>
-                  </tr>
-                   <tr>
-                    <td>Angeline Mcclain</td>
-                    <td>2004-07-06</td>
-                    <td>dale@chief.info</td>
-                    <td>Rosser</td>
-                    <td>176-026-5992</td>
-                    <td>
-                      <div class="btn-group">
-                        <a class="btn btn-primary" href="#">조회</a>
-                        <a class="btn btn-success" href="#">수정</a>
-                        <a class="btn btn-danger" href="#">삭제</a>
-                      </div>
-                    </td>
-                  </tr>          
+				  </tr>
+				 </c:forEach>        
                 </tbody>
-              </table>
+         </table>
 		 </div>
         </div>
+        </section>
         <div class="row">
           <div class="col-lg-12">
             <section class="panel">
@@ -128,6 +103,6 @@
 	</section>
 </section>
    <!-- ↓ 이부분은 자바스크립트가 작성된 include 태그입니다. 포함 하셔야됩니다 ! -->
-	<%@include file="commons/mjs.jsp"%>
+	<%@include file="../../commons/mjs.jsp"%>
 </body>
 </html>
