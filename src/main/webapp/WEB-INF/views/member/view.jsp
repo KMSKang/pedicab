@@ -26,7 +26,7 @@ $(function(){
 </script>
 </head>
 <body>
-	<%@ include file="../commons/loginMenu.jsp"%>
+	<%-- <%@ include file="../commons/loginMenu.jsp"%> --%>
 	<h2>회원 정보</h2>
 	<form name="form1" method="post">
 		<table border="1" width="400px">

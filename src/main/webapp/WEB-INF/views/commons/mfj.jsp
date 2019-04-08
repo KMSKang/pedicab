@@ -6,7 +6,7 @@
 				<ul class="sidebar-menu">
 					<li class="active"><a class="" href="/managerhome"><span>Home</span>
 					</a></li>
-					<li class="active"><a class="" href="#"><span>User</span>
+					<li class="active"><a class="" href="/manager/list.do"><span>Member</span>
 					</a></li>
 					<li class="active"><a class="" href="slistAll"><span>Staff</span>
 					</a></li>

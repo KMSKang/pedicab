@@ -174,7 +174,7 @@ button.social-signin.google {
 
 </head>
 <body>
-	<%@ include file="../commons/loginMenu.jsp"%>
+	<%-- <%@ include file="../commons/loginMenu.jsp"%> --%>
 	<div id="login-box">
 		<div class="left">
 			<h1>Sign up</h1>
