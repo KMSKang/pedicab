@@ -6,9 +6,28 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('#qutitle').val('${questionInfo.qutitle}')
+		$('#qucontent').val('${questionInfo.qucontent}')
+		$('#hiddenQuseq').val('${questionInfo.quseq}')
+		$('#hiddenEmail').val('${questionInfo.quemail}');
+	});
+</script>
 <style>
+table {
+	text-align: center;
+	color: black;
+}
+
 #name {
 	color: red;
+}
+
+#hr {
+	border-top: 1px solid black;
 }
 </style>
 <%@ include file="../commons/indexbg.jsp"%>
@@ -32,31 +51,56 @@
 
 	<section class="ftco-section bg-light">
 		<div class="container">
-			<form action="/question/questionWriteOK" method="POST">
+
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>번호</th>
+						<th>제목</th>
+						<th>내용</th>
+						<th>이름</th>
+						<th>날짜</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>${questionInfo.quseq}</td>
+						<td>${questionInfo.qutitle}</td>
+						<td>${questionInfo.qucontent}</td>
+						<td>${questionInfo.quemail}</td>
+						<td>${questionInfo.qudate}</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+			<br> <br> <br> <br>
+			<h1 id="h1">문의 수정</h1>
+
+			<hr id="hr">
+
+			<form action="/question/questionModifyOK" method="POST">
 
 				<h3 class="mb-5"></h3>
 				<div class="form-group">
-					<label for="email">작성자 *</label> <input type="text"
-						class="form-control" name="quemail" id="email"
-						placeholder="작성자명을 입력해주세요.">
-				</div>
-				
-				<div class="form-group">
-					<label for="name">제목 *</label> <input type="text"
-						class="form-control" name="qutitle" id="name"
-						placeholder="제목을 입력해주세요.">
+					<label for="email">제목</label> <input type="text"
+						class="form-control" name="qutitle" id="qutitle">
 				</div>
 
 				<div class="form-group">
 					<label for="message">내용</label>
-					<textarea name="qucontent" id="message" cols="30" rows="10"
-						class="form-control" placeholder="내용을 입력해주세요."></textarea>
+					<textarea class="form-control" name="qucontent" id="qucontent"
+						cols="30" rows="10"></textarea>
 				</div>
+
+				<input type="hidden" id="hiddenQuseq" name="quseq">
+				<input type="hidden" id="hiddenEmail" name="quemail">
 
 				<div class="row" style="margin-right: 12%;">
 					<div class="col-6"></div>
 					<div class="form-group col-6">
-						<input type="submit" value="문의하기" class="btn py-3 px-4 btn-primary">
+						<input type="submit" value="문의하기"
+							class="btn py-3 px-4 btn-primary">
 					</div>
 				</div>
 			</form>

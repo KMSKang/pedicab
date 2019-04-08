@@ -15,6 +15,10 @@ table {
 #td_title {
 	color: black;
 }
+
+.btn-light {
+	border-color: 1px solid silver;
+}
 </style>
 
 <%@ include file="../commons/indexbg.jsp"%>
@@ -38,6 +42,14 @@ table {
 
 	<section class="ftco-section bg-light">
 		<div class="container">
+			<div class="row" style="margin-bottom: 1%; margin-left:1%;">
+				<div class="col-10"></div>
+				<div class="col-2">
+					<a class="btn btn-outline-dark" href="questionWrite.do">문의하기</a>
+				</div>
+			</div>
+			<!-- <a class="btn btn-outline-dark" href="noticeWrite.do">문의하기</a> -->
+
 			<table class="table table-hover">
 				<tr>
 					<th>번호</th>

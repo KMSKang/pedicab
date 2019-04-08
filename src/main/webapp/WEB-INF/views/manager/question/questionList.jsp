@@ -8,12 +8,25 @@
 <head>
 <title>Manger</title>
 <style>
-table {
-	text-align: center;
+#td_title {
 	color: black;
 }
+
+table {
+	color: black;
+	text-align: center;
+}
+
 table th {
 	text-align: center;
+}
+
+#h1 {
+	color: black;
+}
+
+#hr {
+	border-top: 1px solid black;
 }
 </style>
 <!--↓ 이부분은 managerpage에 적용될 css가 담겨있는 iclude 태그입니다. 포함하셔야 됩니다. -->
@@ -32,38 +45,76 @@ table th {
 				<!-- ↓ 하나의 코드를 작성 하실떄 div class="row"는  하나의 행을 의미합니다.  -->
 				<div class="row">
 					<div class="col-lg-12">
-						<h3 class="page-header">Notice</h3>
+						<h3 class="page-header">Q & A</h3>
+
+						<h1 id="h1">문의 리스트(전체)</h1>
+
+						<hr id="hr">
+
 						<table class="table table-striped table-advance table-hover">
 							<thead>
 								<tr>
 									<th>No</th>
-									<th>title</th>
-									<th>content</th>
+									<th>Title</th>
+									<th>Content</th>
+									<th>Writer</th>
 									<th>Date</th>
-									<th>management</th>
+									<th>Management</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${List}" var="List">
+
+								<c:forEach items="${questionList}" var="questionList">
 									<tr>
-										<td>${List.noseq}</td>
-										<td>${List.notitle}</td>
-										<td>${List.nocontent}</td>
-										<td>${List.nodate}</td>
+										<td>${questionList.quseq}</td>
+										<td><a
+											href="/question/questionInfo.do?quseq=${questionList.quseq}"
+											id="td_title">${questionList.qutitle}</a></td>
+										<td>${questionList.qucontent}</td>
+										<td>${questionList.quemail}</td>
+										<td>${questionList.qudate}</td>
 										<td>
 											<div class="btn-group">
-
-												<a class="btn btn-success"
-													href="noticeModify.do?noseq=${List.noseq}">modify</a> <a
-													class="btn btn-danger"
-													href="noticeDelete.do?noseq=${List.noseq}">remove</a>
+												<a class="btn btn-warning"
+													href="/manager/question/questionInfo.do?quseq=${questionList.quseq}">Info</a>
 											</div>
 										</td>
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
-						<a class="btn btn-default" href="noticeWrite.do">write</a>
+						<br> <br> <br> <br>
+						<h1 id="h1">답변 리스트(전체)</h1>
+						<hr id="hr">
+						<table class="table table-striped table-advance table-hover">
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>Content</th>
+									<th>Name</th>
+									<th>Date</th>
+									<th>Management</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${answerList}" var="answerList">
+									<tr>
+										<td>${answerList.naseq}</td>
+										<td><a
+											href="/question/questionInfo.do?quseq=${answerList.naseq}"
+											id="td_title">${answerList.nacontent}</a></td>
+										<td>${answerList.naname}</td>
+										<td>${answerList.nadate}</td>
+										<td>
+											<div class="btn-group">
+												<a class="btn btn-warning"
+													href="/manager/question/questionInfo.do?quseq=${answerList.quseq}">Info</a>
+											</div>
+										</td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</section>

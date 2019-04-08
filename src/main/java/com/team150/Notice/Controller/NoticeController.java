@@ -4,7 +4,6 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -69,7 +68,7 @@ public class NoticeController {
 
 	// 수정 (페이지)
 	@RequestMapping("/manager/notice/noticeModify")
-	public ModelAndView noticeModify(Model model, @RequestParam int noseq, @ModelAttribute NoticeVO noticeVO) {
+	public ModelAndView noticeModify(Model model, @RequestParam int noseq, NoticeVO noticeVO) {
 
 		noticeVO = service.noticeInfoer(noseq);
 
@@ -78,11 +77,11 @@ public class NoticeController {
 
 	// 수정 (실행)
 	@RequestMapping("/manager/notice/noticeModifyOK")
-	public String noticeModifyOK(@ModelAttribute NoticeVO noticeVO) {
+	public String noticeModifyOK(NoticeVO noticeVO) {
 
 		service.noticeUpdater(noticeVO);
 
-		return "redirect:/manager/notice/noticeList.do?noseq=" + noticeVO.getNoseq();
+		return "redirect:/manager/notice/noticeList.do?";
 	}
 
 	// 삭제 (실행)
