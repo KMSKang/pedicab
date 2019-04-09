@@ -42,7 +42,7 @@
 					 <td>
                       <div class="btn-group">
                         <a class="btn btn-primary" href="/manager/member/view.do?uid=${row.uid}">조회</a>
-                        <a class="btn btn-danger" href="/manager/member/delete.do">삭제</a>
+                        <a class="btn btn-danger" href="/manager/member/delete.do?uid=${row.uid}">삭제</a>
                       </div>
                     </td>
 				  </tr>

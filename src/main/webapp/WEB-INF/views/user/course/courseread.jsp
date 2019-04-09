@@ -99,7 +99,7 @@
 					</form>
 				</div>
 				<div class="col-md- order-md-last d-flex">
-					<form class="bg-black p-5">
+					<form class="bg-black p-5" action="/user/reserve/userreserve" method="post">
 						<div class="form-group">
 							<h1>예약하기</h1>
 						</div>
@@ -107,12 +107,12 @@
 						<div class="form-group">
 							<label style="color: black" for="rtime">시간선택</label> <br> <select
 								name="rtime" id="rtime" class="form-control">
-								<option value="10:00">10:00~11:00</option>
-								<option value="11:00">11:00~12:00</option>
-								<option value="12:00">12:00~13:00</option>
-								<option value="13:00">13:00~14:00</option>
-								<option value="14:00">15:00~16:00</option>
-								<option value="15:00">17:00~18:00</option>
+								<option value="10시">10:00~11:00</option>
+								<option value="11시">11:00~12:00</option>
+								<option value="12시">12:00~13:00</option>
+								<option value="13시">13:00~14:00</option>
+								<option value="14시">15:00~16:00</option>
+								<option value="15시">17:00~18:00</option>
 							</select>
 						</div>
 						<hr>
@@ -123,11 +123,16 @@
 						<hr>
 						<div class="form-group">
 							<label style="color: black">계좌번호</label><input type="text"
-								class="form-control" name="rbank" id="rbank">
+								class="form-control" name="raccount" id="raccount">
 						</div>
 						<div class="form-group">
 							<label style="color: black">요청사항</label><input type="text"
 								class="form-control" name="rmemo" id="rmemo">
+						</div>
+						<div class="form-group" style="display:none;">
+						<label style="color: black">요청사항</label>
+						<input type="text" class="form-control" name="uid" id="useq" value="${sessionScope.uid}">
+						<input type="text" class="form-control" name="cseq" id="cseq" value="${course.cseq }">
 						</div>
 						<div class="form-group">
 						 <input type="submit" value="에약하기" class="btn btn-primary py-3 px-5">
