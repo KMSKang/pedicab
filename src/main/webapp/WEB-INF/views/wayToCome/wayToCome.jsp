@@ -5,56 +5,75 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<%@ include file="../commons/indexbg.jsp" %>
 <style>
-* {
-	margin: 0px;
-	padding: 0px;
-}
-
-#map{
-position: absolute;
-}
-
-#right{
-position: absolute;
-margin-left: 550px;
-}
+	
 </style>
 
 </head>
 <body>
 <%@ include file="../commons/Header.jsp" %>
-	<p>오시는길</p>
-	
-	
-	
-	<div id="right">
-		<p>(주)아띠이야기</p>
-		<br>
-		<p>
-		대표이사<br>원정호
-		</p>
-		<br>
-		<p>
-		사업자 등록번호<br>123-456-7890
-		</p>
-		<br>
-		<p>
-		주소<br>서울시 강남구 봉은사로 443
-		</p>
-		<br>
-		<p>제휴 문의</p>
-		<p>Tel ) 010-123-4567</p>
+
+<div class="hero-wrap js-fullheight"
+		style="background-image: url('/resources/imagesu/bg_1.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+		<div
+			class="row no-gutters slider-text js-fullheight align-items-center justify-content-end"
+			data-scrollax-parent="true">
+			<div class="col-md-7 ftco-animate mt-5"
+				data-scrollax=" properties: { translateY: '70%' }">
+				<h1 class="mb-4"
+					data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">YOUR
+					GUIDE, YOUR FRIEND</h1>
+				<p class="mb-4"
+					data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">"COMING
+					TOGETHER IS A BEGINNING, KEEPING TOGETHER IS A PROCESS, WORKING
+					TOGETHER IS A SUCCESS"</p>
+			</div>
+		</div>
 	</div>
+</div>
 
-
-	<!-- 자바 스크립트 -->
-	
-	<div id="map" style="width:500px;height:500px;"></div>
-	
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cc84e86d65eee9754a6074c7329a9302&libraries=services"></script>
-	<script>
+<section class="ftco-section">
+	<div class="container" >
+		<div class="row">
+			<div class="col-md-12" style="padding:0px;">
+				<h2>오시는 길</h2>
+			<hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2 col-lg-8" id="map" style="margin-right: 20px; width:300px; height: 500px;">
+			</div>
+			<div class="col-md-2" style="float: right;">
+				<p>(주)아띠이야기</p>
+				<br>
+				<p>
+				대표이사<br>원정호
+				</p>
+				<br>
+				<p>
+				사업자 등록번호<br>123-456-7890
+				</p>
+				<br>
+				<p>
+				주소<br>서울시 강남구 봉은사로 443
+				</p>
+				<br>
+				<p>제휴 문의</p>
+				<p>Tel ) 010-123-4567</p>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="ftco-section">
+<%@ include file="../commons/footer.jsp" %>
+</section>
+<!-- 자바 스크립트 -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cc84e86d65eee9754a6074c7329a9302&libraries=services"></script>
+<script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = {
         center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
@@ -90,7 +109,7 @@ geocoder.addressSearch('서울 종로구 종로 69 YMCA빌딩 7층', function(re
         // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
         map.setCenter(coords);
     } 
-});    
+});
 </script>
 </body>
 </html>
