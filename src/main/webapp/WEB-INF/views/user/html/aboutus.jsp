@@ -40,6 +40,7 @@
 					<img src="/resources/imagesu/aboutus_1.jpg" class="img-fluid">
 				</div>
 			</div>
+			<br><br>
 			<div class="row">
 				<div class="col-md-12 heading-section text-center ftco-animate">
 					<h2 style="font-size: 14px; text-align: center">
@@ -50,17 +51,22 @@
 					</h2>
 				</div>
 			</div>
+			<br><br>
 
 			<div class="row">
-				<div class="">
+			<div class="col-md-3"></div>
+				<div class="col-md-6">
 					<img src="/resources/imagesu/aboutus_2.jpg" class="img-fluid">
 				</div>
+			<div class="col-md-3"></div>
 			</div>
+			<br><br>
 			<div class="row">
 				<div class="col-md-12 heading-section text-center ftco-animate">
 					<h2 style="color: #01569e; font-weight: bold">행복을 달리다</h2>
 				</div>
 			</div>
+			<br><br>
 			<div class="row">
 				<div class="col-md-12 heading-section text-center ftco-animate">
 					<h2 style="font-size: 14px">“미국 유학생활을 마친 뒤 한국에 돌아와 외국계 금융회사를
@@ -73,6 +79,7 @@
 						과거와 현재, 사람과 사람을 이어주는 존재라고 생각해요.”</h2>
 				</div>
 			</div>
+			<br><br>
 			<div class="row">
 				<div class="col-md-12 heading-section text-center ftco-animate">
 					<h2 style="color: #01569e; font-weight: bold">
