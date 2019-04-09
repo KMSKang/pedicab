@@ -42,13 +42,19 @@
                   <div class="form-group">
                     <label for="sphone" class="control-label col-lg-2">폰번호<span class="required">*</span></label>
                     <div class="col-lg-10">
-                      <input class="form-control" id="sphone" name="sphone" min="5" type="text" required />
+                      <input class="form-control" id="sphone" name="sphone" min="5" type="text" required placeholder="${staff.sphone }" />
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="snickname" class="control-label col-lg-2">닉네임<span class="required">*</span></label>
                     <div class="col-lg-10">
-                      <input class="form-control" id="snickname" name="snickname" type="text" required />
+                      <input class="form-control" id="snickname" name="snickname" type="text" required placeholder="${staff.snickname }" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="simg" class="control-label col-lg-2">현재 이미지<span class="required">*</span></label>
+                    <div class="col-lg-10">
+                    	<img src="/uploadFile/staffphoto/${staff.simg }" style="widht:50px; height:50px;">
                     </div>
                   </div>
                   <div class="form-group">
