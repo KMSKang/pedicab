@@ -37,18 +37,18 @@
             </header>
             <div class="panel-body">
               <div class="form">
-                <form class="form-validate form-horizontal" id="feedback_form"
-                  method="post" action="/staff/smodify" enctype="multipart/form-data">
+                <form class="form-validate form-horizontal" action="/staff/smodify" id="feedback_form"
+                  method="post" enctype="multipart/form-data">
                   <div class="form-group">
                     <label for="sphone" class="control-label col-lg-2">폰번호<span class="required">*</span></label>
                     <div class="col-lg-10">
-                      <input class="form-control" id="sphone" name="sphone" min="5" type="text" required placeholder="${staff.sphone }" />
+                      <input class="form-control" id="sphone" name="sphone" min="5" type="text" required />
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="snickname" class="control-label col-lg-2">닉네임<span class="required">*</span></label>
                     <div class="col-lg-10">
-                      <input class="form-control" id="snickname" name="snickname" type="text" required placeholder="${staff.snickname }" />
+                      <input class="form-control" id="snickname" name="snickname" type="text" required />
                     </div>
                   </div>
                   <div class="form-group">
