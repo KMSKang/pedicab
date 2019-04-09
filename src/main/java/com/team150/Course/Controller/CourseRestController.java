@@ -31,4 +31,5 @@ public class CourseRestController {
 		
 		return result == 0 ? "fail" : "success";
 	}
+	
 }
