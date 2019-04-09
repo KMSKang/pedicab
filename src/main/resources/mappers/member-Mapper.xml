@@ -32,13 +32,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 															<!-- #{DTO에 적어둔 변수명과 일치해야함} -->
 	</insert>
 	
-	<delete id="remove">
+	<delete id="remove" parameterType="string">
 	delete from User where uid=#{uid}
 	</delete>
 	
 	<update id = "modify">
 	update User set  upwd=#{upwd}, uname=#{uname}, uimg=#{uimg}, uymd=#{uymd}, ugender=#{ugender}, uphone=#{uphone} where uid=#{uid}
 	</update>
+	
+	<select id="session" resultType="int">
+	select useq from User where uid=#{uid}
+	</select>
 	
 	
 </mapper>

@@ -15,7 +15,7 @@
 	</select>
 	
 	<update id="modify">
-		UPDATE staff SET sphone = #{ sphone }, snickname = #{ snickname }, simg = #{simg }   
+		UPDATE staff SET sphone = #{sphone}, snickname = #{snickname}, simg = #{simg}    
 		WHERE sseq = #{ sseq }
 	</update>
 	

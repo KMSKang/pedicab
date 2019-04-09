@@ -62,4 +62,8 @@ public class MemberDAOImpl implements MemberDAO {
 		//리천값이 1이면 true, 0이면 false 
 		return result; 
 		}
+	@Override
+	public int session(String uid) {
+		return sqlSession.selectOne("member.session", uid);
+	}
 	}
