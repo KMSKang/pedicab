@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 
-	<!-- 등록 -->
+	<!-- 등록 (실행) -->
 	<insert id="reviewCreate" parameterType="com.team150.Review.Model.ReviewVO">
 		INSERT INTO practice (reemail, rephoto, recontent, redate)
 		value ( #{reemail}, #{rephoto}, #{recontent}, now() )
@@ -14,44 +14,72 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	
-	<!-- 리뷰 조회 -->
+	<!-- 리뷰 조회 (페이지)-->
 	<select id="reviewListAll" resultType="com.team150.Review.Model.ReviewVO">
 		SELECT * FROM practice
 	</select>
 	
 	
 	
-	<!-- 리뷰 상세, 리뷰 수정 -->
+	<!-- 리뷰 상세, 리뷰 수정 (페이지) -->
 	<select id="reviewSelectOne" resultType="com.team150.Review.Model.ReviewVO">
 		SELECT * FROM practice where reseq=#{reseq}
 	</select>
 	
 	
 	
-	<!-- 리뷰 수정 -->
+	<!-- 리뷰 수정 (실행) -->
 	<update id="reviewUpdate" parameterType="com.team150.Review.Model.ReviewVO">
 		UPDATE practice	SET reemail = #{reemail}, rephoto = #{rephoto}, recontent = #{recontent} WHERE reseq = ${reseq}
 	</update>
 	
 
 	
-	<!-- 리뷰 삭제 -->
+	<!-- 리뷰 삭제 (실행) -->
 	<delete id="reviewDelete" parameterType="com.team150.Review.Model.ReviewVO">
 		DELETE FROM practice WHERE reseq=#{reseq}
 	</delete> 
 	
 	
 	
-	<!-- 답글 등록 -->
+	<!-- 답글 등록 (실행)-->
 	<insert id="commentCreate" parameterType="com.team150.Review.Model.CommentVO">
-		INSERT INTO practice1 (cocontent, reseq) 
-		value ( #{cocontent}, #{reseq} )
+		INSERT INTO practice1 (cocomment, codate, reseq) 
+		value ( #{cocomment}, now(), #{reseq} )
 	</insert>
 	
 	
 	
-	<!-- 답글 조회 -->
+	<!-- 답글 조회 (페이지) -->
 	<select id="listAllComment" resultType="com.team150.Review.Model.CommentVO">
 		SELECT * FROM practice1
 	</select>
+	
+	
+	
+	<!-- 답글 수정 (페이지) -->
+	<select id="commentSelectOne" resultType="com.team150.Review.Model.CommentVO">
+		SELECT * FROM practice1 where coseq=#{coseq}
+	</select>
+	
+	
+	
+	<!-- 답글 수정 (실행) -->
+	<update id="commentUpdate" parameterType="com.team150.Review.Model.CommentVO">
+		UPDATE practice1 SET cocomment = #{cocomment} WHERE coseq = #{coseq}
+	</update>
+	
+	
+	
+	<!-- 답글 삭제 (실행) -->
+	<delete id="commentDelete" parameterType="com.team150.Review.Model.CommentVO">
+		DELETE FROM practice1 WHERE coseq=#{coseq}
+	</delete>
+	
+	
+	
+	<!-- 답글 + 댓글 삭제 (실행) -->
+	<delete id="allDelete" parameterType="com.team150.Review.Model.CommentVO">
+		DELETE FROM practice1 WHERE reseq = #{reseq}
+	</delete>
 </mapper>

@@ -11,6 +11,11 @@ table {
 	text-align: center;
 	color: black;
 }
+
+#reviewImg {
+	width: 200px;
+	height: 200px;
+}
 </style>
 <%@ include file="../commons/indexbg.jsp"%>
 </head>
@@ -59,7 +64,8 @@ table {
 						<td>${reviewInfo.reemail}</td>
 						<td><c:forEach items="${reviewList}" var="reviewList">
 								<c:if test="${reviewInfo.reseq == reviewList.reseq}">
-									<img src="uploadFile\memberPhoto/${reviewList.rephoto}" />
+									<img src="/uploadFile/reviewPhoto/${reviewList.rephoto}"
+										id="reviewImg">
 								</c:if>
 							</c:forEach></td>
 						<td>${reviewInfo.recontent}</td>
@@ -67,9 +73,6 @@ table {
 					</tr>
 				</tbody>
 			</table>
-
-
-
 		</div>
 	</section>
 	<%@ include file="../commons/footer.jsp"%>

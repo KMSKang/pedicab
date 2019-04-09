@@ -14,7 +14,7 @@
 					</a></li>
 					<li class="active"><a class="" href="#"><span>Reserve</span>
 					</a></li>
-					<li class="active"><a class="" href="#"><span>Review</span>
+					<li class="active"><a class="" href="/manager/review/reviewList"><span>Review</span>
 					</a></li>
 					<li class="active"><a class="" href="/manager/notice/noticeList"><span>Notice</span>
 					</a></li>

@@ -34,7 +34,6 @@
 		<div class="container">
 			<form action="/question/questionWriteOK" method="POST">
 
-				<h3 class="mb-5"></h3>
 				<div class="form-group">
 					<label for="email">작성자 *</label> <input type="text"
 						class="form-control" name="quemail" id="email"
@@ -44,7 +43,7 @@
 				<div class="form-group">
 					<label for="name">제목 *</label> <input type="text"
 						class="form-control" name="qutitle" id="name"
-						placeholder="제목을 입력해주세요.">
+						placeholder="제목을 입력해주세요." style="width: 300px !important;">
 				</div>
 
 				<div class="form-group">
@@ -61,7 +60,6 @@
 				</div>
 			</form>
 		</div>
-
 	</section>
 	<%@ include file="../commons/footer.jsp"%>
 </body>

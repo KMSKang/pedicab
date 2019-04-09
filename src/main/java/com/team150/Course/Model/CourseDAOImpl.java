@@ -7,6 +7,9 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.team150.Review.Model.CommentVO;
+import com.team150.Review.Model.ReviewVO;
+
 @Repository
 public class CourseDAOImpl implements CourseDAO {
 
@@ -57,4 +60,15 @@ public class CourseDAOImpl implements CourseDAO {
 	public List<FavoriteVO> selectListfavorite() {
 		return session.selectList(namespace + ".selectListfavorite");
 	}
+
+	// 답글 조회 (실행)
+	public List<CommentVO> listAllComment() {
+		return session.selectList(namespace + ".listAllComment");
+	}
+
+	// 리뷰 조회 (실행)
+	public List<ReviewVO> reviewListAll() {
+		return session.selectList(namespace + ".reviewListAll");
+	}
+
 }

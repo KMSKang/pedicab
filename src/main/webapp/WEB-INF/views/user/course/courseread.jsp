@@ -6,6 +6,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+#reviewImg {
+	width: 200px;
+	height: 200px;
+}
+
+table {
+	text-align: center;
+	color: black;
+}
+
+table a {
+	color: black;
+}
+</style>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -130,8 +145,46 @@
 								class="form-control" name="rmemo" id="rmemo">
 						</div>
 						<div class="form-group">
-						 <input type="submit" value="에약하기" class="btn btn-primary py-3 px-5">
+							<input type="submit" value="에약하기"
+								class="btn btn-primary py-3 px-5">
 						</div>
+					</form>
+				</div>
+
+				<div class="col-md- order-md-last d-flex">
+					<form class="bg-light p-5 contact-form">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>번호</th>
+									<th>작성자</th>
+									<th>사진</th>
+									<th>리뷰</th>
+									<th>작성일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${reviewList}" var="reviewList">
+									<tr>
+										<td>${reviewList.reseq}</td>
+										<td>${reviewList.reemail}</td>
+										<td><img
+											src="/uploadFile/reviewPhoto/${reviewList.rephoto}"
+											id="reviewImg"></td>
+										<td><a
+											href="/review/reviewInfo.do?reseq=${reviewList.reseq}">${reviewList.recontent}<br>
+												<c:forEach items="${commentList}" var="commentList">
+													<c:if test="${commentList.reseq == reviewList.reseq}">
+														<br>---------답글------------<br>${commentList.cocomment}<br>
+													</c:if>
+												</c:forEach>
+										</a></td>
+										<td>${reviewList.redate}</td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+
 					</form>
 				</div>
 			</div>
