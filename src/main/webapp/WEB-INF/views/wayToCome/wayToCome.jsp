@@ -13,28 +13,19 @@
 </head>
 <body>
 <%@ include file="../commons/Header.jsp" %>
-
-<div class="hero-wrap js-fullheight"
-		style="background-image: url('/resources/imagesu/bg_1.jpg');"
+<section class="hero-wrap hero-wrap-2 js-fullheight"
+		style="background-image: url('/resources/imagesu/bg_3.jpg');"
 		data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
-		<div
-			class="row no-gutters slider-text js-fullheight align-items-center justify-content-end"
-			data-scrollax-parent="true">
-			<div class="col-md-7 ftco-animate mt-5"
-				data-scrollax=" properties: { translateY: '70%' }">
-				<h1 class="mb-4"
-					data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">YOUR
-					GUIDE, YOUR FRIEND</h1>
-				<p class="mb-4"
-					data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">"COMING
-					TOGETHER IS A BEGINNING, KEEPING TOGETHER IS A PROCESS, WORKING
-					TOGETHER IS A SUCCESS"</p>
+			<div
+				class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate pb-5 text-center">
+					<h1 class="mb-3 bread">WayToCome</h1>
+				</div>
 			</div>
 		</div>
-	</div>
-</div>
+</section>
 
 <section class="ftco-section">
 	<div class="container" >
