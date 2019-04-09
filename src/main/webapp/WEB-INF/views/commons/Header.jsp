@@ -28,7 +28,7 @@
 						<a class="dropdown-item" href="/notice/noticeMain">notice</a> 
 						<a class="dropdown-item" href="/question/questionMain">Q&A</a> 
 						<a class="dropdown-item" href="/question/commonsquestion">자주묻는질문</a>
-						<a class="dropdown-item" href="#">WaytoCome</a>
+						<a class="dropdown-item" href="/wayToCome/wayToCome">WaytoCome</a>
 					</div></li>
 				<c:choose>
 					<c:when test="${sessionScope.uid==null }">
