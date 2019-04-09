@@ -40,7 +40,7 @@ public class StaffController {
 	}
 	
 	// 라이더 소개 이미지 리스트 (유저)
-	@RequestMapping(value = "/slistAllU", method = RequestMethod.GET)
+	@RequestMapping(value = "/staff/slistAllU", method = RequestMethod.GET)
 	public String staffListU(Model model) throws Exception {
 		model.addAttribute("list", staffService.listAll());
 		return "staff/slistAllU";
