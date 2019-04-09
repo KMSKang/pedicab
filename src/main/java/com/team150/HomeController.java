@@ -36,7 +36,15 @@ public class HomeController {
 	public String managerhome() {
 		return"managerhome";
 	}
+
 	@RequestMapping(value="/user/html/aboutus",method=RequestMethod.GET)
+
+	@RequestMapping(value="/question/commonsquestion",method=RequestMethod.GET)
+	public String commonsquestion() {
+		return"/question/commonsquestion";
+	}
+
+
 
 	public String aboutus() {
 		return "/user/html/aboutus";
