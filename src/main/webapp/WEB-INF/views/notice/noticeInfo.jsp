@@ -52,15 +52,22 @@ table {
 
 	<section class="ftco-section bg-light">
 		<div class="container">
-			<table class="table table-hover">
 
+
+			<label>제목</label> <input class="form-control" type="text" placeholder="${Info.notitle}" readonly>
+
+			<label style="margin-top:3%;">내용</label> <textarea name="qucontent" id="message" cols="50" rows="20" class="form-control" placeholder="${Info.nocontent}" readonly></textarea>
+
+
+
+
+			<table class="table table-hover">
 				<tr>
 					<th>번호</th>
 					<th>제목</th>
 					<th>내용</th>
 					<th>작성일</th>
 				</tr>
-
 				<tr>
 					<td>${Info.noseq}</td>
 					<td>${Info.notitle}</td>

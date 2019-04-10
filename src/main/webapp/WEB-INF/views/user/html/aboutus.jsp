@@ -32,7 +32,7 @@
 		<div class="container">
 			<div class="row justify-content-center pb-5">
 				<div class="col-md-12 heading-section text-center ftco-animate">
-					<h2 class="mb-4">YOUR GUIDE, YOUR FRIEND</h2>
+					<h2 class="mb-4" style="color: #01569e;">YOUR GUIDE, YOUR FRIEND</h2>
 				</div>
 			</div>
 			<div class="row">
@@ -86,6 +86,7 @@
 					<h2 style="font-size: 14px; text-align: center">- HENRY FORD</h2>
 				</div>
 			</div>
+			<br><br>
 
 		</div>
 

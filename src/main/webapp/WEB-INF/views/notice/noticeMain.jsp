@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>공지사항</title>
 <style>
 table {
 	text-align: center;

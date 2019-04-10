@@ -2,8 +2,6 @@
 	pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <!DOCTYPE html>
 <html lang="UTF-8">
@@ -13,7 +11,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 	$(document).ready(function() {
-		$('#quseq').val('${questionInfo.quseq}');
+		$('#reseq').val('${reviewInfo.reseq}');
 	});
 </script>
 <style>
@@ -22,16 +20,16 @@
 }
 
 table {
-	text-align: center;
 	color: black;
+	text-align: center;
 }
 
 table th {
 	text-align: center;
 }
 
-table tbody #td {
-	line-height: 2.428571;
+table a {
+	color: black;
 }
 
 #h1 {
@@ -52,9 +50,9 @@ table tbody #td {
 			<section class="wrapper">
 				<div class="row">
 					<div class="col-lg-12">
-						<h3 class="page-header">Q & A</h3>
+						<h3 class="page-header">Review</h3>
 
-						<h1 id="h1">문의 리스트</h1>
+						<h1 id="h1">리뷰 리스트</h1>
 
 						<hr id="hr">
 
@@ -62,55 +60,44 @@ table tbody #td {
 							<thead>
 								<tr>
 									<th>No</th>
-									<th>Title</th>
-									<th>Content</th>
 									<th>Write</th>
+									<th>Image</th>
+									<th>Review</th>
 									<th>Date</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td id="td">${questionInfo.quseq}</td>
-									<td id="td"><a
-										href="/question/questionInfo.do?quseq=${questionInfo.quseq}"
-										id="td_title">${questionInfo.qutitle}</a></td>
-									<td id="td">${questionInfo.qucontent}</td>
-									<td id="td">${questionInfo.quemail}</td>
-									<td id="td">${questionInfo.qudate}</td>
-
+									<td>${reviewInfo.reseq}</td>
+									<td>${reviewInfo.reemail}</td>
+									<td><img
+										src="/uploadFile/reviewPhoto/${reviewInfo.rephoto}"
+										id="reviewImg" style="width: 100px; height: 100px;"></td>
+									<td>${reviewInfo.recontent}</td>
+									<td>${reviewInfo.redate}</td>
 								</tr>
 							</tbody>
 						</table>
-
 						<br> <br> <br> <br>
 						<h1 id="h1">답변 작성</h1>
 						<hr id="hr">
-						
 						<section class="panel">
 							<header class="panel-heading"> Answer Write </header>
 							<div class="panel-body">
 								<div class="form">
-									<form action="/manager/question/answerWriteOK"
+									<form action="/manager/review/commentWriteOK"
 										class="form-validate form-horizontal" id="feedback_form"
 										method="POST">
-										<div class="form-group">
-											<label for="cname" class="control-label col-lg-2">writer
-											</label>
-											<div class="col-lg-10">
-												<input class="form-control" id="cname" name="naname"
-													minlength="5" type="text" placeholder="작성자를 작성해주세요" required />
-											</div>
-										</div>
 
 										<div class="form-group">
 											<label for="ccomment" class="control-label col-lg-2">Content</label>
 											<div class="col-lg-10">
 												<textarea class="form-control " id="ccomment"
-													name="nacontent" required style="height: 250px;" placeholder="답변을 작성해주세요"></textarea>
+													name="cocomment" required style="height: 250px;" placeholder="답변을 작성해주세요"></textarea>
 											</div>
 										</div>
 
-										<input type="hidden" id="quseq" name="quseq">
+										<input type="hidden" id="reseq" name="reseq">
 
 										<div class="form-group">
 											<div class="col-lg-offset-2 col-lg-10">
@@ -122,12 +109,12 @@ table tbody #td {
 								</div>
 							</div>
 						</section>
+
 					</div>
 				</div>
 			</section>
 		</section>
 	</section>
 	<%@include file="../../commons/mjs.jsp"%>
-
 </body>
 </html>

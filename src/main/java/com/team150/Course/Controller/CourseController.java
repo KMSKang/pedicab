@@ -20,9 +20,9 @@ public class CourseController {
 	@Inject
 	CourseService service;
 
-	//=================관리자================================//
-	@RequestMapping(value="/manager/course/courselist", method=RequestMethod.GET)
-	public void clistAll(Model model) throws Exception{
+	// =================관리자================================//
+	@RequestMapping(value = "/manager/course/courselist", method = RequestMethod.GET)
+	public void clistAll(Model model) throws Exception {
 		model.addAttribute("list", service.listAll());
 	}
 
@@ -30,6 +30,7 @@ public class CourseController {
 	public String coursewrite() throws Exception {
 		return "/manager/course/coursewrite";
 	}
+
 	@RequestMapping(value = "/manager/course/coursewrite", method = RequestMethod.POST)
 	public String cregisterPOST(CourseVO vo, RedirectAttributes rttr, HttpServletRequest request) throws Exception {
 		service.regist(vo, request);
@@ -58,16 +59,21 @@ public class CourseController {
 		return "redirect:/manager/course/courselist";
 	}
 
-	//=======================유저=============================//
-	
-	@RequestMapping(value = "/user/course/courselist",method=RequestMethod.GET)
+	// =======================유저=============================//
+
+	@RequestMapping(value = "/user/course/courselist", method = RequestMethod.GET)
 	public void uclistAll(Model model) throws Exception {
 		model.addAttribute("list", service.listAll());
 	}
 
-	@RequestMapping(value = "/user/course/courseread",method=RequestMethod.GET)
+	@RequestMapping(value = "/user/course/courseread", method = RequestMethod.GET)
 	public void ucread(@RequestParam("cseq") int cseq, Model model) throws Exception {
 		model.addAttribute("course", service.read(cseq));
+		// 답글 조회
+		model.addAttribute("commentList", service.commentSelecter());
+		// 리뷰 조회
+		model.addAttribute("reviewList", service.reviewSelecter());
+
 	}
 
 	// 즐겨찾기 조회(페이지)
@@ -79,7 +85,7 @@ public class CourseController {
 		return "/favorite/favorite";
 
 	}
-	
-	//커밋
+
+	// 커밋
 
 }

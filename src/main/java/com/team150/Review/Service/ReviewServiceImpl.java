@@ -59,7 +59,7 @@ public class ReviewServiceImpl implements ReviewService {
 	public int reviewUpdater(ReviewVO reviewVO, HttpServletRequest request) throws Exception {
 
 		String imgName = "";
-		String uploadUri = "/uploadFile/memberPhoto";
+		String uploadUri = "/uploadFile/reviewPhoto";
 		String dir = request.getSession().getServletContext().getRealPath(uploadUri);
 
 		if (!reviewVO.getPhotoFile().isEmpty()) {
@@ -78,12 +78,14 @@ public class ReviewServiceImpl implements ReviewService {
 		return dao.reviewDelete(reseq);
 	}
 
+//	----------------------------------------------------------------------------
+
+//	관리자
+
 	// 답글 등록 (실행)
-	public void commentRegister(CommentVO commentVO, int reseq) {
+	public void commentRegister(CommentVO commentVO) {
 
-		System.out.println("reseq : " + reseq);
-
-		int result = dao.commentCreate(commentVO, reseq);
+		int result = dao.commentCreate(commentVO);
 
 		if (result == 0) {
 			System.out.println("Join Fail!!");
@@ -97,4 +99,23 @@ public class ReviewServiceImpl implements ReviewService {
 		return dao.listAllComment();
 	}
 
+	// 답글 수정 (페이지)
+	public CommentVO commentInfoer(int coseq) {
+		return dao.commentSelectOne(coseq);
+	}
+
+	// 답글 수정 (실행)
+	public int commentUpdater(CommentVO commentVO) {
+		return dao.commentUpdate(commentVO);
+	}
+
+	// 답글 삭제 (실행)
+	public int commentDeleter(int coseq) {
+		return dao.commentDelete(coseq);
+	}
+
+	// 답글 + 댓글 삭제 (실행)
+	public int allDeleter(int reseq) {
+		return dao.allDelete(reseq);
+	}
 }

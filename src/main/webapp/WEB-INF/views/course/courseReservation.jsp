@@ -159,6 +159,7 @@ table a {
 					<hr>
 					<div>
 						<h1>리뷰</h1>
+						<hr>
 					</div>
 				</div>
 			</div>
