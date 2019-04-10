@@ -68,7 +68,7 @@
 								</div>
 								<div class="form-group">
 									<label for="cinfo">맵데이터 (JSON)</label>
-									<textarea name="cinfo" id="cmap" class="form-control"
+									<textarea name="cmap" id="cmap" class="form-control"
 										placeholder="Enter Courseinfo" value=""></textarea>
 								</div>
 								<div class="form-group">
