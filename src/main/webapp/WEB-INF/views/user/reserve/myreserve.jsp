@@ -24,6 +24,10 @@
 	</section>
 	<section class="ftco-section bg-light">
 		<div class="container">
+		
+		<a href="/review/reviewWrite.do">리뷰작성</a>
+		<a href="review/reviewWrite.do"></a>
+		
 			<h1>${sessionScope.uid}님의예약</h1>
 			<div class="row">
 			<br>

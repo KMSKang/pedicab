@@ -14,6 +14,10 @@ table {
 #a_management {
 	color: black;
 }
+
+.ftco-section {
+	padding: 50px 10px 150px 10px !important;
+}
 </style>
 
 <%@ include file="../commons/indexbg.jsp"%>

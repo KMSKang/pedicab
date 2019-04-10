@@ -6,6 +6,9 @@ public interface QuestionDAO {
 
 	// 문의하기 리스트 (페이지)
 	public List<QuestionVO> questionListAll();
+	
+	// 1:1 문의하기 리스트 (실행)
+	public List<QuestionVO> questionListAllUid(String uid);
 
 	// 문의하기 등록 (실행)
 	public int questionCreate(QuestionVO questionVO);

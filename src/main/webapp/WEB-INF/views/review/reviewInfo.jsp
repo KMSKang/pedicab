@@ -13,8 +13,20 @@ table {
 }
 
 #reviewImg {
-	width: 200px;
-	height: 200px;
+	width: 400px;
+	height: 400px;
+}
+
+#reemail::placeholder {
+	color: #666;
+}
+
+recontent::placeholder {
+	color:
+}
+
+.ftco-section {
+	padding: 50px 10px 150px 10px !important;
 }
 </style>
 <%@ include file="../commons/indexbg.jsp"%>
@@ -38,8 +50,21 @@ table {
 
 	<section class="ftco-section bg-light">
 		<div class="container">
-			<a href="commentWrite.do?reseq=${reviewInfo.reseq}">답글</a>
-			<div class="row" style="margin-bottom: 1%; margin-left: 1%;">
+
+			<div class="row">
+				<div class="col-4"></div>
+				<div class="col-8">
+					<c:forEach items="${reviewList}" var="reviewList">
+						<c:if test="${reviewInfo.reseq == reviewList.reseq}">
+							<img src="/uploadFile/reviewPhoto/${reviewList.rephoto}"
+								id="reviewImg" class="img-fluid rounded-circle">
+						</c:if>
+					</c:forEach>
+					<br> <br> <br> <br>
+				</div>
+			</div>
+
+			<div class="row" style="margin-bottom: 1%; margin-left: 20%;">
 				<div class="col-10"></div>
 				<div class="col-2">
 					<a class="btn btn-outline-dark"
@@ -48,31 +73,19 @@ table {
 						href="reviewDelete.do?reseq=${reviewInfo.reseq}">삭제</a>
 				</div>
 			</div>
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>번호</th>
-						<th>작성자</th>
-						<th>사진</th>
-						<th>리뷰</th>
-						<th>작성일</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>${reviewInfo.reseq}</td>
-						<td>${reviewInfo.reemail}</td>
-						<td><c:forEach items="${reviewList}" var="reviewList">
-								<c:if test="${reviewInfo.reseq == reviewList.reseq}">
-									<img src="/uploadFile/reviewPhoto/${reviewList.rephoto}"
-										id="reviewImg">
-								</c:if>
-							</c:forEach></td>
-						<td>${reviewInfo.recontent}</td>
-						<td>${reviewInfo.redate}</td>
-					</tr>
-				</tbody>
-			</table>
+
+			<label style="color: black;">작성자　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　${reviewInfo.redate}</label> <input
+				class="form-control" id="reemail" type="text"
+				placeholder="${reviewInfo.reemail}" readonly> <label
+				style="margin-top: 3%; color: black;">내용</label>
+			<textarea id="recontent" cols="50" rows="20" class="form-control"
+				placeholder="${reviewInfo.recontent}" readonly></textarea>
+
+
+
+
+
+
 		</div>
 	</section>
 	<%@ include file="../commons/footer.jsp"%>
