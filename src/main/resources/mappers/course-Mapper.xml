@@ -48,4 +48,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectListfavorite" resultType="com.team150.Course.Model.FavoriteVO">
 		SELECT * FROM favorite
 	</select>
+	
+	
+	
+	<!-- 답글 조회 -->
+	<select id="listAllComment" resultType="com.team150.Review.Model.CommentVO">
+		SELECT * FROM practice1
+	</select>
+	
+	
+	
+	<!-- 리뷰 조회 -->
+	<select id="reviewListAll" resultType="com.team150.Review.Model.ReviewVO">
+		SELECT * FROM practice
+	</select>
+	
 </mapper>

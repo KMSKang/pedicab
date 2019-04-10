@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.team150.Course.Model.CourseVO;
 import com.team150.Course.Model.FavoriteVO;
+import com.team150.Review.Model.CommentVO;
+import com.team150.Review.Model.ReviewVO;
 
 public interface CourseService {
 
@@ -27,5 +29,10 @@ public interface CourseService {
 	
 	// 즐겨찾기 조회
 	public List<FavoriteVO> favoriteSelecter();
-
+	
+	// 답글 조회
+	public List<CommentVO> commentSelecter();
+	
+	// 리뷰 조회
+	public List<ReviewVO> reviewSelecter();
 }

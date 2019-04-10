@@ -40,7 +40,7 @@ public class QuestionDAOImpl implements QuestionDAO {
 		return session.delete(namespace + ".questionDelete", quseq);
 	}
 
-	// 문의하기 삭제 (실행)
+	// 문의 + 답변 삭제 (실행)
 	public int allDelete(int quseq) {
 		return session.delete(namespace + ".allDelete", quseq);
 	}

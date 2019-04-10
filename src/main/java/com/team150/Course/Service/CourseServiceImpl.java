@@ -12,6 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.team150.Course.Model.CourseDAO;
 import com.team150.Course.Model.CourseVO;
 import com.team150.Course.Model.FavoriteVO;
+import com.team150.Review.Model.CommentVO;
+import com.team150.Review.Model.ReviewVO;
 
 @Service
 public class CourseServiceImpl implements CourseService {
@@ -86,5 +88,15 @@ public class CourseServiceImpl implements CourseService {
 	// 즐겨찾기 조회
 	public List<FavoriteVO> favoriteSelecter() {
 		return dao.selectListfavorite();
+	}
+
+	// 답글 조회 (페이지)
+	public List<CommentVO> commentSelecter() {
+		return dao.listAllComment();
+	}
+
+	// 리뷰 조회 (페이지)
+	public List<ReviewVO> reviewSelecter() {
+		return dao.reviewListAll();
 	}
 }

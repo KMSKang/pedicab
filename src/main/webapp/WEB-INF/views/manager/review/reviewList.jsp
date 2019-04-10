@@ -21,6 +21,10 @@ table th {
 	text-align: center;
 }
 
+table a {
+	color: black;
+}
+
 #h1 {
 	color: black;
 }
@@ -39,9 +43,9 @@ table th {
 			<section class="wrapper">
 				<div class="row">
 					<div class="col-lg-12">
-						<h3 class="page-header">Q & A</h3>
+						<h3 class="page-header">Review</h3>
 
-						<h1 id="h1">문의 리스트(전체)</h1>
+						<h1 id="h1">리뷰 리스트(전체)</h1>
 
 						<hr id="hr">
 
@@ -49,28 +53,35 @@ table th {
 							<thead>
 								<tr>
 									<th>No</th>
-									<th>Title</th>
-									<th>Content</th>
-									<th>Writer</th>
+									<th>Write</th>
+									<th>Image</th>
+									<th>Review</th>
 									<th>Date</th>
 									<th>Management</th>
 								</tr>
 							</thead>
 							<tbody>
 
-								<c:forEach items="${questionList}" var="questionList">
+								<c:forEach items="${reviewList}" var="reviewList">
 									<tr>
-										<td>${questionList.quseq}</td>
+										<td>${reviewList.reseq}</td>
+										<td>${reviewList.reemail}</td>
+										<td><img
+											src="/uploadFile/reviewPhoto/${reviewList.rephoto}"
+											id="reviewImg" style="width: 100px; height: 100px;"></td>
 										<td><a
-											href="/question/questionInfo.do?quseq=${questionList.quseq}"
-											id="td_title">${questionList.qutitle}</a></td>
-										<td>${questionList.qucontent}</td>
-										<td>${questionList.quemail}</td>
-										<td>${questionList.qudate}</td>
+											href="/review/reviewInfo.do?reseq=${reviewList.reseq}">${reviewList.recontent}<br>
+												<c:forEach items="${commentList}" var="commentList">
+													<c:if test="${commentList.reseq == reviewList.reseq}">
+														<br>---------답글------------<br>${commentList.cocontent}<br>
+													</c:if>
+												</c:forEach>
+										</a></td>
+										<td>${reviewList.redate}</td>
 										<td>
 											<div class="btn-group">
 												<a class="btn btn-warning"
-													href="/manager/question/questionInfo.do?quseq=${questionList.quseq}">Info</a>
+													href="/manager/review/reviewInfo.do?reseq=${reviewList.reseq}">Info</a>
 											</div>
 										</td>
 									</tr>
@@ -84,25 +95,23 @@ table th {
 							<thead>
 								<tr>
 									<th>No</th>
-									<th>Content</th>
-									<th>Name</th>
+									<th>Coment</th>
 									<th>Date</th>
+									<th>reseq
 									<th>Management</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach items="${answerList}" var="answerList">
 									<tr>
-										<td>${answerList.naseq}</td>
-										<td><a
-											href="/question/questionInfo.do?quseq=${answerList.naseq}"
-											id="td_title">${answerList.nacontent}</a></td>
-										<td>${answerList.naname}</td>
-										<td>${answerList.nadate}</td>
+										<td>${answerList.coseq}</td>
+										<td>${answerList.cocomment}</td>
+										<td>${answerList.codate}</td>
+										<td>${answerList.reseq}</td>
 										<td>
 											<div class="btn-group">
 												<a class="btn btn-warning"
-													href="/manager/question/questionInfo.do?quseq=${answerList.quseq}">Info</a>
+													href="/manager/review/reviewInfo.do?reseq=${answerList.reseq}">Info</a>
 											</div>
 										</td>
 									</tr>

@@ -41,13 +41,33 @@ public class ReviewDAOImpl implements ReviewDAO {
 	}
 
 	// 답글 등록 (실행)
-	public int commentCreate(CommentVO commentVO, int reseq) {
+	public int commentCreate(CommentVO commentVO) {
 		return session.update(namespace + ".commentCreate", commentVO);
 	}
 
 	// 답글 조회 (실행)
 	public List<CommentVO> listAllComment() {
 		return session.selectList(namespace + ".listAllComment");
+	}
+
+	// 답글 수정 (페이지)
+	public CommentVO commentSelectOne(int coseq) {
+		return session.selectOne(namespace + ".commentSelectOne", coseq);
+	}
+
+	// 답글 수정 (실행)
+	public int commentUpdate(CommentVO commentVO) {
+		return session.update(namespace + ".commentUpdate", commentVO);
+	}
+
+	// 답글 삭제 (실행)
+	public int commentDelete(int coseq) {
+		return session.delete(namespace + ".commentDelete", coseq);
+	}
+
+	// 답글 + 댓글 삭제 (실행)
+	public int allDelete(int reseq) {
+		return session.delete(namespace + ".allDelete", reseq);
 	}
 
 }

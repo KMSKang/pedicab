@@ -99,7 +99,7 @@ public class QuestionController {
 		return "/manager/question/questionList";
 	}
 
-	// 문의하기 리스트 상세 (페이지)
+	// 문의하기 상세 (페이지)
 	@RequestMapping(value = "/manager/question/questionInfo")
 	public String answerInfo(Model model, @RequestParam int quseq) {
 
@@ -109,9 +109,6 @@ public class QuestionController {
 
 		return "/manager/question/questionInfo";
 	}
-	
-	// 답변하기 리스트 상세 (페이지)
-	
 
 	// 답변하기 등록 (페이지)
 	@RequestMapping(value = "/manager/question/answerWrite")
@@ -158,7 +155,7 @@ public class QuestionController {
 		return "redirect:/manager/question/questionInfo.do?quseq=" + quseq;
 	}
 
-	// 문의하기 삭제 (실행)
+	// 문의+답변 삭제 (실행)
 	@RequestMapping("/question/questionDeleteManager")
 	public String questionDeleteManager(@RequestParam int quseq) {
 

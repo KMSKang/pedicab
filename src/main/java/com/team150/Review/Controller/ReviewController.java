@@ -33,19 +33,7 @@ public class ReviewController {
 
 		service.reviewRegister(reviewVO, request);
 
-		return "redirect:/course/courseReservation.do";
-	}
-
-	// 리스트 (리뷰, 답글) (페이지)
-	@RequestMapping("/course/courseReservation")
-	public String courseReservation(Model model) {
-
-		model.addAttribute("commentList", service.commentSelecter());
-
-		// 리뷰 전체 조회
-		model.addAttribute("reviewList", service.reviewSelecter());
-
-		return "/course/courseReservation";
+		return "redirect:/user/course/courseread.do?cseq=" + "46";
 	}
 
 	// 리뷰 상세 (페이지)
@@ -75,10 +63,10 @@ public class ReviewController {
 	// 리뷰 수정 (실행)
 	@RequestMapping("/review/reviewModifyOK")
 	public String reviewModifyOK(@ModelAttribute ReviewVO reviewVO, HttpServletRequest request) throws Exception {
-
+		System.out.println("수정1");
 		service.reviewUpdater(reviewVO, request);
 
-		return "redirect:/course/courseReservation.do";
+		return "redirect:/review/reviewInfo.do?reseq=" + reviewVO.getReseq();
 	}
 
 	// 리뷰 삭제 (실행)
@@ -87,28 +75,87 @@ public class ReviewController {
 
 		service.reviewDeleter(reseq);
 
-		return "redirect:/course/courseReservation.do";
+		return "redirect:/user/course/courseread.do?cseq=" + "46";
 	}
 
-	// 답글 등록 (페이지)
-	@RequestMapping("/review/commentWrite")
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//	관리자
+
+	// 리뷰 모든 리스트 (페이지)
+	@RequestMapping("/manager/review/reviewList")
+	public String reviewList(Model model) {
+
+		model.addAttribute("reviewList", service.reviewSelecter());
+		model.addAttribute("answerList", service.commentSelecter());
+		
+		return "/manager/review/reviewList";
+	}
+
+	// 리뷰 상세 (페이지)
+	@RequestMapping("/manager/review/reviewInfo")
+	public String reviewInfoManager(Model model, @RequestParam int reseq) {
+
+		model.addAttribute("reviewInfo", service.reviewInfoer(reseq));
+
+		model.addAttribute("answerList", service.commentSelecter());
+
+		return "/manager/review/reviewInfo";
+	}
+
+	// 답글 작성 (페이지)
+	@RequestMapping("/manager/review/commentWrite")
 	public String commentWrite(Model model, @RequestParam int reseq) {
 
 		model.addAttribute("reviewInfo", service.reviewInfoer(reseq));
 
-		// 리뷰 전체 조회
-		model.addAttribute("reviewList", service.reviewSelecter());
-
-		return "/review/commentWrite";
+		return "/manager/review/commentWrite";
 	}
 
-	// 답글 등록 (실행)
-	@RequestMapping(value = "/review/commentWriteOK", method = RequestMethod.POST)
-	public String commentWriteOK(CommentVO commentVO, @RequestParam int reseq) {
+	// 답글 작성 (실행)
+	@RequestMapping(value = "/manager/review/commentWriteOK", method = RequestMethod.POST)
+	public String commentWriteOK(CommentVO commentVO) {
 
-		service.commentRegister(commentVO, reseq);
+		service.commentRegister(commentVO);
 
-		return "redirect:/course/courseReservation.do";
+		return "redirect:/manager/review/reviewInfo.do?reseq=" + commentVO.getReseq();
+	}
+
+	// 답글 수정 (페이지)
+	@RequestMapping("/manager/review/commentModify")
+	public ModelAndView commentModify(CommentVO commentVO, @RequestParam int coseq, @RequestParam int reseq) {
+
+		commentVO = service.commentInfoer(coseq);
+
+		return new ModelAndView("/manager/review/commentModify", "commentVO", commentVO);
+	}
+
+	// 답글 수정 (실행)
+	@RequestMapping("/manager/review/commentModifyOK")
+	public String commentModifyOK(CommentVO commentVO) {
+
+		service.commentUpdater(commentVO);
+
+		return "redirect:/manager/review/reviewInfo.do?reseq=" + commentVO.getReseq();
+	}
+
+	// 답글 삭제(실행)
+	@RequestMapping("/manager/review/commentDelete")
+	public String commentDelete(@RequestParam int coseq, @RequestParam int reseq) {
+
+		service.commentDeleter(coseq);
+
+		return "redirect:/manager/review/reviewInfo.do?reseq=" + reseq;
+	}
+	
+	// 답글 + 댓글 삭제 (실행)
+	@RequestMapping("/manager/review/commentReviewDelete")
+	public String commentReviewDelete(@RequestParam int reseq) {
+		
+		service.reviewDeleter(reseq);
+		service.allDeleter(reseq);
+		
+		return "redirect:/manager/review/reviewList";
 	}
 
 }
