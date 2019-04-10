@@ -38,7 +38,7 @@
 		<div class="row">
 			<div class="col-md-2 col-lg-8" id="map" style="margin-right: 20px; width:300px; height: 500px;">
 			</div>
-			<div class="col-md-2" style="float: right;">
+			<div class="col-md-2" style="color: black;">
 				<p>(주)아띠이야기</p>
 				<br>
 				<p>

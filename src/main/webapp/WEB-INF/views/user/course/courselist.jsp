@@ -52,6 +52,7 @@
 				</div>
 		</c:forEach>
 			</div>
+			<br><br>
 		</div>
 	</section>
 	<%@include file="../../commons/footer.jsp"%>

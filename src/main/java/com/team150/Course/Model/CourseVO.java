@@ -12,6 +12,7 @@ public class CourseVO {
 	private String cstart;
 	private MultipartFile imgfile;
 	private String cimg;
+	private String cmap;
 	private int sseq;
 	private int pseq;
 	

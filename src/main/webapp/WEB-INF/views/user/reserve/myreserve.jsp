@@ -45,7 +45,12 @@
 			<td>${reserve.rbank}</td>
 			<td>${reserve.raccount}</td>
 			<td>${reserve.rmemo}</td>
-			<td><a href="">수정</a></td>
+			<td><div class="btn-group">
+			<a href="" class="btn btn-primary">수정</a>
+			<a href="" class="btn btn-success">리뷰등록</a>
+			<a href="" class="btn btn-danger">삭제</a>
+			</div>
+			</td>
 			</c:forEach>
 			</tr>
 			</table>
