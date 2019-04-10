@@ -18,23 +18,21 @@
 					<table class="table table-striped table-advance table-hover">
 						<thead>
 							<tr>
-								<td>Name</td>
-								<td>Price</td>
+								<td>요구사항</td>
+								<td>시간</td>
 								<td>Action</td>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${list}" var="Course">
+							<c:forEach items="${list}" var="Reserve">
 								<tr>
-									<td>${Course.cname }</td>
-									<td>${Course.cprice }</td>
+									<td>${Reserve.rmemo}</td>
+									<td>${Reserve.rtime }</td>
 									<td><div class="btn-group">
 											<a class="btn btn-primary"
-												href="/manager/course/courseread?cseq=${Course.cseq}">read</a>
-											<a class="btn btn-success"
-												href='/manager/course/coursemodify?cseq=${Course.cseq}'>modify</a>
+												href="/manager/course/reserve/reserveview">read</a>
 											<a class="btn btn-danger"
-												href="/manager/course/courseremove?cseq=${Course.cseq}">remove</a>
+												href="/manager/reserve/reserveremove?rseq=${Reserve.rseq}" method="post">remove</a>
 										</div></td>
 								</tr>
 							</c:forEach>
