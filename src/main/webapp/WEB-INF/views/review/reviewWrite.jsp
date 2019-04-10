@@ -10,6 +10,10 @@
 .ftco-section {
 	padding: 50px 10px 150px 10px !important;
 }
+
+label {
+	color: black;
+}
 </style>
 <%@ include file="../commons/indexbg.jsp"%>
 </head>
@@ -45,7 +49,7 @@
 								class="form-control" placeholder="성함을 입력해주세요." name="reemail">
 						</div>
 						<div class="form-group" style="margin-top: 10%">
-							사진 : <input type="file" name="photoFile"> <br>
+							<label>사진 :　</label><input type="file" name="photoFile"> <br>
 						</div>
 
 						<div class="form-group" style="margin-top: 10%">

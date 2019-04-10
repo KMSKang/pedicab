@@ -1,6 +1,8 @@
 package com.team150.Question.Controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.team150.Member.Service.MemberService;
 import com.team150.Question.Model.AnswerVO;
 import com.team150.Question.Model.QuestionVO;
 import com.team150.Question.Service.QuestionService;
@@ -18,14 +21,23 @@ public class QuestionController {
 
 	@Inject
 	QuestionService service;
-
+	
+	@Inject
+	MemberService memberservice;
+	
+	
+	
 //	고객
 
 	// 문의하기 리스트 (페이지)
 	@RequestMapping("/question/questionMain")
-	public String questionMain(Model model) {
-
-		model.addAttribute("questionList", service.questionSelecter());
+	public String questionMain(Model model, HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		
+		String uid = session.getAttribute("uid").toString();
+		
+		model.addAttribute("questionList", service.questionSelecterUid(uid));
 
 		return "question/questionMain";
 	}
@@ -38,9 +50,16 @@ public class QuestionController {
 
 	// 문의하기 등록 (실행)
 	@RequestMapping(value = "/question/questionWriteOK", method = RequestMethod.POST)
-	public String questionWriteOK(QuestionVO questionVO) {
-
+	public String questionWriteOK(QuestionVO questionVO, HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		
+		String uid = session.getAttribute("uid").toString();
+		
+		questionVO.setQuemail(uid);
+		
 		service.questionRegister(questionVO);
+		
 
 		return "redirect:questionMain.do";
 	}

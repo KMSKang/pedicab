@@ -9,7 +9,10 @@ public interface QuestionService {
 
 	// 문의하기 리스트 (페이지)
 	public List<QuestionVO> questionSelecter();
-
+	
+	//  1:1 문의하기 리스트 (실행)
+	public List<QuestionVO> questionSelecterUid(String uid);
+	
 	// 문의하기 등록 (실행)
 	public void questionRegister(QuestionVO questionVO);
 	

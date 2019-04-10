@@ -16,21 +16,20 @@ public class QuestionServiceImpl implements QuestionService {
 	@Inject
 	private QuestionDAO dao;
 
-	/// 문의하기 리스트 (실행)
+	// 문의하기 리스트 (실행)
 	public List<QuestionVO> questionSelecter() {
 		return dao.questionListAll();
 	}
 
+	// 1:1 문의하기 리스트 (실행)
+	public List<QuestionVO> questionSelecterUid(String uid) {
+		return dao.questionListAllUid(uid);
+	}
+
 	// 문의하기 등록 (실행)
 	public void questionRegister(QuestionVO questionVO) {
-
 		int result = dao.questionCreate(questionVO);
 
-		if (result == 0) {
-			System.out.println("noticeRegister Fail!!");
-		} else {
-			System.out.println("noticeRegister Success!!");
-		}
 	}
 
 	// 문의하기 상세 (페이지)
@@ -65,11 +64,6 @@ public class QuestionServiceImpl implements QuestionService {
 	// 답변하기 등록 (실행)
 	public void answerRegister(AnswerVO answerVO) {
 		int result = dao.answerCreate(answerVO);
-		if (result == 0) {
-			System.out.println("noticeRegister Fail!!");
-		} else {
-			System.out.println("noticeRegister Success!!");
-		}
 	}
 
 	// 답변하기 수정 (페이지)

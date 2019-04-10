@@ -13,6 +13,18 @@ table {
 	text-align: center;
 	color: black;
 }
+
+#qutitle::placeholder{
+	color: #666;
+}
+
+#nocontent::placeholder{
+	color: #666;
+}
+
+.ftco-section {
+	padding: 50px 10px 150px 10px !important;
+}
 </style>
 <%@ include file="../commons/indexbg.jsp"%>
 </head>
@@ -35,61 +47,38 @@ table {
 
 	<section class="ftco-section bg-light">
 		<div class="container">
-			<div class="row" style="margin-bottom: 1%; margin-left: 1%;">
+			<div class="row" style="margin-left: 20%;">
 				<div class="col-10"></div>
 				<div class="col-2">
 					<a class="btn btn-outline-dark" href="questionModify.do?quseq=${questionInfo.quseq}">수정</a> <a
 						class="btn btn-outline-dark" href="/question/questionDelete.do?quseq=${questionInfo.quseq}">삭제</a>
 				</div>
 			</div>
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>번호</th>
-						<th>제목</th>
-						<th>내용</th>
-						<th>이름</th>
-						<th>날짜</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>${questionInfo.quseq}</td>
-						<td>${questionInfo.qutitle}</td>
-						<td>${questionInfo.qucontent}</td>
-						<td>${questionInfo.quemail}</td>
-						<td>${questionInfo.qudate}</td>
-					</tr>
-				</tbody>
-			</table>
+			<input type="hidden" id ="qutitle" placeholder="${questionInfo.quemail}" readonly>
+			<label style="color:black; margin-top: 3%;">제목　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　${questionInfo.qudate}</label>
+			<input class="form-control" id ="qutitle" type="text" placeholder="${questionInfo.qutitle}" readonly>
+				<label style="margin-top: 3%; color:black;">내용</label>
+			<textarea id="nocontent" cols="50" rows="20" class="form-control" placeholder="${questionInfo.qucontent}" readonly></textarea>
 
 			<br> <br>
 			<hr>
-			<br> <br>
+			<br>
 
 			<h1>관리자 답변</h1>
-
-			<table class="table table-hover">
-
-				<tr>
-					<th>번호</th>
-					<th>내용</th>
-					<th>이름</th>
-					<th>날짜</th>
-				</tr>
-
+			
+			<br><br>
+			
 				<c:forEach items="${answerList}" var="answerList">
 					<c:if test="${answerList.quseq == questionInfo.quseq}">
-						<tr>
-							<td>${answerList.naseq}</td>
-							<td>${answerList.nacontent}</td>
-							<td>${answerList.naname}</td>
-							<td>${answerList.nadate}</td>
-						</tr>
+			
+			<label style="color:black;">작성자　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　${answerList.nadate}</label>
+			<input class="form-control" id ="qutitle" type="text" placeholder="${answerList.naname}" readonly>
+				<label style="margin-top: 3%; color:black;">내용</label>
+			<textarea id="nocontent" cols="50" rows="20" class="form-control" placeholder="${answerList.nacontent}" readonly></textarea>
+			
 					</c:if>
 				</c:forEach>
-
-			</table>
+			
 		</div>
 	</section>
 	<%@ include file="../commons/footer.jsp"%>

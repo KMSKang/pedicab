@@ -12,8 +12,8 @@
 <title>Insert title here</title>
 <style>
 #reviewImg {
-	width: 200px;
-	height: 200px;
+	width: 400px;
+	height: 400px;
 }
 
 #h1 {
@@ -27,6 +27,10 @@
 table {
 	color: black;
 	text-align: center;
+}
+
+.ftco-section {
+	padding: 20px 10px 150px 10px !important;
 }
 </style>
 <%@ include file="../commons/indexbg.jsp"%>
@@ -59,61 +63,45 @@ table {
 
 	<section class="ftco-section bg-light">
 		<div class="container">
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>번호</th>
-						<th>작성자</th>
-						<th>사진</th>
-						<th>리뷰</th>
-						<th>작성일</th>
-					</tr>
-				<tbody>
-					<tr>
-						<td>${reviewVO.reseq}</td>
-						<td>${reviewVO.reemail}</td>
-						<td><c:forEach items="${reviewList}" var="reviewList">
-								<c:if test="${reviewVO.reseq == reviewList.reseq}">
-									<br>
-									<img src="/uploadFile/reviewPhoto/${reviewList.rephoto}"
-										id="reviewImg">
-									<br>
-								</c:if>
-							</c:forEach></td>
-						<td>${reviewVO.recontent}</td>
-						<td>${reviewVO.redate}</td>
-					</tr>
-				</tbody>
-			</table>
-
-
-			<br> <br> <br>
-			<h1 id="h1">리뷰 수정</h1>
-			<br>
-
+			<div class="row">
+				<div class="col-4"></div>
+				<div class="col-8">
+					<c:forEach items="${reviewList}" var="reviewList">
+						<c:if test="${reviewVO.reseq == reviewList.reseq}">
+							<br>
+							<img src="/uploadFile/reviewPhoto/${reviewList.rephoto}"
+								id="reviewImg" class="img-fluid rounded-circle">
+							<br><br><br>
+						</c:if>
+					</c:forEach>
+				</div>
+			</div>
 			<form action="reviewModifyOK" modelAttribute="reviewVO"
 				enctype="multipart/form-data" method="POST">
 
 				<div class="form-group">
-					<label for="email">번호 *</label>
-					<input type="text" class="form-control" id="disabledInput" placeholder="${reviewVO.reseq}" disabled><br>
+					<label for="email">번호</label> <input type="text"
+						class="form-control" id="disabledInput"
+						placeholder="${reviewVO.reseq}" disabled><br>
 				</div>
 
 				<div class="form-group">
-					<label for="email">작성자 * </label>
-					<input type="text" class="form-control" id="disabledInput" placeholder="${reviewVO.reemail}" disabled><br>
-					<input type="hidden" id="reemail" name="reemail">
+					<label for="email">작성자</label> <input type="text"
+						class="form-control" id="disabledInput"
+						placeholder="${reviewVO.reemail}" disabled><br> <input
+						type="hidden" id="reemail" name="reemail">
 				</div>
 
 				<div class="form-group">
-					<label for="email">사진 * </label> <input type="file"
+					<label for="email">사진 : </label> <input type="file"
 						name="photoFile">
 				</div>
 
 				<div class="form-group">
-					<label for="email">리뷰 *</label>
+					<label for="email">리뷰</label>
 				</div>
-				<textarea class="form-control" cols="30" rows="10" placeholder="내용을 입력해주세요." id="recontent" name="recontent"></textarea>
+				<textarea class="form-control" cols="30" rows="10"
+					placeholder="내용을 입력해주세요." id="recontent" name="recontent"></textarea>
 
 				<input type="hidden" id="reseq" name="reseq">
 
