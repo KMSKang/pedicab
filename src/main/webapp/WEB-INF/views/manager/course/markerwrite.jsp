@@ -19,9 +19,29 @@
 					</div>
 				</div>
 				<div class="row">
+				<div class="col-lg-12">
 					<div id="map" style="width: 100%; height: 350px;"></div>
-					<p>
-					</p>
+				</div>
+				</div>
+				<div class="row">
+				<div class="col-lg-12">
+				<div class="form">
+				<form action="">
+				<div class="form-group">
+				<input type="text" name="matitle">
+				</div>
+				<div class="form-group">
+				<input type="text" name="matitle">
+				</div>
+				<div class="form-group">
+				<input type="text" name="matitle">
+				</div>
+				<div class="form-group">
+				<input type="button" value="추가" id="markerinfoadd">
+				</div>
+				</form>
+				</div>
+				</div>
 				</div>
 			</section>
 		</section>
