@@ -33,7 +33,7 @@ public class ReviewController {
 
 		service.reviewRegister(reviewVO, request);
 
-		return "redirect:/user/course/courseread.do?cseq=" + "46";
+		return "redirect:/user/course/courseread.do?cseq=" + reviewVO.getCseq();
 	}
 
 	// 리뷰 상세 (페이지)
