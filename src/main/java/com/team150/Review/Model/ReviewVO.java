@@ -13,5 +13,6 @@ public class ReviewVO {
 	private String rephoto; // 사진 - VARCHAR(45)
 	private String recontent; // 내용 - VARCHAR(45)
 	private String redate; // 날짜 - DATE
+	private int cseq;
 
 }

@@ -9,11 +9,6 @@
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cc84e86d65eee9754a6074c7329a9302&libraries=drawing"></script>
 <style>
-#reviewImg {
-	width: 200px;
-	height: 200px;
-}
-
 table {
 	text-align: center;
 	color: black;
@@ -170,28 +165,51 @@ table a {
 				</div>
 
 				<div class="col-md- order-md-last d-flex">
-					<form class="bg-light p-5 contact-form">
-						<table class="table table-hover">
+						<div class="row" style="width: 100%;">
 							<c:forEach items="${reviewList}" var="reviewList">
-								<tr>
-									<td id="td">${reviewList.reemail}</td>
-									<td><img
-										src="/uploadFile/reviewPhoto/${reviewList.rephoto}"
-										id="reviewImg"></td>
-									<td id="td"><a
-										href="/review/reviewInfo.do?reseq=${reviewList.reseq}">${reviewList.recontent}<br>
-											<c:forEach items="${commentList}" var="commentList">
-												<c:if test="${commentList.reseq == reviewList.reseq}">
-													<br>-----------------답글-------------------<br>${commentList.cocomment}<br>
-												</c:if>
-											</c:forEach>
-									</a></td>
-									<td id="td">${reviewList.redate}</td>
-								</tr>
+								<c:if test="${course.cseq == reviewList.cseq}">
+
+
+
+									<div class="col-sm-6 col-md-4" style="padding: 20px; margin: 10px; border: 1px solid silver; border-radius: 10px; text-align: center; background: white; flex: 0 0 31.33333%;">
+										<div class="thumbnail">
+											<div class="caption">
+												<img src="/uploadFile/reviewPhoto/${reviewList.rephoto}" style="width: 300px; height: 300px; margin-top: 10px;" class="rounded"><br>
+												<hr>
+												<span style="color: black;">${reviewList.reemail}고객님</span>
+													<span style="color: black; margin-left: 37%;">${reviewList.redate}</span><hr>
+												<p style="color: black;">${reviewList.recontent}</p>
+											</div>
+											<div class="caption">
+												<c:forEach items="${commentList}" var="commentList">
+													<c:if test="${commentList.reseq == reviewList.reseq}">
+														<div class="alert alert-warning" role="alert">
+															${commentList.cocomment}
+														</div>
+													</c:if>
+												</c:forEach>
+											</div>
+										</div>
+									</div>
+
+
+
+								</c:if>
 							</c:forEach>
-						</table>
-					</form>
+						</div>
+
+
 				</div>
+
+
+
+
+
+
+
+
+
+
 			</div>
 		</div>
 	</section>
