@@ -19,6 +19,10 @@ table {
 .btn-light {
 	border-color: 1px solid silver;
 }
+
+.ftco-section {
+	padding: 50px 10px 150px 10px !important;
+}
 </style>
 
 <%@ include file="../commons/indexbg.jsp"%>
@@ -55,7 +59,6 @@ table {
 					<tr>
 						<th>번호</th>
 						<th>제목</th>
-						<th>작성자</th>
 						<th>작성일</th>
 					</tr>
 				</thead>
@@ -65,7 +68,6 @@ table {
 							<td>${questionList.quseq}</td>
 							<td><a href="questionInfo.do?quseq=${questionList.quseq}"
 								id="td_title">${questionList.qutitle}</a></td>
-							<td>${questionList.quemail}</td>
 							<td>${questionList.qudate}</td>
 						</tr>
 					</c:forEach>

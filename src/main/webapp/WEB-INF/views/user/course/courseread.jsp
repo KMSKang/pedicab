@@ -9,11 +9,6 @@
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cc84e86d65eee9754a6074c7329a9302&libraries=drawing"></script>
 <style>
-#reviewImg {
-	width: 200px;
-	height: 200px;
-}
-
 table {
 	text-align: center;
 	color: black;
@@ -21,6 +16,10 @@ table {
 
 table a {
 	color: black;
+}
+
+#td {
+	vertical-align: middle;
 }
 </style>
 <script
@@ -95,8 +94,8 @@ table a {
 				<div class="col-md- order-md-last d-flex">
 					<form class="bg-light p-5 contact-form">
 						<div class="form-group">
-						<label class="col-lg-2 control-label">map</label>
-								<div id="map" style="width:700px;height:700px;"></div>
+							<label class="col-lg-2 control-label">map</label>
+							<div id="map" style="width: 700px; height: 700px;"></div>
 						</div>
 						<div class="form-group">
 							<img src="/uploadFile/coursePhoto/${course.cimg}" id="cimg"
@@ -120,7 +119,8 @@ table a {
 					</form>
 				</div>
 				<div class="col-md- order-md-last d-flex">
-					<form class="bg-black p-5" action="/user/reserve/userreserve" method="post">
+					<form class="bg-black p-5" action="/user/reserve/userreserve"
+						method="post">
 						<div class="form-group">
 							<h1>예약하기</h1>
 						</div>
@@ -150,10 +150,12 @@ table a {
 							<label style="color: black">요청사항</label><input type="text"
 								class="form-control" name="rmemo" id="rmemo">
 						</div>
-						<div class="form-group" style="display:none;">
-						<label style="color: black">요청사항</label>
-						<input type="text" class="form-control" name="uid" id="useq" value="${sessionScope.uid}">
-						<input type="text" class="form-control" name="cseq" id="cseq" value="${course.cseq }">
+						<div class="form-group" style="display: none;">
+							<label style="color: black">요청사항</label> <input type="text"
+								class="form-control" name="uid" id="useq"
+								value="${sessionScope.uid}"> <input type="text"
+								class="form-control" name="cseq" id="cseq"
+								value="${course.cseq }">
 						</div>
 						<div class="form-group">
 							<input type="submit" value="에약하기"
@@ -163,178 +165,192 @@ table a {
 				</div>
 
 				<div class="col-md- order-md-last d-flex">
-					<form class="bg-light p-5 contact-form">
-						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th>번호</th>
-									<th>작성자</th>
-									<th>사진</th>
-									<th>리뷰</th>
-									<th>작성일</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach items="${reviewList}" var="reviewList">
-									<tr>
-										<td>${reviewList.reseq}</td>
-										<td>${reviewList.reemail}</td>
-										<td><img
-											src="/uploadFile/reviewPhoto/${reviewList.rephoto}"
-											id="reviewImg"></td>
-										<td><a
-											href="/review/reviewInfo.do?reseq=${reviewList.reseq}">${reviewList.recontent}<br>
+						<div class="row" style="width: 100%;">
+							<c:forEach items="${reviewList}" var="reviewList">
+								<c:if test="${course.cseq == reviewList.cseq}">
+
+
+
+									<div class="col-sm-6 col-md-4" style="padding: 20px; margin: 10px; border: 1px solid silver; border-radius: 10px; text-align: center; background: white; flex: 0 0 31.33333%;">
+										<div class="thumbnail">
+											<div class="caption">
+												<img src="/uploadFile/reviewPhoto/${reviewList.rephoto}" style="width: 300px; height: 300px; margin-top: 10px;" class="rounded"><br>
+												<hr>
+												<span style="color: black;">${reviewList.reemail}고객님</span>
+													<span style="color: black; margin-left: 37%;">${reviewList.redate}</span><hr>
+												<p style="color: black;">${reviewList.recontent}</p>
+											</div>
+											<div class="caption">
 												<c:forEach items="${commentList}" var="commentList">
 													<c:if test="${commentList.reseq == reviewList.reseq}">
-														<br>---------답글------------<br>${commentList.cocomment}<br>
+														<div class="alert alert-warning" role="alert">
+															${commentList.cocomment}
+														</div>
 													</c:if>
 												</c:forEach>
-										</a></td>
-										<td>${reviewList.redate}</td>
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
+											</div>
+										</div>
+									</div>
 
-					</form>
+
+
+								</c:if>
+							</c:forEach>
+						</div>
+
+
 				</div>
+
+
+
+
+
+
+
+
+
+
 			</div>
 		</div>
 	</section>
 	<%@include file="../../commons/footer.jsp"%>
-	<script type="text/javascript">	
-	var data =${course.cmap}
-	var x=data.marker[0].x;
-	var y=data.marker[0].y;
-	var mapContainer = document.getElementById('map'), mapOptions ={
-		center : new daum.maps.LatLng(y,x ), // 지도의 중심좌표
-		level : 5
-	}
-	var map = new daum.maps.Map(mapContainer, mapOptions), overlays = [];
-	$(document).ready(function(){
-	console.log(data);
-	console.log(overlays);
+	<script type="text/javascript">
+		var data = $
+		{
+			course.cmap
+		}
+		var x = data.marker[0].x;
+		var y = data.marker[0].y;
+		var mapContainer = document.getElementById('map'), mapOptions = {
+			center : new daum.maps.LatLng(y, x), // 지도의 중심좌표
+			level : 5
+		}
+		var map = new daum.maps.Map(mapContainer, mapOptions), overlays = [];
+		$(document).ready(function() {
+			console.log(data);
+			console.log(overlays);
 
-	    drawMarker(data[daum.maps.drawing.OverlayType.MARKER]);
-	    drawPolyline(data[daum.maps.drawing.OverlayType.POLYLINE]);
-	});
-	
-	function drawMarker(markers) {
-	    var len = markers.length, i = 0;
+			drawMarker(data[daum.maps.drawing.OverlayType.MARKER]);
+			drawPolyline(data[daum.maps.drawing.OverlayType.POLYLINE]);
+		});
 
-	    for (; i < len; i++) {
-	        var marker = new daum.maps.Marker({
-	            map: map, 
-	            position: new daum.maps.LatLng(markers[i].y, markers[i].x), 
-	            zIndex: markers[i].zIndex
-	        });
+		function drawMarker(markers) {
+			var len = markers.length, i = 0;
 
-	        overlays.push(marker);
-	    }
-	}
+			for (; i < len; i++) {
+				var marker = new daum.maps.Marker(
+						{
+							map : map,
+							position : new daum.maps.LatLng(markers[i].y,
+									markers[i].x),
+							zIndex : markers[i].zIndex
+						});
 
-	// Drawing Manager에서 가져온 데이터 중 선을 아래 지도에 표시하는 함수입니다
-	function drawPolyline(lines) {
-	    var len = lines.length, i = 0;
+				overlays.push(marker);
+			}
+		}
 
-	    for (; i < len; i++) {
-	        var path = pointsToPath(lines[i].points);
-	        var style = lines[i].options;
-	        var polyline = new daum.maps.Polyline({
-	            map: map,
-	            path: path,
-	            strokeColor: style.strokeColor,
-	            strokeOpacity: style.strokeOpacity,
-	            strokeStyle: style.strokeStyle,
-	            strokeWeight: style.strokeWeight
-	        });
+		// Drawing Manager에서 가져온 데이터 중 선을 아래 지도에 표시하는 함수입니다
+		function drawPolyline(lines) {
+			var len = lines.length, i = 0;
 
-	        overlays.push(polyline);
-	    }
-	}
+			for (; i < len; i++) {
+				var path = pointsToPath(lines[i].points);
+				var style = lines[i].options;
+				var polyline = new daum.maps.Polyline({
+					map : map,
+					path : path,
+					strokeColor : style.strokeColor,
+					strokeOpacity : style.strokeOpacity,
+					strokeStyle : style.strokeStyle,
+					strokeWeight : style.strokeWeight
+				});
 
-	// Drawing Manager에서 가져온 데이터 중 사각형을 아래 지도에 표시하는 함수입니다
-	function drawRectangle(rects) {
-	    var len = rects.length, i = 0;
+				overlays.push(polyline);
+			}
+		}
 
-	    for (; i < len; i++) {
-	        var style = rects[i].options;
-	        var rect = new daum.maps.Rectangle({
-	            map: map, 
-	            bounds: new daum.maps.LatLngBounds(
-	                new daum.maps.LatLng(rects[i].sPoint.y, rects[i].sPoint.x),
-	                new daum.maps.LatLng(rects[i].ePoint.y, rects[i].ePoint.x)
-	            ), 
-	            strokeColor: style.strokeColor,
-	            strokeOpacity: style.strokeOpacity,
-	            strokeStyle: style.strokeStyle,
-	            strokeWeight: style.strokeWeight,
-	            fillColor: style.fillColor,
-	            fillOpacity: style.fillOpacity
-	        });
+		// Drawing Manager에서 가져온 데이터 중 사각형을 아래 지도에 표시하는 함수입니다
+		function drawRectangle(rects) {
+			var len = rects.length, i = 0;
 
-	        overlays.push(rect);
-	    }
-	}
+			for (; i < len; i++) {
+				var style = rects[i].options;
+				var rect = new daum.maps.Rectangle({
+					map : map,
+					bounds : new daum.maps.LatLngBounds(new daum.maps.LatLng(
+							rects[i].sPoint.y, rects[i].sPoint.x),
+							new daum.maps.LatLng(rects[i].ePoint.y,
+									rects[i].ePoint.x)),
+					strokeColor : style.strokeColor,
+					strokeOpacity : style.strokeOpacity,
+					strokeStyle : style.strokeStyle,
+					strokeWeight : style.strokeWeight,
+					fillColor : style.fillColor,
+					fillOpacity : style.fillOpacity
+				});
 
-	// Drawing Manager에서 가져온 데이터 중 원을 아래 지도에 표시하는 함수입니다
-	function drawCircle(circles) {
-	    var len = circles.length, i = 0;
+				overlays.push(rect);
+			}
+		}
 
-	    for (; i < len; i++) {
-	        var style = circles[i].options;
-	        var circle = new daum.maps.Circle({
-	            map: map, 
-	            center: new daum.maps.LatLng(circles[i].center.y, circles[i].center.x), 
-	            radius: circles[i].radius,
-	            strokeColor: style.strokeColor,
-	            strokeOpacity: style.strokeOpacity,
-	            strokeStyle: style.strokeStyle,
-	            strokeWeight: style.strokeWeight,
-	            fillColor: style.fillColor,
-	            fillOpacity: style.fillOpacity
-	        });
+		// Drawing Manager에서 가져온 데이터 중 원을 아래 지도에 표시하는 함수입니다
+		function drawCircle(circles) {
+			var len = circles.length, i = 0;
 
-	        overlays.push(circle);
-	    }
-	}
+			for (; i < len; i++) {
+				var style = circles[i].options;
+				var circle = new daum.maps.Circle({
+					map : map,
+					center : new daum.maps.LatLng(circles[i].center.y,
+							circles[i].center.x),
+					radius : circles[i].radius,
+					strokeColor : style.strokeColor,
+					strokeOpacity : style.strokeOpacity,
+					strokeStyle : style.strokeStyle,
+					strokeWeight : style.strokeWeight,
+					fillColor : style.fillColor,
+					fillOpacity : style.fillOpacity
+				});
 
-	// Drawing Manager에서 가져온 데이터 중 다각형을 아래 지도에 표시하는 함수입니다
-	function drawPolygon(polygons) {
-	    var len = polygons.length, i = 0;
+				overlays.push(circle);
+			}
+		}
 
-	    for (; i < len; i++) {
-	        var path = pointsToPath(polygons[i].points);
-	        var style = polygons[i].options;
-	        var polygon = new daum.maps.Polygon({
-	            map: map,
-	            path: path,
-	            strokeColor: style.strokeColor,
-	            strokeOpacity: style.strokeOpacity,
-	            strokeStyle: style.strokeStyle,
-	            strokeWeight: style.strokeWeight,
-	            fillColor: style.fillColor,
-	            fillOpacity: style.fillOpacity
-	        });
+		// Drawing Manager에서 가져온 데이터 중 다각형을 아래 지도에 표시하는 함수입니다
+		function drawPolygon(polygons) {
+			var len = polygons.length, i = 0;
 
-	        overlays.push(polygon);
-	    }
-	}
+			for (; i < len; i++) {
+				var path = pointsToPath(polygons[i].points);
+				var style = polygons[i].options;
+				var polygon = new daum.maps.Polygon({
+					map : map,
+					path : path,
+					strokeColor : style.strokeColor,
+					strokeOpacity : style.strokeOpacity,
+					strokeStyle : style.strokeStyle,
+					strokeWeight : style.strokeWeight,
+					fillColor : style.fillColor,
+					fillOpacity : style.fillOpacity
+				});
 
-	// Drawing Manager에서 가져온 데이터 중 
-	// 선과 다각형의 꼭지점 정보를 daum.maps.LatLng객체로 생성하고 배열로 반환하는 함수입니다 
-	function pointsToPath(points) {
-	    var len = points.length, 
-	        path = [], 
-	        i = 0;
+				overlays.push(polygon);
+			}
+		}
 
-	    for (; i < len; i++) { 
-	        var latlng = new daum.maps.LatLng(points[i].y, points[i].x);
-	        path.push(latlng); 
-	    }
+		// Drawing Manager에서 가져온 데이터 중 
+		// 선과 다각형의 꼭지점 정보를 daum.maps.LatLng객체로 생성하고 배열로 반환하는 함수입니다 
+		function pointsToPath(points) {
+			var len = points.length, path = [], i = 0;
 
-	    return path;
-	}	
+			for (; i < len; i++) {
+				var latlng = new daum.maps.LatLng(points[i].y, points[i].x);
+				path.push(latlng);
+			}
+
+			return path;
+		}
 	</script>
 </body>
 </html>

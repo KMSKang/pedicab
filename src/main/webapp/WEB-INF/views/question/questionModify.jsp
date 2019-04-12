@@ -29,6 +29,10 @@ table {
 #hr {
 	border-top: 1px solid black;
 }
+
+.ftco-section {
+	padding: 50px 10px 150px 10px !important;
+}
 </style>
 <%@ include file="../commons/indexbg.jsp"%>
 </head>
@@ -51,34 +55,7 @@ table {
 
 	<section class="ftco-section bg-light">
 		<div class="container">
-
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>번호</th>
-						<th>제목</th>
-						<th>내용</th>
-						<th>이름</th>
-						<th>날짜</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>${questionInfo.quseq}</td>
-						<td>${questionInfo.qutitle}</td>
-						<td>${questionInfo.qucontent}</td>
-						<td>${questionInfo.quemail}</td>
-						<td>${questionInfo.qudate}</td>
-					</tr>
-				</tbody>
-			</table>
-
-
-			<br> <br> <br> <br>
-			<h1 id="h1">문의 수정</h1>
-
-			<hr id="hr">
-
+		
 			<form action="/question/questionModifyOK" method="POST">
 
 				<h3 class="mb-5"></h3>
@@ -99,7 +76,7 @@ table {
 				<div class="row" style="margin-right: 12%;">
 					<div class="col-6"></div>
 					<div class="form-group col-6">
-						<input type="submit" value="문의하기"
+						<input type="submit" value="등록"
 							class="btn py-3 px-4 btn-primary">
 					</div>
 				</div>

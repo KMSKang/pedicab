@@ -8,8 +8,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- 등록 (실행) -->
 	<insert id="reviewCreate" parameterType="com.team150.Review.Model.ReviewVO">
-		INSERT INTO practice (reemail, rephoto, recontent, redate)
-		value ( #{reemail}, #{rephoto}, #{recontent}, now() )
+		INSERT INTO practice (reemail, rephoto, recontent, redate, cseq)
+		value ( #{reemail}, #{rephoto}, #{recontent}, now(), #{cseq} )
 	</insert>
 	
 	

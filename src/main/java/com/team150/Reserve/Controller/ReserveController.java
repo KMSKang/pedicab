@@ -50,22 +50,16 @@ public class ReserveController {
 	
 	//===========================관리자=======================//
 	//리스트
-	@RequestMapping(value="reserve/Reserve_listM",method=RequestMethod.GET)
+	@RequestMapping(value="/manager/reserve/reservelist",method=RequestMethod.GET)
 	public void listAll(Model model) throws Exception{
 		model.addAttribute("list", service.listAll());
 	}
-	//상세내역
-	@RequestMapping(value="/reserve/Reserve_viewM",method=RequestMethod.GET)
-	public void viewM(@RequestParam("rseq") int rseq,Model model) throws Exception{
-		model.addAttribute("reserve",service.read1(rseq));
-		
-	}
 	//취소(삭제)
-    @RequestMapping(value="/reserve/Reserve_remove",method=RequestMethod.POST)
+    @RequestMapping(value="/manager/reserve/reserveremove",method=RequestMethod.GET)
 	public String remove(@RequestParam("rseq") int rseq,RedirectAttributes rttr) throws Exception{
 		service.remove(rseq);
 		
-		return"redirect:/reserve/Reserve_listM";
+		return"redirect:/manager/reserve/reservelist";
 	}
     
   //===========================유저=======================//

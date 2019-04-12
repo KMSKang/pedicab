@@ -19,6 +19,11 @@ public class QuestionDAOImpl implements QuestionDAO {
 	public List<QuestionVO> questionListAll() {
 		return session.selectList(namespace + ".questionListAll");
 	}
+	
+	// 1:1 문의하기 리스트 (실행)
+	public List<QuestionVO> questionListAllUid(String uid) {
+		return session.selectList(namespace + ".questionListAllUid", uid);
+	}
 
 	// 문의하기 등록 (실행)
 	public int questionCreate(QuestionVO questionVO) {

@@ -10,6 +10,14 @@
 #name {
 	color: red;
 }
+
+.ftco-section {
+	padding: 50px 10px 120px 10px !important;
+}
+
+div label {
+	color: black;
+}
 </style>
 <%@ include file="../commons/indexbg.jsp"%>
 </head>
@@ -34,16 +42,12 @@
 		<div class="container">
 			<form action="/question/questionWriteOK" method="POST">
 
+				<input type="hidden" name="quemail" id="email" placeholder="작성자명을 입력해주세요.">
+
 				<div class="form-group">
-					<label for="email">작성자 *</label> <input type="text"
-						class="form-control" name="quemail" id="email"
-						placeholder="작성자명을 입력해주세요.">
-				</div>
-				
-				<div class="form-group">
-					<label for="name">제목 *</label> <input type="text"
+					<label for="name">제목</label> <input type="text"
 						class="form-control" name="qutitle" id="name"
-						placeholder="제목을 입력해주세요." style="width: 300px !important;">
+						placeholder="제목을 입력해주세요.">
 				</div>
 
 				<div class="form-group">
@@ -55,7 +59,8 @@
 				<div class="row" style="margin-right: 12%;">
 					<div class="col-6"></div>
 					<div class="form-group col-6">
-						<input type="submit" value="문의하기" class="btn py-3 px-4 btn-primary">
+						<input type="submit" value="문의하기"
+							class="btn py-3 px-4 btn-primary">
 					</div>
 				</div>
 			</form>

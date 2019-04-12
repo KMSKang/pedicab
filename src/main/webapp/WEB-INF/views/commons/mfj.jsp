@@ -12,7 +12,7 @@
 					</a></li>
 					<li class="active"><a class="" href="/manager/course/courselist"><span>Course</span>
 					</a></li>
-					<li class="active"><a class="" href="#"><span>Reserve</span>
+					<li class="active"><a class="" href="/manager/reserve/reservelist"><span>Reserve</span>
 					</a></li>
 					<li class="active"><a class="" href="/manager/review/reviewList"><span>Review</span>
 					</a></li>

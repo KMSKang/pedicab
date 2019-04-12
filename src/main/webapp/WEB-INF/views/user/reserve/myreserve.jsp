@@ -24,6 +24,10 @@
 	</section>
 	<section class="ftco-section bg-light">
 		<div class="container">
+		
+		<a href="/review/reviewWrite.do">리뷰작성</a>
+		<a href="review/reviewWrite.do"></a>
+		
 			<h1>${sessionScope.uid}님의예약</h1>
 			<div class="row">
 			<br>
@@ -43,7 +47,7 @@
 			<td>${reserve.rmemo}</td>
 			<td><div class="btn-group">
 			<a href="" class="btn btn-primary">수정</a>
-			<a href="" class="btn btn-success">리뷰등록</a>
+			<a href="/review/reviewWrite.do?cseq=${reserve.cseq}" class="btn btn-success">리뷰등록</a>
 			<a href="" class="btn btn-danger">삭제</a>
 			</div>
 			</td>

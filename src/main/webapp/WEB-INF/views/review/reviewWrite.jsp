@@ -6,9 +6,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	var para = document.location.href.split("?cseq=");
+	console.log(para);
+
+	$(document).ready(function() {
+		$('#cseq').val(para[1]);
+	});
+</script>
 <style>
 .ftco-section {
 	padding: 50px 10px 150px 10px !important;
+}
+
+label {
+	color: black;
 }
 </style>
 <%@ include file="../commons/indexbg.jsp"%>
@@ -45,13 +58,17 @@
 								class="form-control" placeholder="성함을 입력해주세요." name="reemail">
 						</div>
 						<div class="form-group" style="margin-top: 10%">
-							사진 : <input type="file" name="photoFile"> <br>
+							<label>사진 : </label><input type="file" name="photoFile">
+							<br>
 						</div>
 
 						<div class="form-group" style="margin-top: 10%">
 							<label for="email">리뷰 *</label> <input type="text"
 								class="form-control" placeholder="리뷰를 작성해주세요." name="recontent">
 						</div>
+
+						<input type="hidden" id="cseq" name="cseq">
+
 						<div class="row" style="">
 							<div class="col-5"></div>
 							<div class="col-7">

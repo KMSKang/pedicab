@@ -30,10 +30,6 @@
 	width: 100%;
 	height: 350px;
 }
-
-#map {
-	margin-top: 10px;
-}
 </style>
 </head>
 <body>
@@ -196,8 +192,18 @@
 		function getDataFromDrawingMap() {
 			// Drawing Manager에서 그려진 데이터 정보를 가져옵니다 
 			var madata = manager.getData();
+			var marker=new Array();
+			
+			for(var i=0;i<madata.length;i++){
+				marker[i]=JSON.stringify(madata.marker[i]);
+			}
 			var cmapi = JSON.stringify(madata);
 			console.log(madata);
+			console.log(marker[0]);
+			console.log(marker[1]);
+			console.log(marker[2]);
+			console.log(marker[3]);
+			console.log(marker[4]);
 			console.log(cmapi);
 			cmap.val(cmapi);
 			cmap.value = cmapi;
