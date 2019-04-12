@@ -48,7 +48,7 @@
 			<td><div class="btn-group">
 			<a href="" class="btn btn-primary">수정</a>
 			<a href="/review/reviewWrite.do?cseq=${reserve.cseq}" class="btn btn-success">리뷰등록</a>
-			<a href="" class="btn btn-danger">삭제</a>
+			<a href="/user/reserve/userremove?rseq=${reserve.rseq}" class="btn btn-danger">삭제</a>
 			</div>
 			</td>
 			</c:forEach>

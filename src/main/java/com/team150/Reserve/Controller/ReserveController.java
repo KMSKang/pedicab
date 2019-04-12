@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.team150.Course.Service.CourseService;
 import com.team150.Member.Service.MemberService;
 import com.team150.Reserve.Model.ReserveVO;
 import com.team150.Reserve.Service.ReserveService;
@@ -48,6 +49,9 @@ public class ReserveController {
 	@Inject
 	MemberService memberservice;
 	
+	@Inject
+	CourseService courseservice;
+	
 	//===========================관리자=======================//
 	//리스트
 	@RequestMapping(value="/manager/reserve/reservelist",method=RequestMethod.GET)
@@ -81,6 +85,13 @@ public class ReserveController {
 		int useq=memberservice.session(uid);
 		System.out.println(useq);
 		model.addAttribute("list", service.read(useq));
+	}
+	//예약취소
+	@RequestMapping("/user/reserve/userremove")
+	public String uremove(@RequestParam("rseq")int rseq) throws Exception{
+		service.remove(rseq);
+		
+		return "redirect:/user/reserve/myreserve";
 	}
 
 }
