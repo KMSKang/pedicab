@@ -47,4 +47,8 @@ public class HomeController {
 	public String aboutus() {
 		return "/user/html/aboutus";
 	}
+	@RequestMapping(value="/user/payment/userpayment",method=RequestMethod.GET)
+	public String userpayment() {
+		return"/user/payment/userpayment";
+	}
 }
