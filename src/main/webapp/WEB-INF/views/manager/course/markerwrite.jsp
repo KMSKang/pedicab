@@ -131,10 +131,36 @@
 					<div class="col-lg-12">
 						<div id="map" style="width: 100%; height: 350px;"></div>
 					</div>
+					<div class="col-lg-12">
 					<p>
-						<button onclick="hideMarkers()">마커 감추기</button>
-						<button onclick="showMarkers()">마커 보이기</button>
+						<button onclick="showmarkerinfo()">마커정보보기</button>
 					</p>
+					</div>
+					<div class="row">
+					<div class="col-lg-3"></div> 
+					<div class="col-lg-6">
+				<div id="markerinfo">
+				<form action="/manager/marker/mregist" method="post" enctype="multipart/form-data">
+				<div class="form-group">
+				마커이름:<input type="text" class="form-control" name="mtitle" id="mtitle">
+				</div>
+				<div class="form-group">
+				마커위도:<input type="text" class="form-control" name="mlocation" id="mlatitude">
+				</div>
+				<div class="form-group">
+				마커소개:<input type="text" class="form-control" name="mcontent" id="mcontent">
+				</div>
+				<div class="form-group">
+				마커사진:<input type="file" class="form-control" name="imgfile" id="imgfile">
+				</div>
+				<div class="form-group">
+				<input type="submit" value="저장" id="markerinfosave" class="btn btn-primary">
+				</div>
+				</form>
+				</div>
+				</div>
+				<div class="col-lg-3"></div> 
+				</div>	
 				</div>
 			</section>
 		</section>
@@ -142,22 +168,24 @@
 	<%@include file="../../commons/mjs.jsp"%>
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cc84e86d65eee9754a6074c7329a9302&libraries=drawing"></script>
-	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=발급받은 APP KEY를 사용하세요"></script>
 	<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
 		mapOption = {
-			center : new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+			center : new daum.maps.LatLng(37.57045624692911, 126.9854373262434), // 지도의 중심좌표
 			level : 3
 		// 지도의 확대 레벨
 		};
 
+		var x= document.getElementById('mlatitude');
+		var y= document.getElementById('mlongitude');
 		var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+		
 
 		// 지도를 클릭했을때 클릭한 위치에 마커를 추가하도록 지도에 클릭이벤트를 등록합니다
 		daum.maps.event.addListener(map, 'click', function(mouseEvent) {
 			// 클릭한 위치에 마커를 표시합니다 
 			addMarker(mouseEvent.latLng);
+			
 		});
 
 		// 지도에 표시된 마커 객체를 가지고 있을 배열입니다
@@ -185,15 +213,10 @@
 				markers[i].setMap(map);
 			}
 		}
-
-		// "마커 보이기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에 표시하는 함수입니다
-		function showMarkers() {
-			setMarkers(map)
-		}
-
-		// "마커 감추기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에서 삭제하는 함수입니다
-		function hideMarkers() {
-			setMarkers(null);
+		function showmarkerinfo(){
+			for(var i=0;i<markers.length;i++){
+				x.value=markers[0].getPosition().toString();
+			}
 		}
 		var linePath = [];
 		var polyline = new daum.maps.Polyline({

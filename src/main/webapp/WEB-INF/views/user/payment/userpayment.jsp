@@ -28,6 +28,7 @@
 		<div class="row">
 		<form>
 		<div class="form-group">
+		<a href="#">결제하기</a>
 		</div>
 		</form>
 		</div>
