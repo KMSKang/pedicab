@@ -23,17 +23,63 @@
 		</div>
 	</section>
 	<section class="ftco-section bg-light">
-		<div class="container">
-		<h1>${sessionScope.uid}님의결제</h1>
+		<div class="container" style="text-align:center">
+		<h1>${sessionScope.uid}님의결제</h1><br>
 		<div class="row">
-		<form>
-		<div class="form-group">
-		<a href="#">결제하기</a>
-		</div>
-		</form>
+			<ul class="list-group" style="width:50%; margin:auto;">
+				<li class="list-group-item list-group-item-secondary">결제 정보</li>
+				<li class="list-group-item">
+					<strong>예약 시간</strong>&ensp;${reserve.rtime }<br>
+					<strong>계좌 정보</strong>&ensp;${reserve.raccount }<br>
+					<strong>계좌 은행</strong>&ensp;${reserve.rbank }<br>
+					<strong>예약 일자</strong>&ensp;${reserve.rdate }<br>
+				</li>
+				<li class="list-group-item list-group-item-secondary">코스 정보</li>
+				<li class="list-group-item">
+					<strong>예약 코스</strong>&ensp;${course.cname }<br>
+					<strong>직원 이름</strong>&ensp;${course.cinfo }<br>
+					<strong>시작 장소</strong>&ensp;${course.cstart }<br>
+					<strong>결제 금액&ensp;${course.cprice } 원</strong><br>
+				</li>
+				<li class="list-group-item">
+					<a class="btn btn-primary" id="kakaopay-btn"><strong>카카오 결제</strong></a>
+				</li>
+			</ul>
+			<input type="hidden" value="${reserve.cseq}" id="cseq" />
+			<input type="hidden" value="${reserve.rseq}" id="rseq" />
 		</div>
 		</div>
 		</section>
 	<%@include file="../../commons/footer.jsp"%>
+		<script>
+		$(document).ready(function(){
+			$('#kakaopay-btn').on('click', kakaopay);
+		})
+		
+		let popup;
+		let timer;
+		
+		function kakaopay(e){
+			e.preventDefault();
+			var cseq = $('#cseq').val();
+			var rseq = $('#rseq').val();
+			$.ajax({
+				url : 'http://localhost/user/payment/kakao?cseq=' + cseq + '&rseq=' + rseq,
+				type : 'GET',
+				success : function(res){
+					res = JSON.parse(res);
+					console.log(res.next_redirect_pc_url);
+					popup = window.open(res.next_redirect_pc_url, '카카오 결제', 'width=400, height=600, status=no, toolbar=no, location=no, top=200');
+					timer = setInterval(function(){
+						if(popup.closed){
+							location.href="http://localhost/user/reserve/myreserve"
+						}
+					}, 1000)
+				}
+			})
+			
+			
+		}
+		</script>
 </body>
 </html>

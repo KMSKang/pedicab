@@ -48,4 +48,10 @@ public class ReserveServiceImpl implements ReserveService {
 		return dao.listAll();
 	}
 
+	@Override
+	public void paysuccess(ReserveVO vo) throws Exception {
+		dao.paysuccess(vo);
+		
+	}
+
 }

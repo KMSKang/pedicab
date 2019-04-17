@@ -40,7 +40,6 @@
 		</table>
 		<a class="btn btn-default" href="/manager/course/coursewrite">write</a>
 		<a class="btn btn-default" href="/manager/course/markerwrite">marker write</a>
-		<a class="btn btn-default" href="/manager/course/test">test</a>
 		</div>
 		<div class="col-lg-12">
 		</div>

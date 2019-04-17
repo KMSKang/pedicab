@@ -93,5 +93,32 @@ public class ReserveController {
 		
 		return "redirect:/user/reserve/myreserve";
 	}
+	
+	//결제 창 이동
+	@RequestMapping("/user/payment")
+	public String payment(Model model, HttpServletRequest request) throws Exception{
+		
+		int rseq = Integer.parseInt(request.getParameter("rseq"));
+		ReserveVO reserve = service.read1(rseq);
+		model.addAttribute("reserve", reserve);
+		model.addAttribute("course", courseservice.read(reserve.getCseq()));
+		
+		return "/user/payment/userpayment";
+	}
+	
+	// 결제 성공
+	@RequestMapping("/payment/success")
+	public String payok(HttpServletRequest request) throws Exception {
+		int rseq = Integer.parseInt(request.getParameter("rseq"));
+		ReserveVO reserve = service.read1(rseq);
+		service.paysuccess(reserve);
+		return "/payment/success";
+	}
+	
+	// 결제 실패
+	@RequestMapping("/payment/fail")
+	public String payno() throws Exception{
+		return "/payment/fail";
+	}
 
 }

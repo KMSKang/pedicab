@@ -39,8 +39,8 @@
 			<td>요구사항</td>
 			<td>action</td>
 			</tr>
-			<tr>
 			<c:forEach items="${list}" var="reserve">
+			<tr>
 			<td>${reserve.rtime}</td>
 			<td>${reserve.rbank}</td>
 			<td>${reserve.raccount}</td>
@@ -48,11 +48,16 @@
 			<td><div class="btn-group">
 			<a href="/review/reviewWrite.do?cseq=${reserve.cseq}" class="btn btn-success">리뷰등록</a>
 			<a href="/user/reserve/userremove?rseq=${reserve.rseq}" class="btn btn-danger">삭제</a>
-			<a href="/user/payment/userpayment" class="btn btn-primary">결제하기</a>
+			<c:if test="${reserve.rok.equals(\"false\") }">
+			<a href="/user/payment?rseq=${reserve.rseq }" class="btn btn-primary">결제하기</a>
+			</c:if>
+			<c:if test="${reserve.rok.equals(\"true\") }">
+			<a href="" class="btn btn-outline-dark disabled">결제완료</a>
+			</c:if>
 			</div>
 			</td>
-			</c:forEach>
 			</tr>
+			</c:forEach>
 			</table>
 			</div>
 		</div>
