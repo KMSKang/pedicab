@@ -203,7 +203,7 @@ gapi.analytics.ready(function() {
 		  var check = confirm('관리자로 등록된 구글 계정으로 로그인 하시면 실시간 데이터를 확인할 수 있습니다. 로그인 하시겠습니까?');
 		  if(check == true) $('.gapi-analytics-auth-styles-signinbutton').click()
 	  }
-	}, 500);
+	}, 1000);
   
   /**
    * Create a new ActiveUsers instance to be rendered inside of an
