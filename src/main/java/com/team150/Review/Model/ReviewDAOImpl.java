@@ -35,7 +35,7 @@ public class ReviewDAOImpl implements ReviewDAO {
 		return session.update(namespace + ".reviewUpdate", reviewVO);
 	}
 
-	// 리뷰 삭제 (실행
+	// 리뷰 삭제 (실행)
 	public int reviewDelete(int reseq) {
 		return session.delete(namespace + ".reviewDelete", reseq);
 	}

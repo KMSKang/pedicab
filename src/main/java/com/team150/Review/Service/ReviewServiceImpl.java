@@ -45,16 +45,19 @@ public class ReviewServiceImpl implements ReviewService {
 		}
 	}
 
+	@Override
 	// 리뷰 조회 (페이지)
 	public List<ReviewVO> reviewSelecter() {
 		return dao.reviewListAll();
 	}
-
+	
+	@Override
 	// 리뷰 상세, 수정 (페이지)
 	public ReviewVO reviewInfoer(int reseq) {
 		return dao.reviewSelectOne(reseq);
 	}
-
+	
+	@Override
 	// 리뷰 수정 (실행)
 	public int reviewUpdater(ReviewVO reviewVO, HttpServletRequest request) throws Exception {
 
@@ -72,7 +75,8 @@ public class ReviewServiceImpl implements ReviewService {
 		}
 		return dao.reviewUpdate(reviewVO);
 	}
-
+	
+	@Override
 	// 리뷰 삭제 (실행)
 	public int reviewDeleter(int reseq) {
 		return dao.reviewDelete(reseq);

@@ -63,7 +63,7 @@ public class ReviewController {
 	// 리뷰 수정 (실행)
 	@RequestMapping("/review/reviewModifyOK")
 	public String reviewModifyOK(@ModelAttribute ReviewVO reviewVO, HttpServletRequest request) throws Exception {
-		System.out.println("수정1");
+		
 		service.reviewUpdater(reviewVO, request);
 
 		return "redirect:/review/reviewInfo.do?reseq=" + reviewVO.getReseq();

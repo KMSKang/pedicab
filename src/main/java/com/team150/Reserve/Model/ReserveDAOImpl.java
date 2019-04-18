@@ -18,7 +18,6 @@ public class ReserveDAOImpl implements ReserveDAO {
 	@Override
 	public void create(ReserveVO vo) throws Exception {
 		session.insert(namespace+".create", vo);
-
 	}
 
 	@Override
