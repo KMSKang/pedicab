@@ -197,8 +197,14 @@ gapi.analytics.ready(function() {
     container: 'embed-api-auth-container',
     clientid: '248908516122-8oeoe3gufkf6ki1md6k7grbcmlqv9p0q.apps.googleusercontent.com'
   });
-
-
+	
+  setTimeout(() => {
+	  if($('#embed-api-auth-container').text().indexOf('logged in') == -1){
+		  var check = confirm('관리자로 등록된 구글 계정으로 로그인 하시면 실시간 데이터를 확인할 수 있습니다. 로그인 하시겠습니까?');
+		  if(check == true) $('.gapi-analytics-auth-styles-signinbutton').click()
+	  }
+	}, 500);
+  
   /**
    * Create a new ActiveUsers instance to be rendered inside of an
    * element with the id "active-users-container" and poll for changes every
