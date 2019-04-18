@@ -30,6 +30,14 @@
 <!-- Include the CSS that styles the charts. -->
 <link rel="stylesheet" href="/resources/cssm/chartjs-visualizations.css">
 
+<style>
+
+.info-box:hover{
+	opacity: 0.8;
+}
+
+</style>
+
 </head>
 <body>
 
