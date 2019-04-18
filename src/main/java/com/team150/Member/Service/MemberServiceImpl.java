@@ -69,4 +69,9 @@ public class MemberServiceImpl implements MemberService {
 		return memberDao.session(uid);
 	}
 
+	@Override
+	public int count() {
+		return memberDao.count();
+	}
+
 }

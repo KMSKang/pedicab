@@ -44,6 +44,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	select useq from User where uid=#{uid}
 	</select>
 	
+	<select id="count" resultType="int">
+	select count(*) from User
+	</select>
+	
 	
 </mapper>
 

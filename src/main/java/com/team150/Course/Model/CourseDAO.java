@@ -31,5 +31,7 @@ public interface CourseDAO {
 	
 	// 리뷰 조회
 	public List<ReviewVO> reviewListAll();
+	
+	public int count();
 
 }

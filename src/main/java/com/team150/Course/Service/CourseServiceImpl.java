@@ -99,4 +99,9 @@ public class CourseServiceImpl implements CourseService {
 	public List<ReviewVO> reviewSelecter() {
 		return dao.reviewListAll();
 	}
+
+	@Override
+	public int count() {
+		return dao.count();
+	}
 }
