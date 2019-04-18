@@ -66,4 +66,9 @@ public class MemberDAOImpl implements MemberDAO {
 	public int session(String uid) {
 		return sqlSession.selectOne("member.session", uid);
 	}
+
+	@Override
+	public int count() {
+		return sqlSession.selectOne("member.count");
+	}
 	}
