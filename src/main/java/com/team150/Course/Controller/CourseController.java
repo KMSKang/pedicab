@@ -21,6 +21,10 @@ public class CourseController {
 	CourseService service;
 
 	// =================관리자================================//
+	@RequestMapping(value="/manager/course/markerwrite",method=RequestMethod.GET)
+	public String markerwriteget() throws Exception{
+		return"/manager/course/markerwrite";
+	}
 	@RequestMapping(value = "/manager/course/courselist", method = RequestMethod.GET)
 	public void clistAll(Model model) throws Exception {
 		model.addAttribute("list", service.listAll());

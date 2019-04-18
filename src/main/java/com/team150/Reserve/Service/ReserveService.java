@@ -17,5 +17,7 @@ public interface ReserveService {
 	public void remove(int rseq) throws Exception;
 	
 	public List<ReserveVO> listAll() throws Exception;
+	
+	public void paysuccess(ReserveVO vo) throws Exception;
 
 }

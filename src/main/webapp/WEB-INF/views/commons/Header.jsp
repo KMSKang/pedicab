@@ -20,7 +20,7 @@
 					aria-expanded="false">about</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="/user/html/aboutus">aboutus</a> <a
-							class="dropdown-item" href="#">staff</a>
+							class="dropdown-item" href="/staff/slistAllU">staff</a>
 					</div></li>
 				<li class="nav-item"><a href="/user/course/courselist"
 					class="nav-link">course</a></li>

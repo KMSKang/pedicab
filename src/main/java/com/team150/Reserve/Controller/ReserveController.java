@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.team150.Course.Service.CourseService;
 import com.team150.Member.Service.MemberService;
 import com.team150.Reserve.Model.ReserveVO;
 import com.team150.Reserve.Service.ReserveService;
@@ -48,6 +49,9 @@ public class ReserveController {
 	@Inject
 	MemberService memberservice;
 	
+	@Inject
+	CourseService courseservice;
+	
 	//===========================관리자=======================//
 	//리스트
 	@RequestMapping(value="/manager/reserve/reservelist",method=RequestMethod.GET)
@@ -81,6 +85,40 @@ public class ReserveController {
 		int useq=memberservice.session(uid);
 		System.out.println(useq);
 		model.addAttribute("list", service.read(useq));
+	}
+	//예약취소
+	@RequestMapping("/user/reserve/userremove")
+	public String uremove(@RequestParam("rseq")int rseq) throws Exception{
+		service.remove(rseq);
+		
+		return "redirect:/user/reserve/myreserve";
+	}
+	
+	//결제 창 이동
+	@RequestMapping("/user/payment")
+	public String payment(Model model, HttpServletRequest request) throws Exception{
+		
+		int rseq = Integer.parseInt(request.getParameter("rseq"));
+		ReserveVO reserve = service.read1(rseq);
+		model.addAttribute("reserve", reserve);
+		model.addAttribute("course", courseservice.read(reserve.getCseq()));
+		
+		return "/user/payment/userpayment";
+	}
+	
+	// 결제 성공
+	@RequestMapping("/payment/success")
+	public String payok(HttpServletRequest request) throws Exception {
+		int rseq = Integer.parseInt(request.getParameter("rseq"));
+		ReserveVO reserve = service.read1(rseq);
+		service.paysuccess(reserve);
+		return "/payment/success";
+	}
+	
+	// 결제 실패
+	@RequestMapping("/payment/fail")
+	public String payno() throws Exception{
+		return "/payment/fail";
 	}
 
 }

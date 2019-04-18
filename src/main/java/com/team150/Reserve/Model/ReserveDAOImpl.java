@@ -46,4 +46,11 @@ public class ReserveDAOImpl implements ReserveDAO {
 		return session.selectList(namespace+".listAll");
 	}
 
+	@Override
+	public void paysuccess(ReserveVO vo) throws Exception {
+		session.update(namespace + ".paysuccess", vo); 
+		
+	}
+	
+
 }
