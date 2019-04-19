@@ -165,9 +165,11 @@
 		}
 			
 		} 
+		for(var i=0;i<markers.length;i++){
        $(".plus").click(function(){
-    	   $("#marker").html();	 
+    	   $("#marker").html(JSON.stringify(marker));	 
        });
+		}
 	</script>
 </body>
 </html>
