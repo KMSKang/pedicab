@@ -24,9 +24,14 @@
 					</div></li>
 				<li class="nav-item"><a href="/user/course/courselist"
 					class="nav-link">course</a></li>
+					<c:choose>
+					<c:when test="${sessionScope.uid==null }">
+					</c:when>
+					<c:otherwise>
 				<li class="nav-item"><a href="/user/reserve/myreserve"
 					class="nav-link">reserve</a></li>
-				<li class="nav-item"><a href="blog.html" class="nav-link">blog</a></li>
+					</c:otherwise>
+					</c:choose>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
