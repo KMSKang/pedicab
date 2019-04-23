@@ -27,6 +27,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from Course where cseq=#{cseq}
 	</delete>
 	
+	<select id="count" resultType="int">
+	select count(*) from Course
+	</select>
+	
 	
 	
 	<!-- 즐겨찾기 등록 -->

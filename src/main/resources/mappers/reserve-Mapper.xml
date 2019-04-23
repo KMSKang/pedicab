@@ -37,4 +37,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="paysuccess">
 		update Reserve set rok="true" where rseq=#{rseq}
 	</update>
+	
+	<select id="countOrder" resultType="int">
+	select count(*) from Reserve
+	</select>
+	
+	<select id="countPurchase" resultType="int">
+	select count(*) from Reserve where rok="true"
+	</select>
 </mapper>

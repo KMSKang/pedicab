@@ -35,4 +35,6 @@ public interface CourseService {
 	
 	// 리뷰 조회
 	public List<ReviewVO> reviewSelecter();
+	
+	public int count();
 }

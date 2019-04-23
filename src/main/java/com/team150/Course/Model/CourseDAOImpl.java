@@ -71,4 +71,9 @@ public class CourseDAOImpl implements CourseDAO {
 		return session.selectList(namespace + ".reviewListAll");
 	}
 
+	@Override
+	public int count() {
+		return session.selectOne(namespace + ".count");
+	}
+
 }

@@ -16,5 +16,9 @@ public interface ReserveDAO {
 	public List<ReserveVO> listAll() throws Exception;
 	
 	public void paysuccess(ReserveVO vo) throws Exception;
+	
+	public int countOrder() throws Exception;
+	
+	public int countPurchase() throws Exception;
 
 }

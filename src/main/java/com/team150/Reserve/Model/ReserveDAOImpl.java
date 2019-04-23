@@ -51,6 +51,16 @@ public class ReserveDAOImpl implements ReserveDAO {
 		session.update(namespace + ".paysuccess", vo); 
 		
 	}
+
+	@Override
+	public int countOrder() throws Exception {
+		return session.selectOne(namespace + ".countOrder");
+	}
+
+	@Override
+	public int countPurchase() throws Exception {
+		return session.selectOne(namespace + ".countPurchase");
+	}
 	
 
 }

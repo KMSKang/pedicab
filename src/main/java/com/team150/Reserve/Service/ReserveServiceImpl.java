@@ -54,4 +54,14 @@ public class ReserveServiceImpl implements ReserveService {
 		
 	}
 
+	@Override
+	public int countOrder() throws Exception {
+		return dao.countOrder();
+	}
+
+	@Override
+	public int countPurchase() throws Exception {
+		return dao.countPurchase();
+	}
+
 }

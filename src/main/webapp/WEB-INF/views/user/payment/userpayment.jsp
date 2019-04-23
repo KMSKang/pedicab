@@ -31,13 +31,13 @@
 				<li class="list-group-item">
 					<strong>예약 시간</strong>&ensp;${reserve.rtime }<br>
 					<strong>계좌 정보</strong>&ensp;${reserve.raccount }<br>
-					<strong>계좌 은행</strong>&ensp;${reserve.rbank }<br>
+					<strong>은행 정보</strong>&ensp;${reserve.rbank }<br>
 					<strong>예약 일자</strong>&ensp;${reserve.rdate }<br>
 				</li>
 				<li class="list-group-item list-group-item-secondary">코스 정보</li>
 				<li class="list-group-item">
 					<strong>예약 코스</strong>&ensp;${course.cname }<br>
-					<strong>직원 이름</strong>&ensp;${course.cinfo }<br>
+					<strong>코스 설명</strong>&ensp;${course.cinfo }<br>
 					<strong>시작 장소</strong>&ensp;${course.cstart }<br>
 					<strong>결제 금액&ensp;${course.cprice } 원</strong><br>
 				</li>
