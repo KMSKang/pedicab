@@ -5,15 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@include file="../../commons/mh.jsp"%>
+<%@include file="/WEB-INF/views/user/commons/mh.jsp"%>
 </head>
 <script src="${pageContext.request.contextPath}/resources/jsm/jquery.js"></script>
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cc84e86d65eee9754a6074c7329a9302&libraries=drawing"></script>
 <body>
 	<section id="container" class="">
-		<%@include file="../../commons/mhd.jsp"%>
-		<%@include file="../../commons/mfj.jsp"%>
+		<%@include file="/WEB-INF/views/user/commons/mhd.jsp"%>
+		<%@include file="/WEB-INF/views/user/commons/mfj.jsp"%>
 		<section id="main-content">
 			<section class="wrapper">
 				<div class="row">
@@ -63,7 +63,7 @@
 			</section>
 		</section>
 	</section>
-	<%@include file="../../commons/mjs.jsp"%>
+	<%@include file="/WEB-INF/views/user/commons/mjs.jsp"%>
 	<script type="text/javascript">	
 	var data =${course.cmap}
 	var x=data.marker[0].x;

@@ -39,13 +39,12 @@ table th {
 	border-top: 1px solid black;
 }
 </style>
-<!--↓ 이부분은 managerpage에 적용될 css가 담겨있는 iclude 태그입니다. 포함하셔야 됩니다. -->
-<%@include file="../../commons/mh.jsp"%>
+<%@include file="/WEB-INF/views/user/commons/mh.jsp"%>
 </head>
 <body>
 	<section id="container" class="">
-		<%@include file="../../commons/mhd.jsp"%>
-		<%@include file="../../commons/mfj.jsp"%>
+		<%@include file="/WEB-INF/views/user/commons/mhd.jsp"%>
+		<%@include file="/WEB-INF/views/user/commons/mfj.jsp"%>
 		<section id="main-content">
 			<section class="wrapper">
 				<div class="row">
@@ -116,6 +115,6 @@ table th {
 		</section>
 	</section>
 	<!-- ↓ 이부분은 자바스크립트가 작성된 include 태그입니다. 포함 하셔야됩니다 ! -->
-	<%@include file="../../commons/mjs.jsp"%>
+	<%@include file="/WEB-INF/views/user/commons/mjs.jsp"%>
 </body>
 </html>

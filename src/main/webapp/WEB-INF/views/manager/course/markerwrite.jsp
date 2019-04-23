@@ -114,12 +114,12 @@
 	color: #5085BB;
 }
 </style>
-<%@include file="../../commons/mh.jsp"%>
+<%@include file="/WEB-INF/views/user/commons/mh.jsp"%>
 </head>
 <body>
 	<section id="container" class="">
-		<%@include file="../../commons/mhd.jsp"%>
-		<%@include file="../../commons/mfj.jsp"%>
+		<%@include file="/WEB-INF/views/user/commons/mhd.jsp"%>
+		<%@include file="/WEB-INF/views/user/commons/mfj.jsp"%>
 		<section id="main-content">
 			<section id="wrapper">
 				<div class="row">
@@ -160,7 +160,7 @@
 			</section>
 		</section>
 	</section>
-	<%@include file="../../commons/mjs.jsp"%>
+	<%@include file="/WEB-INF/views/user/commons/mjs.jsp"%>
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cc84e86d65eee9754a6074c7329a9302&libraries=drawing"></script>
 	<script>

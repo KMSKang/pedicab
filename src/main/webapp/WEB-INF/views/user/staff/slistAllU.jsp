@@ -43,7 +43,7 @@
 			<div class="row">
 				<c:forEach var="staff" items="${list}">
 				<div class="col-md-6 col-lg-3">
-			        <img class="img" src="/uploadFile/staffphoto/${staff.simg }" />
+			        <img class="img" src="/uploadFile/staffPhoto/${staff.simg }" />
 			        <p style="font-size:25px;color:black;">${staff.sname }</p>
 				</div>
 		        </c:forEach>

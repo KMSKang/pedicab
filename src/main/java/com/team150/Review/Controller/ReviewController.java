@@ -24,7 +24,7 @@ public class ReviewController {
 	// 리뷰 등록 (페이지)
 	@RequestMapping("/review/reviewWrite")
 	public String reviewWrite(ReviewVO reviewVO) {
-		return "/review/reviewWrite";
+		return "/user/review/reviewWrite";
 	}
 
 	// 리뷰 등록 (실행)
@@ -45,7 +45,7 @@ public class ReviewController {
 		// 리뷰 전체 조회
 		model.addAttribute("reviewList", service.reviewSelecter());
 
-		return "/review/reviewInfo";
+		return "/user/review/reviewInfo";
 	}
 
 	// 리뷰 수정 (페이지)
@@ -57,7 +57,7 @@ public class ReviewController {
 		// 리뷰 전체 조회
 		model.addAttribute("reviewList", service.reviewSelecter());
 
-		return new ModelAndView("/review/reviewModify", "reviewVO", reviewVO);
+		return new ModelAndView("/user/review/reviewModify", "reviewVO", reviewVO);
 	}
 
 	// 리뷰 수정 (실행)

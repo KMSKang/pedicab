@@ -33,12 +33,12 @@ table a {
 	border-top: 1px solid black;
 }
 </style>
-<%@include file="../../commons/mh.jsp"%>
+<%@include file="/WEB-INF/views/user/commons/mh.jsp"%>
 </head>
 <body>
 	<section id="container" class="">
-		<%@include file="../../commons/mhd.jsp"%>
-		<%@include file="../../commons/mfj.jsp"%>
+		<%@include file="/WEB-INF/views/user/commons/mhd.jsp"%>
+		<%@include file="/WEB-INF/views/user/commons/mfj.jsp"%>
 		<section id="main-content">
 			<section class="wrapper">
 				<div class="row">
@@ -120,6 +120,6 @@ table a {
 			</section>
 		</section>
 	</section>
-	<%@include file="../../commons/mjs.jsp"%>
+	<%@include file="/WEB-INF/views/user/commons/mjs.jsp"%>
 </body>
 </html>

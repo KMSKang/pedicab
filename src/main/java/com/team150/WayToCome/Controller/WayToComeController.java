@@ -9,7 +9,7 @@ public class WayToComeController {
 	// 오시는 길
 	@RequestMapping("/wayToCome/wayToCome")
 	public String wayToCome() {
-		return "/wayToCome/wayToCome";
+		return "/user/wayToCome/wayToCome";
 	}
 
 }

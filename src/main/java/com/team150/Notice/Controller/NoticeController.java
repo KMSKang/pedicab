@@ -26,7 +26,7 @@ public class NoticeController {
 
 		model.addAttribute("List", service.noticeSelecter());
 
-		return "/notice/noticeMain";
+		return "/user/notice/noticeMain";
 	}
 	
 	// 상세 (페이지)
@@ -35,7 +35,7 @@ public class NoticeController {
 
 		model.addAttribute("Info", service.noticeInfoer(noseq));
 
-		return "/notice/noticeInfo";
+		return "/user/notice/noticeInfo";
 	}
 
 //	--------------------------------------------------------------------------
@@ -63,7 +63,7 @@ public class NoticeController {
 
 		service.noticeRegister(noticeVO);
 
-		return "redirect:noticeList.do";
+		return "redirect:/manager/notice/noticeList.do";
 	}
 
 	// 수정 (페이지)

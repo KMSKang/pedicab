@@ -22,7 +22,7 @@ public class StaffController {
 	// 라이더 등록 (페이지)
 	@RequestMapping(value = "/staff/sform", method = RequestMethod.GET)
 	public String form() {
-		return "/staff/sform";
+		return "/user/staff/sform";
 	}
 
 	// 라이더 등록
@@ -36,28 +36,28 @@ public class StaffController {
 	@RequestMapping(value = "/staff/slistAll", method = RequestMethod.GET)
 	public String listAll(Model model) throws Exception {
 		model.addAttribute("list", staffService.listAll());
-		return "staff/slistAll";
+		return "/user/staff/slistAll";
 	}
 	
 	// 라이더 소개 이미지 리스트 (유저)
 	@RequestMapping(value = "/staff/slistAllU", method = RequestMethod.GET)
 	public String staffListU(Model model) throws Exception {
 		model.addAttribute("list", staffService.listAll());
-		return "staff/slistAllU";
+		return "/user/staff/slistAllU";
 	}
 	
 	// 라이더 상세 (페이지)
 	@RequestMapping(value = "/staff/sread", method = RequestMethod.GET)
 	public String read(@RequestParam("sseq") int sseq, Model model) throws Exception{
 		model.addAttribute("staff", staffService.read(sseq));
-		return "staff/sread";
+		return "/user/staff/sread";
 	}
 	
 	// 라이더 수정 (페이지)
 	@RequestMapping(value = "/staff/smodify", method = RequestMethod.GET)
 	public String modifyGet(@RequestParam("sseq") int sseq, Model model) throws Exception{
 		model.addAttribute("staff", staffService.read(sseq));
-		return "staff/smodify";
+		return "/user/staff/smodify";
 	}
 	
 	// 라이더 수정

@@ -71,10 +71,10 @@ table a {
 										})
 					});
 </script>
-<%@ include file="../../commons/indexbg.jsp"%>
+<%@ include file="/WEB-INF/views/user/commons/indexbg.jsp"%>
 </head>
 <body>
-	<%@ include file="../../commons/Header.jsp"%>
+	<%@ include file="/WEB-INF/views/user/commons/Header.jsp"%>
 	<section class="hero-wrap hero-wrap-2 js-fullheight"
 		style="background-image: url('/uploadFile/coursePhoto/${course.cimg}');"
 		data-stellar-background-ratio="0.5">
@@ -213,7 +213,7 @@ table a {
 			</div>
 		</div>
 	</section>
-	<%@include file="../../commons/footer.jsp"%>
+	<%@include file="/WEB-INF/views/user/commons/footer.jsp"%>
 	<script type="text/javascript">
 		var data = $
 		{

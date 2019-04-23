@@ -5,10 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="../../commons/indexbg.jsp"%>
+<%@ include file="/WEB-INF/views/user/commons/indexbg.jsp"%>
 </head>
 <body>
-	<%@ include file="../../commons/Header.jsp"%>
+	<%@ include file="/WEB-INF/views/user/commons/Header.jsp"%>
 	<section class="hero-wrap hero-wrap-2 js-fullheight"
 		style="background-image: url('/resources/imagesu/bg_4.jpg');"
 		data-stellar-background-ratio="0.5">
@@ -62,6 +62,6 @@
 			</div>
 		</div>
 	</section>
-	<%@include file="../../commons/footer.jsp"%>
+	<%@include file="/WEB-INF/views/user/commons/footer.jsp"%>
 </body>
 </html>

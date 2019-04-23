@@ -4,14 +4,14 @@
 <html>
 <head>
 <title>Profile</title>
-<%@include file="../../commons/mh.jsp"%>
+<%@include file="/WEB-INF/views/user/commons/mh.jsp"%>
 <%@ include file="option.jsp"%>
   
 </head>
 
 <body>
-	<%@include file="../../commons/mhd.jsp"%>
-	<%@include file="../../commons/mfj.jsp"%>
+	<%@include file="/WEB-INF/views/user/commons/mhd.jsp"%>
+		<%@include file="/WEB-INF/views/user/commons/mfj.jsp"%>
   <!-- container section start -->
   <section id="container" class="">
     <!--header start-->

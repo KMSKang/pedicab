@@ -21,47 +21,44 @@ public class QuestionController {
 
 	@Inject
 	QuestionService service;
-	
+
 	@Inject
 	MemberService memberservice;
-	
-	
-	
+
 //	고객
 
 	// 문의하기 리스트 (페이지)
 	@RequestMapping("/question/questionMain")
 	public String questionMain(Model model, HttpServletRequest request) {
-		
+
 		HttpSession session = request.getSession();
-		
+
 		String uid = session.getAttribute("uid").toString();
-		
+
 		model.addAttribute("questionList", service.questionSelecterUid(uid));
 
-		return "question/questionMain";
+		return "/user/question/questionMain";
 	}
 
 	// 문의하기 등록 (페이지)
 	@RequestMapping("/question/questionWrite")
 	public String questionWrite() {
-		return "question/questionWrite";
+		return "/user/question/questionWrite";
 	}
 
 	// 문의하기 등록 (실행)
 	@RequestMapping(value = "/question/questionWriteOK", method = RequestMethod.POST)
 	public String questionWriteOK(QuestionVO questionVO, HttpServletRequest request) {
-		
-		HttpSession session = request.getSession();
-		
-		String uid = session.getAttribute("uid").toString();
-		
-		questionVO.setQuemail(uid);
-		
-		service.questionRegister(questionVO);
-		
 
-		return "redirect:questionMain.do";
+		HttpSession session = request.getSession();
+
+		String uid = session.getAttribute("uid").toString();
+
+		questionVO.setQuemail(uid);
+
+		service.questionRegister(questionVO);
+
+		return "redirect:/question/questionMain.do";
 	}
 
 	// 문의하기 상세 (페이지)
@@ -72,7 +69,7 @@ public class QuestionController {
 
 		model.addAttribute("answerList", service.answerSelecter());
 
-		return "question/questionInfo";
+		return "/user/question/questionInfo";
 	}
 
 	// 문의하기 수정 (페이지)
@@ -81,7 +78,7 @@ public class QuestionController {
 
 		questionVO = service.questionInfoer(quseq);
 
-		return new ModelAndView("/question/questionModify", "questionInfo", questionVO);
+		return new ModelAndView("/user/question/questionModify", "questionInfo", questionVO);
 	}
 
 	// 문의하기 수정 (실행)
@@ -101,6 +98,13 @@ public class QuestionController {
 		service.allDeleter(quseq);
 
 		return "redirect:/question/questionMain";
+	}
+
+	// 자주 묻는 질문
+	@RequestMapping("/question/commonsquestion")
+	public String questionAlways() {
+
+		return "/user/question/commonsquestion";
 	}
 
 //	--------------------------------------------------------------------------------

@@ -25,7 +25,7 @@ public class StaffServiceImpl implements StaffService {
 		// 임의 주석
 		// request 이용 절대경로 설정 String imgfile = ""; String uploadUri =
 		String imgfile = "";
-		String uploadUri = "/uploadFile/staffphoto"; 
+		String uploadUri = "/uploadFile/staffPhoto"; 
 		String dir = request.getSession().getServletContext().getRealPath(uploadUri);
 		
 		System.out.println(dir);

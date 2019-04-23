@@ -16,7 +16,7 @@
 	</script>
 
 <!--↓ 이부분은 managerpage에 적용될 css가 담겨있는 iclude 태그입니다. 포함하셔야 됩니다. -->
-<%@include file="commons/mh.jsp"%>
+<%@include file="/WEB-INF/views/user/commons/mh.jsp"%>
 
 <!-- Include the ViewSelector2 component script. -->
 <script src="${pageContext.request.contextPath }/resources/jsm/view-selector2.js"></script>
@@ -30,6 +30,14 @@
 <!-- Include the CSS that styles the charts. -->
 <link rel="stylesheet" href="/resources/cssm/chartjs-visualizations.css">
 
+<style>
+
+.info-box:hover{
+	opacity: 0.8;
+}
+
+</style>
+
 </head>
 <body>
 
@@ -37,8 +45,8 @@
 <!--↓아래에 있는 section id="container"는 꼭 만드서야 합니다 !  -->
 <section id="container" class="">
 <!--↓밑에 두개 include 파일은 복사 하셔서 만드시는 뷰단 페이지에다가 붙여넣기 하세요 꼭 이위치에 복사 하셔야 됩니다! -->
-	<%@include file="commons/mhd.jsp"%>
-	<%@include file="commons/mfj.jsp"%>
+	<%@include file="/WEB-INF/views/user/commons/mhd.jsp"%>
+	<%@include file="/WEB-INF/views/user/commons/mfj.jsp"%>
 <!-- ↓id="main-content" section은 작성하시는 코드가 들어가는 부분입니다. 만드셔야지 되요!  -->
 	<section id="main-content">
 <!--      ↓여기있는 wrapper는 감싸주는거 같아요 저도 잘 모르겠어요 일단 만드셔야 됩니다. -->
@@ -170,7 +178,7 @@
 
 
    <!-- ↓ 이부분은 자바스크립트가 작성된 include 태그입니다. 포함 하셔야됩니다 ! -->
-	<%@include file="commons/mjs.jsp"%>
+	<%@include file="/WEB-INF/views/user/commons/mjs.jsp"%>
 	
 
 	
@@ -197,8 +205,14 @@ gapi.analytics.ready(function() {
     container: 'embed-api-auth-container',
     clientid: '248908516122-8oeoe3gufkf6ki1md6k7grbcmlqv9p0q.apps.googleusercontent.com'
   });
-
-
+	
+  setTimeout(() => {
+	  if($('#embed-api-auth-container').text().indexOf('logged in') == -1){
+		  var check = confirm('관리자로 등록된 구글 계정으로 로그인 하시면 실시간 데이터를 확인할 수 있습니다. 로그인 하시겠습니까?');
+		  if(check == true) $('.gapi-analytics-auth-styles-signinbutton').click()
+	  }
+	}, 1000);
+  
   /**
    * Create a new ActiveUsers instance to be rendered inside of an
    * element with the id "active-users-container" and poll for changes every

@@ -52,7 +52,7 @@
 		];
 		//마커를 담은 배열
 		var markers=[];
-		var data =document.getElementById('marker');
+		
 		
 		//DB에 저장된 마커를 지도에 찍음.
 		for(var i=0;i<positions.length;i++){			
@@ -165,9 +165,11 @@
 		}
 			
 		} 
-//        document.getElementById('plus').on(click,function(){
-    	   
-//        });
+		for(var i=0;i<markers.length;i++){
+       $(".plus").click(function(){
+    	   $("#marker").html(JSON.stringify(marker));	 
+       });
+		}
 	</script>
 </body>
 </html>
