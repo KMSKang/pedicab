@@ -40,8 +40,12 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberVO view(String uid) {
-		return memberDao.view(uid);
+	public MemberVO viewManager(String uid) {
+		return memberDao.viewManager(uid);
+	}
+	@Override
+	public MemberVO viewMember(String uid) {
+		return memberDao.viewMember(uid);
 	}
 
 	@Override
@@ -50,9 +54,12 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public void remove(String uid) {
-		memberDao.remove(uid);
-
+	public void remove_u(String uid) {
+		memberDao.remove_u(uid);
+	}
+	@Override
+	public void remove_m(String uid) {
+		memberDao.remove_m(uid);
 	}
 
 	@Override
@@ -67,11 +74,6 @@ public class MemberServiceImpl implements MemberService {
 	
 	public int session(String uid) {
 		return memberDao.session(uid);
-	}
-
-	@Override
-	public int count() {
-		return memberDao.count();
 	}
 
 }

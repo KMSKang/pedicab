@@ -45,7 +45,7 @@ public class MemberController {
 
 		} else {
 			// 로그인 실패하면
-			mav.setViewName("member/loginForm");// member/login.jsp로 이동하여 다시 로그인
+			mav.setViewName("user/member/loginForm");// member/login.jsp로 이동하여 다시 로그인
 			mav.addObject("message", "error");
 		}
 		return mav;
@@ -73,6 +73,51 @@ public class MemberController {
 		return "redirect:/member/loginForm.do";
 		/* return "redirect:/member/list.do"; //목록 갱신 */
 	}
+	
+	// 회원리스트 상세 (유저 페이지)
+		@RequestMapping("/member/view.do")
+		public String viewMember(@RequestParam String uid, Model model) {
+			// member_list.jsp의 view.do?userid=kim이라면 @RequestParam String userid 변수에 kim이
+			// 저장됨
+			// system.out.println("클릭한 아이디: "+userid); //info, debug, warn, error
+			// logger.info("클릭한 아이디: "+userid);
+			model.addAttribute("vo", memberService.viewMember(uid)); // 회원정보를 모델에 저장
+			return "user/member/view";
+		}
+	
+	// 회원리스트 수정 (실행)
+		@RequestMapping("/member/modify.do")
+		public String modify(@ModelAttribute MemberVO vo, Model model) {
+			// ------------------------------
+			// view.jsp에서 작성한 form의 정보를 dto에 묶어 보내면 ModelAttribute 쌓임
+			boolean result = memberService.checkPw(vo.getUid(), vo.getUpwd());
+			// logger.info("비밀번호 확인: "+result);
+
+			if (result) {// 비밀번호가 맞으면
+				memberService.modify(vo); // 레코드 수정
+				return "home"; // 회원 상제페이지로 이동
+			} else {// 비밀번호가 틀리면
+				MemberVO vo2 = memberService.viewMember(vo.getUid());
+				vo.setUdate(vo2.getUdate());// 날자가 지워지지 않도록
+				model.addAttribute("vo", vo); // 모델에 저장
+				model.addAttribute("message", "비밀번호가 일치하지 않습니다.");
+				return "/user/member/view"; // 수정 페이지로 되돌아감
+			}
+		}
+		// 회원리스트 삭제 유저용(실행)
+		@RequestMapping("/member/delete.do")
+		public String remove_u(HttpSession session,@RequestParam String uid, @RequestParam String upwd, Model model) {
+			boolean result = memberService.checkPw(uid, upwd);
+			if (result) {
+				memberService.remove_u(uid);
+				memberService.logOut(session);
+				return "home";
+			} else {
+				model.addAttribute("message", "비밀번호가 일치하지 않습니다.");
+				model.addAttribute("vo", memberService.viewMember(uid));
+				return "user/member/view";
+			}
+		}
 
 //	----------------------------------------------------------------------------
 
@@ -87,41 +132,21 @@ public class MemberController {
 		return "manager/member/memberList"; // 출력 페이지로 포워딩
 	}
 
-	// 회원리스트 상세 (페이지)
+	// 회원리스트 상세 (매니저 페이지)
 	@RequestMapping("/manager/member/view.do")
-	public String view(@RequestParam String uid, Model model) {
+	public String viewManager(@RequestParam String uid, Model model) {
 		// member_list.jsp의 view.do?userid=kim이라면 @RequestParam String userid 변수에 kim이
 		// 저장됨
 		// system.out.println("클릭한 아이디: "+userid); //info, debug, warn, error
 		// logger.info("클릭한 아이디: "+userid);
-		model.addAttribute("vo", memberService.view(uid)); // 회원정보를 모델에 저장
+		model.addAttribute("vo", memberService.viewManager(uid)); // 회원정보를 모델에 저장
 		return "manager/member/view";
 	}
-
-	// 회원리스트 수정 (실행)
-	@RequestMapping("/manager/modify.do")
-	public String modify(@ModelAttribute MemberVO vo, Model model) {
-		// ------------------------------
-		// view.jsp에서 작성한 form의 정보를 dto에 묶어 보내면 ModelAttribute 쌓임
-		boolean result = memberService.checkPw(vo.getUid(), vo.getUpwd());
-		// logger.info("비밀번호 확인: "+result);
-
-		if (result) {// 비밀번호가 맞으면
-			memberService.modify(vo); // 레코드 수정
-			return "redirect:/member/list.do"; // 목록으로 이동
-		} else {// 비밀번호가 틀리면
-			MemberVO vo2 = memberService.view(vo.getUid());
-			vo.setUdate(vo2.getUdate());// 날자가 지워지지 않도록
-			model.addAttribute("vo", vo); // 모델에 저장
-			model.addAttribute("message", "비밀번호가 일치하지 않습니다.");
-			return "member/view"; // 수정 페이지로 되돌아감
-		}
-	}
-
-	// 회원리스트 삭제 (실행)
+	
+	// 회원리스트 삭제 관리자용(실행)
 	@RequestMapping("/manager/member/delete.do")
-	public String remove(@RequestParam String uid, Model model) {
-		memberService.remove(uid);
-		return "redirect:/manager/list.do";
+	public String remove_m(@RequestParam String uid, Model model) {
+			memberService.remove_m(uid);
+			return "redirect:/manager/list.do";
 	}
 }

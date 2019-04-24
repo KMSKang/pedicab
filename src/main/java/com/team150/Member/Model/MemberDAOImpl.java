@@ -32,7 +32,11 @@ public class MemberDAOImpl implements MemberDAO {
 		}
 
 	@Override
-	public MemberVO view(String uid) {
+	public MemberVO viewManager(String uid) {
+		return sqlSession.selectOne("member.view", uid);
+	}
+	@Override
+	public MemberVO viewMember(String uid) {
 		return sqlSession.selectOne("member.view", uid);
 	}
 
@@ -41,7 +45,11 @@ public class MemberDAOImpl implements MemberDAO {
 	  }
 
 	@Override
-	public void remove(String uid) { 
+	public void remove_u(String uid) { 
+		sqlSession.delete("member.remove", uid);
+	}
+	@Override
+	public void remove_m(String uid) { 
 		sqlSession.delete("member.remove", uid);
 	}
 
@@ -65,10 +73,5 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public int session(String uid) {
 		return sqlSession.selectOne("member.session", uid);
-	}
-
-	@Override
-	public int count() {
-		return sqlSession.selectOne("member.count");
 	}
 	}

@@ -6,6 +6,7 @@
 <%@ include file="../commons/option.jsp"%>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<%@ include file="../commons/indexbg.jsp" %>
 <script>
 $(function(){
 	$("#btnUpdate").click(function(){
@@ -26,10 +27,29 @@ $(function(){
 </script>
 </head>
 <body>
-	<%-- <%@ include file="../commons/loginMenu.jsp"%> --%>
-	<h2>회원 정보</h2>
+	<%@ include file="../commons/Header.jsp" %>
+	<div class="hero-wrap js-fullheight"
+		style="background-image: url('/resources/imagesu/bg_1.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div
+				class="row no-gutters slider-text js-fullheight align-items-center justify-content-end"
+				data-scrollax-parent="true">
+				<div class="col-md-7 ftco-animate mt-5"
+					data-scrollax=" properties: { translateY: '70%' }">
+					<h1 class="mb-4"
+						data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">My Info</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+	<div class="col-lg-3"></div>
+	<div class="col-lg-6">
+	<h3 class="page-header">회원정보</h3>
 	<form name="form1" method="post">
-		<table border="1" width="400px">
+		<table class="table table-striped table-advance table-hover">
 			<tr>
 				<td>아이디</td>
 				<td><input name="uid" value="${vo.uid}" readonly></td>
@@ -55,8 +75,8 @@ $(function(){
 				<td>성별</td>
 				<td> 
 					<%-- <input name="ugender" value="${vo.ugender}"> --%>
-					<input type="radio" name="ugender" value="남자"> 남자
-  					<input type="radio" name="ugender" value="여자"> 여자 
+					<input type="radio" name="ugender" value="남자" > 남자
+  					<input type="radio" name="ugender" value="여자" > 여자 
 				</td>
 			</tr>
 			<tr>
@@ -77,5 +97,10 @@ $(function(){
 			</tr>
 		</table>
 	</form>
+	</div>
+	<div class="col-lg-3"></div>
+	</div>
+	<br><br><br>
+<%@include file="../commons/footer.jsp" %>
 </body>
 </html>
