@@ -100,13 +100,6 @@ public class QuestionController {
 		return "redirect:/question/questionMain";
 	}
 
-	// 자주 묻는 질문
-	@RequestMapping("/question/commonsquestion")
-	public String questionAlways() {
-
-		return "/user/question/commonsquestion";
-	}
-
 //	--------------------------------------------------------------------------------
 
 //	관리자

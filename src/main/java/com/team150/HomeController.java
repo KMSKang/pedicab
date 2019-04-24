@@ -21,13 +21,13 @@ import com.team150.Reserve.Service.ReserveService;
 
 @Controller
 public class HomeController {
-	
+
 	@Inject
 	MemberService mService;
-	
+
 	@Inject
 	ReserveService rService;
-	
+
 	@Inject
 	CourseService cService;
 
@@ -49,31 +49,19 @@ public class HomeController {
 
 		return "home";
 	}
-	@RequestMapping(value="/managerhome",method=RequestMethod.GET)
+
+	@RequestMapping(value = "/managerhome", method = RequestMethod.GET)
 	public String managerhome(Model model) throws Exception {
 		Map<String, Integer> map = new HashMap<>();
 		map.put("members", mService.count());
 		map.put("purchased", rService.countPurchase());
 		map.put("order", rService.countOrder());
 		map.put("cources", cService.count());
-		
+
 		model.addAllAttributes(map);
-		
-		return"managerhome";
-	}
 
-	@RequestMapping(value="/question/commonsquestion",method=RequestMethod.GET)
-	public String commonsquestion() {
-		return"/question/commonsquestion";
+		return "managerhome";
 	}
-
-
-	@RequestMapping(value="/user/html/aboutus",method=RequestMethod.GET)
-	public String aboutus() {
-		return "/user/html/aboutus";
-	}
-	@RequestMapping(value="/user/payment/userpayment",method=RequestMethod.GET)
-	public String userpayment() {
-		return"/user/payment/userpayment";
-	}
+	
+	
 }

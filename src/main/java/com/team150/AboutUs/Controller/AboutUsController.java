@@ -5,13 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class AboutUsController {
-	
-	// 아띠 인력거 소개
-	@RequestMapping("/companyIntroduce/companyIntroduce")
-	public String companyIntroduce() {
-		return "companyIntroduce/companyIntroduce";
+
+	// 아띠 소개
+	@RequestMapping("/user/html/aboutus")
+	public String aboutus() {
+		return "/user/html/aboutus";
 	}
-	
-	// 아띠 라이더 소개
-		
 }
